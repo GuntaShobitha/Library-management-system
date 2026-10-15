@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Help Desk — Athenaeum Central Library</title>
+  <meta name="description" content="Get in touch with Athenaeum Central Library. Inquire about research consultations, book loans, facility reservations, or view circulation hours.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-brand" aria-label="Athenaeum Central Library Home">
+        <img src="assets/images/logo.svg" alt="Athenaeum Central Library Emblem" class="logo-svg">
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="books.html" class="nav-link">Books Catalog</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div id="navAuthContainer"></div>
+        <button type="button" class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile navigation menu">
+          <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/logo.svg" alt="Athenaeum Library" style="height: 32px; filter: brightness(0) invert(1);">
+      <button type="button" id="mobileDrawerClose" style="color: #fff;" aria-label="Close mobile menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><span class="material-symbols-outlined">home</span> Home</a></li>
+      <li><a href="books.html"><span class="material-symbols-outlined">menu_book</span> Books Catalog</a></li>
+      <li><a href="categories.html"><span class="material-symbols-outlined">category</span> Categories</a></li>
+      <li><a href="services.html"><span class="material-symbols-outlined">room_service</span> Services</a></li>
+      <li><a href="about.html"><span class="material-symbols-outlined">info</span> About Us</a></li>
+      <li><a href="contact.html" class="active"><span class="material-symbols-outlined">mail</span> Contact</a></li>
+    </ul>
+    <div id="mobileAuthContainer"></div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION WITH REALISTIC BACKGROUND -->
+    <section class="page-hero page-hero-contact">
+      <div class="container text-center" style="text-align: center; max-width: 860px; margin: 0 auto;">
+        <div class="hero-tag" style="margin-bottom: 18px; display: inline-flex;">
+          <span class="material-symbols-outlined" style="font-size: 16px;">support_agent</span>
+          Patron Support & Reference Services
+        </div>
+        <h1 style="color: var(--color-white); font-size: clamp(2.3rem, 4.2vw, 3.4rem); margin-bottom: 16px; font-weight: 700; letter-spacing: -0.02em;">
+          We Are Here to Assist Your Scholarly Inquiry
+        </h1>
+        <p style="color: rgba(255,255,255,0.88); font-size: 1.15rem; line-height: 1.7; max-width: 720px; margin: 0 auto 28px;">
+          Whether you need assistance with scholarly research, membership card renewal, or finding rare manuscript access, our staff is delighted to help.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="#inquiry-form" class="btn btn-gold btn-sm">1. Send Inquiry</a>
+          <a href="#departments" class="btn btn-outline-gold btn-sm">2. Department Directory</a>
+          <a href="#location-transit" class="btn btn-outline-gold btn-sm">3. Location & Transit</a>
+          <a href="#operating-hours" class="btn btn-outline-gold btn-sm">4. Service Hours</a>
+          <a href="#faq" class="btn btn-outline-gold btn-sm">5. Help FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INQUIRY FORM SECTION -->
+    <section class="section-py section-bg-parchment" id="inquiry-form">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-header">
+          <div class="section-tag">Electronic Dispatch</div>
+          <h2 class="section-title">Submit Patron Inquiry & Consultation Request</h2>
+          <p class="section-subtitle">Inquiries are logged directly into our circulation service desk and answered within 24 operational hours.</p>
+        </div>
+
+        <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 40px 36px; box-shadow: var(--shadow-sm);">
+          <form id="contactInquiryForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label class="form-label" for="inqName">Your Full Name *</label>
+                <input type="text" id="inqName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inqEmail">Email Address *</label>
+                <input type="email" id="inqEmail" class="form-control" placeholder="name@domain.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label class="form-label" for="inqCategory">Inquiry Nature *</label>
+                <select id="inqCategory" class="form-select">
+                  <option value="General Circulation">General Circulation & Book Loans</option>
+                  <option value="Research Assistance">Archival & Research Assistance</option>
+                  <option value="Membership Query">Membership Card or Account Renewal</option>
+                  <option value="Study Desk Booking">Study Carrel or Seminar Room Booking</option>
+                  <option value="Book Purchase Request">Book Recommendation for Acquisition</option>
+                  <option value="Inter-Library Loan">Inter-Library Loan & Document Delivery</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inqCardNumber">Membership ID (Optional)</label>
+                <input type="text" id="inqCardNumber" class="form-control" placeholder="e.g. ATH-MEM-1042">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inqSubject">Subject Summary *</label>
+              <input type="text" id="inqSubject" class="form-control" placeholder="Brief subject line" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inqMessage">Detailed Message / Citation Request *</label>
+              <textarea id="inqMessage" class="form-control" rows="5" placeholder="Please elaborate your research request or circulation inquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; justify-content: center;">
+              <span class="material-symbols-outlined">send</span>
+              <span>Transmit Inquiry to Circulation Desk</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DEPARTMENTAL DIRECTORY -->
+    <section class="section-py section-bg-white" id="departments">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Staff Directory</div>
+          <h2 class="section-title">Specialist Department Desks</h2>
+          <p class="section-subtitle">Reach out directly to the dedicated librarians presiding over each branch of our collection.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon-wrap" style="background: var(--color-gold-light); color: var(--color-gold-600);">
+              <span class="material-symbols-outlined">local_library</span>
+            </div>
+            <h3 class="service-title">Circulation & Lending Services</h3>
+            <p class="service-desc">
+              Manages patron memberships, book checkouts, renewals, reserve holds, and lost item resolutions.
+            </p>
+            <div style="margin-top:auto; font-size:0.88rem; color:var(--color-navy-900); line-height:1.7;">
+              <div><strong>Lead Officer:</strong> Marcus Sterling</div>
+              <div><strong>Direct Email:</strong> desk@athenaeum.lib</div>
+              <div><strong>Desk Phone:</strong> +1 (555) 019-2834 &bull; Ext. 101</div>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-wrap" style="background: var(--color-green-50); color: var(--color-green-700);">
+              <span class="material-symbols-outlined">history_edu</span>
+            </div>
+            <h3 class="service-title">Rare Manuscripts & Special Collections</h3>
+            <p class="service-desc">
+              Supervises access to illuminated manuscripts, 16th-century first editions, and historical cartography.
+            </p>
+            <div style="margin-top:auto; font-size:0.88rem; color:var(--color-navy-900); line-height:1.7;">
+              <div><strong>Curator:</strong> Dr. Alistair Finch</div>
+              <div><strong>Direct Email:</strong> archives@athenaeum.lib</div>
+              <div><strong>Desk Phone:</strong> +1 (555) 019-7412 &bull; Ext. 204</div>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-wrap" style="background: #eef2ff; color: #4338ca;">
+              <span class="material-symbols-outlined">developer_board</span>
+            </div>
+            <h3 class="service-title">Information Systems & Digital Library</h3>
+            <p class="service-desc">
+              Administers the online catalog database, patron portal authentication, research API, and Wi-Fi networks.
+            </p>
+            <div style="margin-top:auto; font-size:0.88rem; color:var(--color-navy-900); line-height:1.7;">
+              <div><strong>Lead Architect:</strong> Miriam Vance, MLIS</div>
+              <div><strong>Direct Email:</strong> systems@athenaeum.lib</div>
+              <div><strong>Desk Phone:</strong> +1 (555) 019-6188 &bull; Ext. 315</div>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-wrap" style="background: #ffedd5; color: #ea580c;">
+              <span class="material-symbols-outlined">swap_horizontal_circle</span>
+            </div>
+            <h3 class="service-title">Inter-Library Loan & Document Delivery</h3>
+            <p class="service-desc">
+              Facilitates worldwide inter-library borrowing and article scans across 45 partner university consortia.
+            </p>
+            <div style="margin-top:auto; font-size:0.88rem; color:var(--color-navy-900); line-height:1.7;">
+              <div><strong>Liaison:</strong> Elena Rostova</div>
+              <div><strong>Direct Email:</strong> ill@athenaeum.lib</div>
+              <div><strong>Desk Phone:</strong> +1 (555) 019-9021 &bull; Ext. 402</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LOCATION, TRANSIT & CAMPUS ACCESSIBILITY -->
+    <section class="section-py section-bg-parchment" id="location-transit">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;">
+          <div>
+            <div class="section-tag">Campus Presence</div>
+            <h2 class="section-title" style="text-align: left; margin-bottom: 16px;">Location, Transit & Accessibility</h2>
+            <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.75; margin-bottom: 24px;">
+              Athenaeum Central Library occupies the historic neo-classical limestone pavilion on Scholastic Row. The facility is fully accessible to patrons of all mobility needs.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--color-gold-light); color: var(--color-gold-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <strong style="color: var(--color-navy-900); font-size: 1rem; display: block;">Physical Address</strong>
+                  <div style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5;">
+                    450 Academic Way, Scholastic Row, Centennial Quadrant, NY 10024
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--color-green-50); color: var(--color-green-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <span class="material-symbols-outlined">directions_subway</span>
+                </div>
+                <div>
+                  <strong style="color: var(--color-navy-900); font-size: 1rem; display: block;">Public Transit Access</strong>
+                  <div style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5;">
+                    Subway Lines: A, B, C, 1 to 81st St - Museum / Scholastic Way<br>
+                    Bus Lines: M7, M10, M79-SBS (Scholastic Way stop)
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: #eef2ff; color: #4338ca; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <span class="material-symbols-outlined">accessible</span>
+                </div>
+                <div>
+                  <strong style="color: var(--color-navy-900); font-size: 1rem; display: block;">ADA & Universal Accessibility</strong>
+                  <div style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5;">
+                    Automated zero-step entry ramp on West Portico, braille elevator access across all 4 floors, and large-print magnifying terminals in Room 104.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="position:relative; border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-xl); border:2px solid var(--color-parchment-300);">
+              <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&auto=format&fit=crop&fm=webp&q=65" alt="Athenaeum Central Library Facade & Grand Rotunda" style="width:100%; height:380px; object-fit:cover; display:block;" loading="lazy">
+              <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(7,17,30,0.85)); padding:20px; color:#fff;">
+                <div style="font-weight:700; font-size:1.05rem;">Main Entrance & Colonnade</div>
+                <div style="font-size:0.85rem; color:var(--color-gold-300);">Scholastic Row Portico &bull; 24/7 Drop Chute to the left</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. REAL-TIME DESK AVAILABILITY & OPERATING HOURS -->
+    <section class="section-py section-bg-white" id="operating-hours">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Circulation Schedule</div>
+          <h2 class="section-title">Hours of Operation & Desk Availability</h2>
+          <p class="section-subtitle">Our physical library doors and reference desks are organized according to scholarly hours.</p>
+        </div>
+
+        <div class="policy-table-wrap" style="max-width: 960px; margin: 0 auto 32px;">
+          <table class="policy-table">
+            <thead>
+              <tr>
+                <th>Service Area</th>
+                <th>Mon &ndash; Thu</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Main Circulation Desk</strong></td>
+                <td>8:00 AM &ndash; 9:00 PM</td>
+                <td>8:00 AM &ndash; 8:00 PM</td>
+                <td>9:00 AM &ndash; 7:00 PM</td>
+                <td>10:00 AM &ndash; 6:00 PM</td>
+              </tr>
+              <tr>
+                <td><strong>Research & Reference Desk</strong></td>
+                <td>9:00 AM &ndash; 7:00 PM</td>
+                <td>9:00 AM &ndash; 5:00 PM</td>
+                <td>10:00 AM &ndash; 4:00 PM</td>
+                <td>Closed</td>
+              </tr>
+              <tr>
+                <td><strong>Rare Manuscript Archives</strong></td>
+                <td>10:00 AM &ndash; 5:00 PM</td>
+                <td>10:00 AM &ndash; 4:00 PM</td>
+                <td>By Appt Only</td>
+                <td>Closed</td>
+              </tr>
+              <tr>
+                <td><strong>Telephone Reference Support</strong></td>
+                <td>8:30 AM &ndash; 8:00 PM</td>
+                <td>8:30 AM &ndash; 7:00 PM</td>
+                <td>9:30 AM &ndash; 5:00 PM</td>
+                <td>10:30 AM &ndash; 4:00 PM</td>
+              </tr>
+              <tr>
+                <td><strong>24/7 Silent Carrels (Digital Key)</strong></td>
+                <td><span class="badge badge-success">Open 24/7</span></td>
+                <td><span class="badge badge-success">Open 24/7</span></td>
+                <td><span class="badge badge-success">Open 24/7</span></td>
+                <td><span class="badge badge-success">Open 24/7</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+    <section class="section-py section-bg-parchment" id="faq">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-header">
+          <div class="section-tag">Knowledge Base</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Common questions regarding borrower limits, overdue policies, digital access, and visiting rules.</p>
+        </div>
+
+        <div class="faq-accordion">
+          
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>How many books may I borrow concurrently?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              Standard active member cards permit up to 4 concurrent volume loans. Faculty and accredited researchers may borrow up to 10 volumes. All loans carry a 14-day checkout duration with one online renewal permitted.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>How does the book reservation queue work?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              If all copies of a book are currently checked out by other readers, click "Reserve" on the catalog page. You will be assigned a priority queue number. As soon as a copy is returned, you will receive an automatic notification and the book will be held at circulation for 48 hours.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Are overdue fines charged on late returns?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              For standard general collections, we operate on a grace period policy with friendly digital reminder notices. In this demonstration system, a nominal $0.50 per day sample rate is tracked to illustrate fine handling in the administrative console.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Can I access the silent reading rooms after normal hours?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Active members who have verified their card at the circulation desk can use their digital member QR pass to access the Grand Silent Carrels 24 hours a day, 7 days a week.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>How do I access rare manuscripts from the historical vault?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              Rare archives dating before 1850 require consultation in the special collections reading room. Patrons can submit a research consultation request via our contact form at least 48 hours in advance of their planned visit.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Can I recommend a title for library acquisition?</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely. Patrons may submit purchase recommendations directly through our Book Catalog page or choose "Book Recommendation" in the electronic dispatch form above. Our curatorial committee evaluates suggestions on a bi-weekly cycle.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.svg" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        <p>A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Catalog</h4>
+        <ul class="footer-links">
+          <li><a href="books.html">Complete Catalog</a></li>
+          <li><a href="categories.html">Browse Categories</a></li>
+          <li><a href="about.html">About Athenaeum</a></li>
+          <li><a href="services.html">Services & Facilities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Circulation Hours</h4>
+        <ul class="footer-hours-list">
+          <li class="footer-hours-item"><span>Monday &ndash; Friday</span> <strong>8:00 AM &ndash; 9:00 PM</strong></li>
+          <li class="footer-hours-item"><span>Saturday</span> <strong>9:00 AM &ndash; 7:00 PM</strong></li>
+          <li class="footer-hours-item"><span>Sunday</span> <strong>10:00 AM &ndash; 6:00 PM</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Librarian Desk</h4>
+        <div style="font-size:0.9rem; line-height:1.7; color:rgba(255,255,255,0.7); margin-bottom:16px;">
+          <p>450 Academic Way, Scholastic Row</p>
+          <p>desk@athenaeum.lib</p>
+        </div>
+        <button type="button" class="btn btn-sm btn-secondary" onclick="window.resetLibraryDemo()" style="width:100%; justify-content:center;">Reset Demo Data</button>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Athenaeum Central Library. All rights reserved.</div>
+      <div style="display:flex; gap:20px;">
+        <a href="about.html">Institutional Charter</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // FAQ Accordion click handlers
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          if (!isOpen) item.classList.add('active');
+        });
+      });
+
+      // Contact Inquiry Form Submission
+      const form = document.getElementById('contactInquiryForm');
+      if (form) {
+        // Pre-fill subject if URL parameter present
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('subject')) {
+          document.getElementById('inqSubject').value = params.get('subject');
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('inqName').value.trim();
+          const email = document.getElementById('inqEmail').value.trim();
+          const category = document.getElementById('inqCategory').value;
+          const subject = document.getElementById('inqSubject').value.trim();
+          const message = document.getElementById('inqMessage').value.trim();
+
+          if (!name || !email || !subject || !message) {
+            window.showToast('Please fill in all mandatory fields.', 'warning');
+            return;
+          }
+
+          if (window.LibraryDB) {
+            const res = window.LibraryDB.addInquiry({
+              name, email, category, subject, message
+            });
+
+            if (res.success) {
+              window.showToast('Inquiry transmitted! Receipt ID #' + res.inquiry.id + '. A librarian will reply shortly.', 'success', 5000);
+              form.reset();
+            } else {
+              window.showToast('Failed to save inquiry.', 'error');
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

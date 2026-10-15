@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page Not Found — Athenaeum Central Library</title>
+  <meta name="description" content="The catalog page or volume you are looking for is not found in our stacks.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .error-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--color-parchment-100);
+    }
+    .error-card {
+      max-width: 620px;
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-parchment-300);
+      padding: 48px 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .bookshelf-svg {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-brand" aria-label="Athenaeum Central Library Home">
+        <img src="assets/images/logo.svg" alt="Athenaeum Central Library Emblem" class="logo-svg">
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="books.html" class="nav-link">Books Catalog</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div id="navAuthContainer"></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="error-hero">
+    <div class="error-card">
+      
+      <!-- Bookshelf SVG Graphic -->
+      <svg class="bookshelf-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bookshelf Illustration">
+        <!-- Bookshelf board -->
+        <rect x="10" y="76" width="80" height="6" rx="2" fill="#0f1e36"/>
+        <!-- Book 1 (Leaning) -->
+        <rect x="22" y="32" width="10" height="44" rx="2" transform="rotate(-12 22 32)" fill="#c59b27"/>
+        <!-- Book 2 -->
+        <rect x="36" y="28" width="11" height="48" rx="2" fill="#1b4332"/>
+        <!-- Book 3 -->
+        <rect x="49" y="34" width="9" height="42" rx="2" fill="#0f1e36"/>
+        <!-- Book 4 -->
+        <rect x="60" y="22" width="12" height="54" rx="2" fill="#9e7916"/>
+        <!-- Magnifying Glass Search -->
+        <circle cx="68" cy="40" r="14" stroke="#c59b27" stroke-width="3" fill="rgba(255,255,255,0.7)"/>
+        <line x1="78" y1="50" x2="88" y2="60" stroke="#c59b27" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+
+      <div class="section-tag" style="color: var(--color-danger);">Error 404 &bull; Missing Volume</div>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.5rem); color: var(--color-navy-900); margin-bottom: 12px;">
+        Lost in the Stacks?
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 28px;">
+        The catalog card or shelf URL you requested does not correspond to any known volume in our collection. It may have been re-shelved, de-accessioned, or temporarily relocated.
+      </p>
+
+      <!-- Book Search Shortcut -->
+      <form action="books.html" method="GET" style="margin-bottom: 28px;">
+        <div style="display: flex; gap: 8px;">
+          <input type="text" name="q" class="form-control" placeholder="Search the library catalog..." required>
+          <button type="submit" class="btn btn-gold" style="white-space: nowrap;">
+            <span class="material-symbols-outlined">search</span>
+            Search
+          </button>
+        </div>
+      </form>
+
+      <!-- Navigation Actions -->
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-primary">
+          <span class="material-symbols-outlined">home</span>
+          Back to Home
+        </a>
+        <a href="books.html" class="btn btn-outline">
+          <span class="material-symbols-outlined">menu_book</span>
+          Browse Entire Catalog
+        </a>
+        <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+          <span class="material-symbols-outlined">arrow_back</span>
+          Go Back
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border-top: none; padding-top: 0;">
+      <div>&copy; 2026 Athenaeum Central Library. All rights reserved.</div>
+      <div style="display: flex; gap: 20px;">
+        <a href="index.html">Home</a>
+        <a href="books.html">Catalog</a>
+        <a href="contact.html">Help Desk</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

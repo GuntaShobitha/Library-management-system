@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Console — Athenaeum Central Library</title>
+  <meta name="description" content="Circulation management, cataloging, patron registry, overdue tracking, and reporting.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- ADMIN SIDEBAR -->
+    <aside class="dashboard-sidebar" id="adminSidebar">
+      <div class="sidebar-brand">
+        <a href="index.html">
+          <img src="assets/images/logo.svg" alt="Athenaeum Central Library" class="logo-svg">
+        </a>
+      </div>
+
+      <!-- Administrator Profile Header -->
+      <div class="sidebar-user-card">
+        <img src="" alt="Admin" class="sidebar-user-avatar js-admin-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200'">
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name js-admin-name">Dr. Julian Sterling</div>
+          <div class="sidebar-user-email js-admin-email" style="font-size: 0.78rem; color: rgba(255,255,255,0.7); word-break: break-all; margin: 2px 0;">admin@athenaeum.lib</div>
+          <div class="sidebar-user-role" style="color: var(--color-gold-400);">Chief Administrator</div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-item active" data-tab="admin-tab-overview">
+          <button type="button">
+            <span class="material-symbols-outlined">analytics</span>
+            <span>Dashboard Overview</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-books">
+          <button type="button">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span>Manage Books</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-categories">
+          <button type="button">
+            <span class="material-symbols-outlined">category</span>
+            <span>Manage Categories</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-members">
+          <button type="button">
+            <span class="material-symbols-outlined">badge</span>
+            <span>Manage Members</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-loans">
+          <button type="button">
+            <span class="material-symbols-outlined">receipt_long</span>
+            <span>Borrowing Records</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-returns">
+          <button type="button">
+            <span class="material-symbols-outlined">keyboard_return</span>
+            <span>Returns Desk</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-reservations">
+          <button type="button">
+            <span class="material-symbols-outlined">bookmark_manager</span>
+            <span>Reservations Queue</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-overdue">
+          <button type="button">
+            <span class="material-symbols-outlined">notification_important</span>
+            <span>Overdue Tracking</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-staff">
+          <button type="button">
+            <span class="material-symbols-outlined">diversity_3</span>
+            <span>Manage Staff</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-reports">
+          <button type="button">
+            <span class="material-symbols-outlined">table_chart</span>
+            <span>Reports & Exports</span>
+          </button>
+        </li>
+        <li class="sidebar-nav-item" data-tab="admin-tab-settings">
+          <button type="button">
+            <span class="material-symbols-outlined">tune</span>
+            <span>Library Settings</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <button type="button" class="btn-logout js-admin-logout">
+          <span class="material-symbols-outlined">power_settings_new</span>
+          <span>Exit Admin Mode</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="dashboard-content-wrapper">
+      
+      <!-- TOPBAR -->
+      <header class="dashboard-topbar">
+        <div class="dashboard-topbar-left">
+          <button type="button" class="btn-sidebar-toggle" id="adminSidebarToggle" aria-label="Toggle admin drawer">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div class="topbar-search-box" style="width: 380px;">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Search catalog, patron cards, or loan IDs..." id="adminGlobalSearchInput">
+          </div>
+        </div>
+
+        <div class="dashboard-topbar-right">
+          <a href="index.html" class="topbar-action-btn" title="View Public Front">
+            <span class="material-symbols-outlined">public</span>
+          </a>
+          <button type="button" class="btn btn-sm btn-gold" onclick="window.openModal('addBookModal')">
+            <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+            <span>Add Book</span>
+          </button>
+          <div class="user-profile-menu" style="display: flex; align-items: center; gap: 10px;">
+            <img src="" alt="Admin" class="user-profile-avatar js-admin-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200'">
+            <div style="display: flex; flex-direction: column; text-align: right; line-height: 1.25;">
+              <span style="font-weight: 600; font-size: 0.92rem; color: var(--color-navy-900);" class="js-admin-name">Dr. Julian Sterling</span>
+              <span style="font-size: 0.75rem; color: var(--color-text-muted);" class="js-admin-email">admin@athenaeum.lib</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- BODY CONTENT CONTAINER -->
+      <main class="dashboard-main-body">
+
+        <!-- TAB 1: OVERVIEW METRICS & CHARTS -->
+        <section class="dashboard-tab-pane active" id="admin-tab-overview">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Circulation & Inventory Overview</h1>
+              <p class="dashboard-page-subtitle">Real-time status of catalog volumes, active checkouts, member status, and pending holds.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn btn-primary" onclick="window.openModal('recordLoanModal')">
+                <span class="material-symbols-outlined">post_add</span>
+                Record Book Loan
+              </button>
+            </div>
+          </div>
+
+          <!-- METRICS GRID -->
+          <div class="metrics-grid">
+            <div class="metric-card card-gold">
+              <div class="metric-info">
+                <span class="metric-label">Book Titles Cataloged</span>
+                <span class="metric-value" id="statAdminTitles">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">menu_book</span>
+              </div>
+            </div>
+
+            <div class="metric-card card-blue">
+              <div class="metric-info">
+                <span class="metric-label">Physical Copies in Stacks</span>
+                <span class="metric-value" id="statAdminPhysicalCopies">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">shelves</span>
+              </div>
+            </div>
+
+            <div class="metric-card card-green">
+              <div class="metric-info">
+                <span class="metric-label">Available Copies Now</span>
+                <span class="metric-value" id="statAdminAvailableCopies">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">check_circle</span>
+              </div>
+            </div>
+
+            <div class="metric-card card-blue">
+              <div class="metric-info">
+                <span class="metric-label">Active Patron Loans</span>
+                <span class="metric-value" id="statAdminActiveLoans">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">receipt_long</span>
+              </div>
+            </div>
+
+            <div class="metric-card card-red">
+              <div class="metric-info">
+                <span class="metric-label">Overdue Volumes</span>
+                <span class="metric-value" id="statAdminOverdue">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">notification_important</span>
+              </div>
+            </div>
+
+            <div class="metric-card card-green">
+              <div class="metric-info">
+                <span class="metric-label">Registered Patrons</span>
+                <span class="metric-value" id="statAdminMembers">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">group</span>
+              </div>
+            </div>
+
+            <div class="metric-card card-gold">
+              <div class="metric-info">
+                <span class="metric-label">Pending Hold Queue</span>
+                <span class="metric-value" id="statAdminReservations">0</span>
+              </div>
+              <div class="metric-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 28px;">bookmark</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- VISUAL CHARTS & ACTIVITY LOGS -->
+          <div class="chart-container-grid">
+            
+            <!-- Monthly Circulation Chart (Visual Bars) -->
+            <div class="dashboard-card">
+              <div class="dashboard-card-header">
+                <h3 class="dashboard-card-title">Monthly Borrowing Velocity</h3>
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">Current Academic Year</span>
+              </div>
+              <div class="dashboard-card-body">
+                <div class="bar-chart-bars">
+                  <div class="bar-column">
+                    <span class="bar-val">120</span>
+                    <div class="bar-fill" style="height: 48%;"></div>
+                    <span class="bar-label">May</span>
+                  </div>
+                  <div class="bar-column">
+                    <span class="bar-val">185</span>
+                    <div class="bar-fill" style="height: 72%;"></div>
+                    <span class="bar-label">Jun</span>
+                  </div>
+                  <div class="bar-column">
+                    <span class="bar-val">140</span>
+                    <div class="bar-fill" style="height: 56%;"></div>
+                    <span class="bar-label">Jul</span>
+                  </div>
+                  <div class="bar-column">
+                    <span class="bar-val">210</span>
+                    <div class="bar-fill" style="height: 84%;"></div>
+                    <span class="bar-label">Aug</span>
+                  </div>
+                  <div class="bar-column">
+                    <span class="bar-val">260</span>
+                    <div class="bar-fill" style="height: 100%;"></div>
+                    <span class="bar-label">Sep</span>
+                  </div>
+                  <div class="bar-column">
+                    <span class="bar-val">235</span>
+                    <div class="bar-fill" style="height: 92%;"></div>
+                    <span class="bar-label">Oct</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Activity Audit Logs -->
+            <div class="dashboard-card">
+              <div class="dashboard-card-header">
+                <h3 class="dashboard-card-title">Circulation Activity Audit</h3>
+                <span class="status-pill status-available">Live Stream</span>
+              </div>
+              <div class="dashboard-card-body" id="adminActivityLogsList" style="padding-top: 8px;">
+                <!-- Populated by admin-dashboard.js -->
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- TAB 2: MANAGE BOOKS -->
+        <section class="dashboard-tab-pane" id="admin-tab-books">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Catalog Inventory Management</h1>
+              <p class="dashboard-page-subtitle">Add new accessions, modify bibliographic records, or adjust inventory copies.</p>
+            </div>
+            <button type="button" class="btn btn-gold" onclick="window.openModal('addBookModal')">
+              <span class="material-symbols-outlined">add</span>
+              <span>Add New Catalog Title</span>
+            </button>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="input-icon-wrap" style="width: 320px;">
+                <span class="material-symbols-outlined input-icon">search</span>
+                <input type="text" id="adminBookSearchInput" class="form-control" placeholder="Filter by title, author, or ISBN...">
+              </div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                * Deletion is prevented if active loans exist for that volume.
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Book / ISBN</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Total Copies</th>
+                    <th>Available Copies</th>
+                    <th>Shelf Location</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="manageBooksTbody">
+                  <!-- Populated by admin-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: MANAGE CATEGORIES -->
+        <section class="dashboard-tab-pane" id="admin-tab-categories">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Manage Categories & Stacks</h1>
+              <p class="dashboard-page-subtitle">Standard bibliographic subject divisions used throughout the library catalog.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-body">
+              <div class="categories-grid">
+                <div class="category-card"><h3 class="category-card-title">Fiction</h3><p class="category-card-desc">Literary works, drama, science fiction, and modern epics.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Science and Technology</h3><p class="category-card-desc">Physics, computing, artificial intelligence, and engineering.</p></div>
+                <div class="category-card"><h3 class="category-card-title">History</h3><p class="category-card-desc">World civilizations, ancient archives, and military history.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Biography</h3><p class="category-card-desc">Memoirs, letters, and autobiographical narratives.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Business and Economics</h3><p class="category-card-desc">Financial theory, investing, and macroeconomics.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Education and Academic Textbooks</h3><p class="category-card-desc">Curriculum textbooks, biology, and scientific reference.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Mystery and Thriller</h3><p class="category-card-desc">Detective inquiries, suspense, and psychological crime.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Literature and Poetry</h3><p class="category-card-desc">Classical verse, Homeric epics, and poetic anthologies.</p></div>
+                <div class="category-card"><h3 class="category-card-title">Children's Books</h3><p class="category-card-desc">Early readers, illustrated classics, and youth adventures.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: MANAGE MEMBERS -->
+        <section class="dashboard-tab-pane" id="admin-tab-members">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Patron Membership Directory</h1>
+              <p class="dashboard-page-subtitle">View member cards, monitor active loan quotas, and toggle account status.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div class="input-icon-wrap" style="width: 320px;">
+                <span class="material-symbols-outlined input-icon">search</span>
+                <input type="text" id="adminMemberSearchInput" class="form-control" placeholder="Search members by name or card ID...">
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Patron Name / ID</th>
+                    <th>Email Address</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Active Loans</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="manageMembersTbody">
+                  <!-- Populated by admin-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: BORROWING RECORDS -->
+        <section class="dashboard-tab-pane" id="admin-tab-loans">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Circulation & Borrowing Records</h1>
+              <p class="dashboard-page-subtitle">Complete ledger of issued loans, due dates, and return confirmations.</p>
+            </div>
+            <button type="button" class="btn btn-gold" onclick="window.openModal('recordLoanModal')">
+              <span class="material-symbols-outlined">add</span>
+              <span>Issue New Loan</span>
+            </button>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Loan ID</th>
+                    <th>Book Title</th>
+                    <th>Member</th>
+                    <th>Borrow Date</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="manageLoansTbody">
+                  <!-- Populated by admin-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 6: RETURNS DESK -->
+        <section class="dashboard-tab-pane" id="admin-tab-returns">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Circulation Return Processing Desk</h1>
+              <p class="dashboard-page-subtitle">Scan or enter loan IDs/titles to check in volumes and immediately update available copies.</p>
+            </div>
+          </div>
+
+          <div style="max-width: 600px; background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 32px;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Quick Return Check-In</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 20px;">
+              Enter Loan ID (e.g. <code>101</code> or <code>loan-101</code>) or book title to record return.
+            </p>
+            <div style="display: flex; gap: 12px;">
+              <input type="text" id="returnBarcodeOrLoanInput" class="form-control" placeholder="Loan ID or Title (e.g. 101 or Gatsby)">
+              <button type="button" id="processReturnBtn" class="btn btn-gold" style="white-space: nowrap;">
+                <span class="material-symbols-outlined">keyboard_return</span>
+                Process Return
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 7: RESERVATIONS QUEUE -->
+        <section class="dashboard-tab-pane" id="admin-tab-reservations">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Patron Hold & Reservation Queue</h1>
+              <p class="dashboard-page-subtitle">Fulfill hold requests as soon as titles are returned to circulation desk.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Hold ID</th>
+                    <th>Book</th>
+                    <th>Requesting Patron</th>
+                    <th>Date Placed</th>
+                    <th>Queue Priority</th>
+                    <th>Hold Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminReservationsTbody">
+                  <!-- Populated by admin-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 8: OVERDUE TRACKING -->
+        <section class="dashboard-tab-pane" id="admin-tab-overdue">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Overdue Item Monitoring & Notices</h1>
+              <p class="dashboard-page-subtitle">Track volumes past their 14-day checkout date and dispatch patron reminders.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Loan ID</th>
+                    <th>Book Title</th>
+                    <th>Patron Name</th>
+                    <th>Scheduled Due</th>
+                    <th>Days Overdue</th>
+                    <th>Sample Fine</th>
+                    <th>Notice Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminOverdueTbody">
+                  <!-- Populated by admin-dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 9: MANAGE STAFF -->
+        <section class="dashboard-tab-pane" id="admin-tab-staff">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Library Curators & Staff Roster</h1>
+              <p class="dashboard-page-subtitle">Department leadership, archival curators, and patron service personnel.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;" id="adminStaffList">
+            <!-- Populated by admin-dashboard.js -->
+          </div>
+        </section>
+
+        <!-- TAB 10: REPORTS & EXPORTS -->
+        <section class="dashboard-tab-pane" id="admin-tab-reports">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Reports & Bibliographic Exports</h1>
+              <p class="dashboard-page-subtitle">Export catalog records, loan audit sheets, or print library operational summaries.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+            <div class="dashboard-card">
+              <div class="dashboard-card-header"><h3 class="dashboard-card-title">CSV Catalog Export</h3></div>
+              <div class="dashboard-card-body">
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                  Download complete catalog records (Title, Author, ISBN, Category, Total and Available Copies) formatted as comma-separated values.
+                </p>
+                <button type="button" class="btn btn-outline" onclick="exportBooksCsv()">
+                  <span class="material-symbols-outlined">download</span>
+                  Export Catalog CSV
+                </button>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="dashboard-card-header"><h3 class="dashboard-card-title">Printable Executive Summary</h3></div>
+              <div class="dashboard-card-body">
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                  Generate a clean, print-ready institutional report of circulation metrics, member statistics, and inventory counts.
+                </p>
+                <button type="button" class="btn btn-gold" onclick="window.print()">
+                  <span class="material-symbols-outlined">print</span>
+                  Print Summary Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 11: SETTINGS -->
+        <section class="dashboard-tab-pane" id="admin-tab-settings">
+          <div class="dashboard-page-header">
+            <div>
+              <h1 class="dashboard-page-title">Circulation & System Configuration</h1>
+              <p class="dashboard-page-subtitle">Define institution-wide borrowing periods, renewal rules, and fine structures.</p>
+            </div>
+          </div>
+
+          <div style="max-width: 680px; background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 36px; box-shadow: var(--shadow-xs);">
+            <form onsubmit="event.preventDefault(); window.showToast('Circulation policy parameters updated successfully.', 'success');">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                  <label class="form-label">Standard Loan Duration (Days)</label>
+                  <input type="number" class="form-control" value="14" min="1" max="60">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Max Books Per Member</label>
+                  <input type="number" class="form-control" value="4" min="1" max="20">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                  <label class="form-label">Permitted Online Renewals</label>
+                  <input type="number" class="form-control" value="1" min="0" max="5">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Sample Overdue Fine Rate ($/Day)</label>
+                  <input type="number" class="form-control" value="0.50" step="0.10">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-gold">Save Policy Parameters</button>
+            </form>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ADD BOOK MODAL -->
+  <div class="modal-overlay" id="addBookModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Catalog New Book</h3>
+        <button type="button" class="modal-close-btn" onclick="window.closeModal('addBookModal')">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="addBookForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Book Title *</label>
+            <input type="text" id="newBookTitle" class="form-control" placeholder="e.g. The Republic" required>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Author *</label>
+              <input type="text" id="newBookAuthor" class="form-control" placeholder="e.g. Plato" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ISBN *</label>
+              <input type="text" id="newBookIsbn" class="form-control" placeholder="978-0140449143" required>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Category *</label>
+              <select id="newBookCategory" class="form-select" required>
+                <option value="fiction">Fiction</option>
+                <option value="science-tech">Science and Technology</option>
+                <option value="history">History</option>
+                <option value="biography">Biography</option>
+                <option value="business-econ">Business and Economics</option>
+                <option value="education">Education & Academic</option>
+                <option value="mystery-thriller">Mystery and Thriller</option>
+                <option value="literature-poetry">Literature and Poetry</option>
+                <option value="childrens">Children's Books</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Copies *</label>
+              <input type="number" id="newBookCopies" class="form-control" value="4" min="1" required>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Publisher</label>
+              <input type="text" id="newBookPublisher" class="form-control" placeholder="Penguin Classics">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Year</label>
+              <input type="number" id="newBookYear" class="form-control" value="2022">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Shelf Location</label>
+              <input type="text" id="newBookShelf" class="form-control" placeholder="P-04 / Phil">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cover Image URL</label>
+            <input type="url" id="newBookCover" class="form-control" placeholder="https://images.unsplash.com/photo-...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description / Synopsis</label>
+            <textarea id="newBookDescription" class="form-control" rows="3" placeholder="Curatorial synopsis..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="window.closeModal('addBookModal')">Cancel</button>
+          <button type="submit" class="btn btn-gold">Add to Stacks</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- RECORD LOAN MODAL -->
+  <div class="modal-overlay" id="recordLoanModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Record Book Checkout Loan</h3>
+        <button type="button" class="modal-close-btn" onclick="window.closeModal('recordLoanModal')">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="recordLoanForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Select Active Patron Member *</label>
+            <select id="loanMemberSelect" class="form-select" required></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select Available Book *</label>
+            <select id="loanBookSelect" class="form-select" required></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Loan Duration (Days)</label>
+            <input type="number" id="loanDaysInput" class="form-control" value="14" min="1" max="60">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="window.closeModal('recordLoanModal')">Cancel</button>
+          <button type="submit" class="btn btn-gold">Issue Loan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/admin-dashboard.js"></script>
+  <script>
+    function exportBooksCsv() {
+      if (!window.LibraryDB) return;
+      const books = window.LibraryDB.getBooks();
+      let csv = 'ID,Title,Author,ISBN,Category,TotalCopies,AvailableCopies,ShelfLocation\n';
+      books.forEach(b => {
+        csv += `"${b.id}","${b.title.replace(/"/g, '""')}","${b.author.replace(/"/g, '""')}","${b.isbn}","${b.categoryName}",${b.totalCopies},${b.availableCopies},"${b.shelfLocation || ''}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', `athenaeum_catalog_export_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.showToast('Catalog CSV exported successfully.', 'success');
+    }
+  </script>
+</body>
+</html>

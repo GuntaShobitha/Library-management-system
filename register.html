@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Registration — Athenaeum Central Library</title>
+  <meta name="description" content="Register for an Athenaeum Central Library membership card. Enjoy physical book borrowing, online holds, and quiet reading room access.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .auth-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-navy-darkest);
+      background-image:
+        linear-gradient(135deg, rgba(7, 17, 30, 0.92) 0%, rgba(15, 30, 54, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&auto=format&fit=crop&fm=webp&q=65');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 40px 20px;
+      position: relative;
+    }
+    .auth-page-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 80% 20%, rgba(197, 155, 39, 0.18) 0%, transparent 60%),
+                        radial-gradient(circle at 20% 80%, rgba(45, 106, 79, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .auth-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-parchment-300);
+      box-shadow: var(--shadow-xl);
+      max-width: 520px;
+      width: 100%;
+      padding: 40px;
+      position: relative;
+      z-index: 2;
+    }
+    .strength-meter-bar {
+      height: 6px;
+      width: 0%;
+      background: #ccc;
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-page-wrapper">
+    <div class="auth-card">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <a href="index.html" class="logo-brand">
+          <img src="assets/images/logo.svg" alt="Athenaeum Central Library" style="height: 38px;">
+        </a>
+        <a href="index.html" style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 4px;">
+          <span class="material-symbols-outlined" style="font-size: 16px;">arrow_back</span>
+          Home
+        </a>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h1 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--color-navy-900);">Patron Card Registration</h1>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);">
+          Create your digital library account to borrow books, reserve volumes, and receive circulation alerts.
+        </p>
+      </div>
+
+      <form id="registerForm" novalidate>
+        
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Legal Name *</label>
+          <div class="input-icon-wrap">
+            <span class="material-symbols-outlined input-icon">person</span>
+            <input type="text" id="regName" class="form-control" placeholder="e.g. Clara Thorne" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email Address *</label>
+            <div class="input-icon-wrap">
+              <span class="material-symbols-outlined input-icon">mail</span>
+              <input type="email" id="regEmail" class="form-control" placeholder="name@domain.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regPhone">Phone Number *</label>
+            <div class="input-icon-wrap">
+              <span class="material-symbols-outlined input-icon">call</span>
+              <input type="tel" id="regPhone" class="form-control" placeholder="+1 (555) 000-0000" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label class="form-label" for="regPassword" style="margin-bottom: 0;">Password (Min. 6 chars) *</label>
+            <span id="passwordStrengthLabel" style="font-size: 0.78rem; font-weight: 700;"></span>
+          </div>
+          <div class="input-icon-wrap" style="position: relative;">
+            <span class="material-symbols-outlined input-icon">lock</span>
+            <input type="password" id="regPassword" class="form-control" placeholder="Create secure password" required style="padding-right: 44px;">
+            <button type="button" class="js-toggle-password" data-target="regPassword" aria-label="Toggle password visibility" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--color-text-light);">
+              <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+            </button>
+          </div>
+          <div style="background: var(--color-parchment-200); height: 6px; border-radius: var(--radius-full); overflow: hidden; margin-top: 6px;">
+            <div id="passwordStrengthMeter" class="strength-meter-bar"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regConfirmPassword">Confirm Password *</label>
+          <div class="input-icon-wrap" style="position: relative;">
+            <span class="material-symbols-outlined input-icon">lock_clock</span>
+            <input type="password" id="regConfirmPassword" class="form-control" placeholder="Re-enter password" required style="padding-right: 44px;">
+            <button type="button" class="js-toggle-password" data-target="regConfirmPassword" aria-label="Toggle confirm password visibility" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--color-text-light);">
+              <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">
+            <input type="checkbox" id="termsAcceptCheckbox" checked style="accent-color: var(--color-navy-900); margin-top: 3px;">
+            <span>I acknowledge library circulation bylaws: 14-day checkout limit, adherence to reading room etiquette, and responsibility for borrowed volumes.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; justify-content: center; margin-bottom: 20px;">
+          <span>Register Membership Card</span>
+        </button>
+
+      </form>
+
+      <div style="text-align: center; font-size: 0.9rem; color: var(--color-text-muted); border-top: 1px solid var(--color-parchment-200); padding-top: 20px;">
+        Already hold an Athenaeum library card?
+        <a href="login.html" style="color: var(--color-gold-600); font-weight: 700; margin-left: 4px;">
+          Sign In &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

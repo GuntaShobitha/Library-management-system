@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Categories — Athenaeum Central Library</title>
+  <meta name="description" content="Explore our 9 distinct library collections: Fiction, Science & Tech, History, Biography, Business, Education, Mystery, Literature, and Children's books.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-brand" aria-label="Athenaeum Central Library Home">
+        <img src="assets/images/logo.svg" alt="Athenaeum Central Library Emblem" class="logo-svg">
+      </a>
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="books.html" class="nav-link">Books Catalog</a>
+        <a href="categories.html" class="nav-link active">Categories</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div id="navAuthContainer"></div>
+        <button type="button" class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile navigation menu">
+          <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/logo.svg" alt="Athenaeum Library" style="height: 32px; filter: brightness(0) invert(1);">
+      <button type="button" id="mobileDrawerClose" style="color: #fff;" aria-label="Close mobile menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><span class="material-symbols-outlined">home</span> Home</a></li>
+      <li><a href="books.html"><span class="material-symbols-outlined">menu_book</span> Books Catalog</a></li>
+      <li><a href="categories.html" class="active"><span class="material-symbols-outlined">category</span> Categories</a></li>
+      <li><a href="services.html"><span class="material-symbols-outlined">room_service</span> Services</a></li>
+      <li><a href="about.html"><span class="material-symbols-outlined">info</span> About Us</a></li>
+      <li><a href="contact.html"><span class="material-symbols-outlined">mail</span> Contact</a></li>
+    </ul>
+    <div id="mobileAuthContainer"></div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- 1. CATEGORIES HERO WITH REALISTIC BACKGROUND -->
+    <section class="page-hero page-hero-categories" aria-label="Subject Categories Introduction">
+      <div class="container text-center" style="text-align: center; max-width: 820px; margin: 0 auto;">
+        <div class="hero-tag" style="animation-delay: 0.05s;">
+          <span class="material-symbols-outlined" style="font-size: 16px;">category</span>
+          Taxonomy of Knowledge
+        </div>
+        <h1 class="hero-title" style="font-size: clamp(2.3rem, 4.2vw, 3.4rem); margin-bottom: 16px;">
+          Browse By <span>Subject Stacks.</span>
+        </h1>
+        <p class="hero-description" style="margin: 0 auto 28px; font-size: 1.15rem; max-width: 660px;">
+          Our collection is organized into nine comprehensive scholarly domains. Select any category below to immediately explore and filter available physical and digital volumes.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="#allCategoriesGrid" class="btn btn-sm btn-gold">
+            <span class="material-symbols-outlined">grid_view</span>
+            <span>View All 9 Collections</span>
+          </a>
+          <a href="#classification-guide" class="btn btn-sm btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);">
+            <span class="material-symbols-outlined">schema</span>
+            <span>Classification System</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. NINE SPECIALIZED SUBJECT STACKS GRID -->
+    <section class="section-py section-bg-parchment" id="categories-grid-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Stack Directory</div>
+          <h2 class="section-title">Nine Core Knowledge Domains</h2>
+          <p class="section-subtitle">Real-time availability and volume counts automatically synchronized with the central catalog database.</p>
+        </div>
+
+        <div class="categories-grid" id="allCategoriesGrid">
+          <!-- Populated dynamically with real-time available counts from LibraryDB -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CLASSIFICATION SYSTEM & CALL NUMBER GUIDE -->
+    <section class="section-py section-bg-white" id="classification-guide">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Shelf Navigation</div>
+          <h2 class="section-title">Classification & Shelf Mapping</h2>
+          <p class="section-subtitle">Understand our hybrid Dewey Decimal and Library of Congress shelving callouts to quickly locate titles in the physical rotunda.</p>
+        </div>
+
+        <div class="policy-table-wrap">
+          <table class="policy-table">
+            <thead>
+              <tr>
+                <th>Classification Range</th>
+                <th>Discipline</th>
+                <th>Library Wing & Floor</th>
+                <th>Notable Holdings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>000 &ndash; 099</strong></td>
+                <td>Computer Science, Information & General Works</td>
+                <td>West Wing &bull; 2nd Floor</td>
+                <td>AI algorithms, database theory, bibliographic indexes</td>
+              </tr>
+              <tr>
+                <td><strong>100 &ndash; 199</strong></td>
+                <td>Philosophy, Ethics & Epistemology</td>
+                <td>East Wing &bull; Mezzanine Level</td>
+                <td>Classical logic, metaphysics, ethics of science</td>
+              </tr>
+              <tr>
+                <td><strong>300 &ndash; 399</strong></td>
+                <td>Social Sciences, Economics & Law</td>
+                <td>South Wing &bull; 1st Floor</td>
+                <td>Constitutional treatises, macroeconomics, civic governance</td>
+              </tr>
+              <tr>
+                <td><strong>500 &ndash; 599</strong></td>
+                <td>Pure Sciences & Theoretical Mathematics</td>
+                <td>North Wing &bull; 3rd Floor</td>
+                <td>Calculus treatises, quantum mechanics, botany folios</td>
+              </tr>
+              <tr>
+                <td><strong>800 &ndash; 899</strong></td>
+                <td>Literature, Poetry & Dramatic Arts</td>
+                <td>Rotunda Balcony &bull; 2nd Floor</td>
+                <td>World epics, translated prose, literary criticism</td>
+              </tr>
+              <tr>
+                <td><strong>900 &ndash; 999</strong></td>
+                <td>History, Geography & Archival Memoirs</td>
+                <td>Rare Books Vault &bull; Ground Level</td>
+                <td>Nautical maps, historical chronicles, personal correspondence</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SUBJECT SPOTLIGHT OF THE MONTH -->
+    <section class="section-py section-bg-parchment" id="subject-spotlight">
+      <div class="container" style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center;">
+        <div style="position: relative;">
+          <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&auto=format&fit=crop&fm=webp&q=65" alt="Subject Spotlight Archives" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); border: 2px solid var(--color-parchment-300);" loading="lazy">
+          <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(7, 17, 30, 0.92); color: #fff; padding: 12px 20px; border-radius: var(--radius-md); border-left: 4px solid var(--color-gold-500);">
+            <strong style="display: block; font-size: 0.95rem;">Curator's Spotlight</strong>
+            <span style="font-size: 0.8rem; color: var(--color-gold-300);">History & Cartography &bull; 1,420 Volumes</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-tag">Focus Collection</div>
+          <h2 class="section-title" style="text-align: left; font-size: 2.2rem;">Spotlight: Historical Chronicles & Global Cartography</h2>
+          <p style="font-size: 1.05rem; line-height: 1.75; color: var(--color-text-muted); margin-bottom: 20px;">
+            This month, our archival team spotlights rare nautical charts, diplomatic pacts, and regional historiographies dating from 1650 to 1920. Scholars examine these firsthand in the climate-controlled Vault Room.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+            <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">
+              <span class="material-symbols-outlined" style="color: var(--color-gold-500);">verified</span>
+              <span>Over 85 original hand-colored copperplate nautical charts</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">
+              <span class="material-symbols-outlined" style="color: var(--color-gold-500);">verified</span>
+              <span>Available for physical inspection upon appointment with Archives Desk</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">
+              <span class="material-symbols-outlined" style="color: var(--color-gold-500);">verified</span>
+              <span>High-resolution digital scans accessible for all authenticated members</span>
+            </li>
+          </ul>
+          <a href="books.html?category=history" class="btn btn-gold">Browse Spotlight Titles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ANNUAL COLLECTION ACQUISITIONS & BUDGET ALLOCATION -->
+    <section class="section-py section-bg-white" id="collection-budget">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Collection Growth</div>
+          <h2 class="section-title">Annual Bibliographic Acquisitions</h2>
+          <p class="section-subtitle">How our endowment funds are strategically invested each year to expand scholarly horizons across all nine stacks.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">biotech</span>
+            </div>
+            <h3 class="pillar-title">35% Science & Computing</h3>
+            <p class="pillar-desc">Peer-reviewed journals, machine learning treatises, quantum optics monographs, and biological taxonomies.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">history_edu</span>
+            </div>
+            <h3 class="pillar-title">25% History & Folios</h3>
+            <p class="pillar-desc">Rare out-of-print historical chronicles, regional archival bequests, and international facsimile editions.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">menu_book</span>
+            </div>
+            <h3 class="pillar-title">25% World Literature</h3>
+            <p class="pillar-desc">Prize-winning contemporary fiction, classical translations, multilingual anthologies, and poetry archives.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <span class="material-symbols-outlined">account_balance</span>
+            </div>
+            <h3 class="pillar-title">15% Law & Statecraft</h3>
+            <p class="pillar-desc">Constitutional casebooks, international trade treaties, public policy reviews, and jurisprudence volumes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SUBJECT SPECIALIST LIBRARIANS -->
+    <section class="section-py section-bg-parchment" id="subject-librarians">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Expert Research Help</div>
+          <h2 class="section-title">Consult a Subject Specialist</h2>
+          <p class="section-subtitle">Our dedicated subject librarians provide tailored guidance for academic research, archival searches, and thesis bibliographies.</p>
+        </div>
+
+        <div class="archives-grid">
+          <div class="archive-card">
+            <div class="archive-card-body" style="text-align: center; align-items: center;">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&fm=webp&q=70" alt="Dr. Julian Sterling" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 2px solid var(--color-gold-500);" loading="lazy">
+              <h3 style="font-size: 1.2rem; margin-bottom: 4px; color: var(--color-navy-900);">Dr. Julian Sterling</h3>
+              <div style="font-size: 0.85rem; color: var(--color-gold-600); font-weight: 700; margin-bottom: 12px;">Head of Archives & History</div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
+                Specializes in European cartography, 19th-century diplomatic pacts, and archival document authentication.
+              </p>
+              <a href="contact.html?subject=Archives+Consultation" class="btn btn-sm btn-outline">Book Consultation</a>
+            </div>
+          </div>
+
+          <div class="archive-card">
+            <div class="archive-card-body" style="text-align: center; align-items: center;">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&fm=webp&q=70" alt="Elena Rostova" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 2px solid var(--color-gold-500);" loading="lazy">
+              <h3 style="font-size: 1.2rem; margin-bottom: 4px; color: var(--color-navy-900);">Elena Rostova, M.L.I.S.</h3>
+              <div style="font-size: 0.85rem; color: var(--color-gold-600); font-weight: 700; margin-bottom: 12px;">Specialist &bull; Humanities & Literature</div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
+                Specializes in comparative linguistics, Renaissance poetry, and critical literary apparatus compilation.
+              </p>
+              <a href="contact.html?subject=Humanities+Consultation" class="btn btn-sm btn-outline">Book Consultation</a>
+            </div>
+          </div>
+
+          <div class="archive-card">
+            <div class="archive-card-body" style="text-align: center; align-items: center;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&fm=webp&q=70" alt="Marcus Vance" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 2px solid var(--color-gold-500);" loading="lazy">
+              <h3 style="font-size: 1.2rem; margin-bottom: 4px; color: var(--color-navy-900);">Marcus Vance, Ph.D.</h3>
+              <div style="font-size: 0.85rem; color: var(--color-gold-600); font-weight: 700; margin-bottom: 12px;">Specialist &bull; Science & Technology</div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
+                Specializes in computational biology treatises, mathematical monographs, and technical patent repositories.
+              </p>
+              <a href="contact.html?subject=STEM+Consultation" class="btn btn-sm btn-outline">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.svg" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        <p>A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick Catalog</h4>
+        <ul class="footer-links">
+          <li><a href="books.html">Complete Catalog</a></li>
+          <li><a href="categories.html">Browse Categories</a></li>
+          <li><a href="about.html">About Athenaeum</a></li>
+          <li><a href="services.html">Services & Facilities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Circulation Hours</h4>
+        <ul class="footer-hours-list">
+          <li class="footer-hours-item"><span>Monday &ndash; Friday</span> <strong>8:00 AM &ndash; 9:00 PM</strong></li>
+          <li class="footer-hours-item"><span>Saturday</span> <strong>9:00 AM &ndash; 7:00 PM</strong></li>
+          <li class="footer-hours-item"><span>Sunday</span> <strong>10:00 AM &ndash; 6:00 PM</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Librarian Desk</h4>
+        <div style="font-size:0.9rem; line-height:1.7; color:rgba(255,255,255,0.7); margin-bottom:16px;">
+          <p>450 Academic Way, Scholastic Row</p>
+          <p>desk@athenaeum.lib</p>
+        </div>
+        <button type="button" class="btn btn-sm btn-secondary" onclick="window.resetLibraryDemo()" style="width:100%; justify-content:center;">Reset Demo Data</button>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Athenaeum Central Library. All rights reserved.</div>
+      <div style="display:flex; gap:20px;">
+        <a href="about.html">Institutional Charter</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!window.LibraryDB) return;
+
+      const categories = window.LibraryDB.getCategories();
+      const books = window.LibraryDB.getBooks();
+      const container = document.getElementById('allCategoriesGrid');
+
+      // Category Curated Photography Imagery
+      const categoryCovers = {
+        'fiction': 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=600&auto=format&fit=crop&q=80',
+        'science-tech': 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80',
+        'history': 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=600&auto=format&fit=crop&q=80',
+        'biography': 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+        'business-econ': 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
+        'education': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&auto=format&fit=crop&q=80',
+        'mystery-thriller': 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop&q=80',
+        'literature-poetry': 'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=600&auto=format&fit=crop&q=80',
+        'childrens': 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&auto=format&fit=crop&q=80'
+      };
+
+      if (container) {
+        container.innerHTML = categories.map(cat => {
+          const matchingBooks = books.filter(b => b.category === cat.id);
+          const totalTitles = matchingBooks.length;
+          const availableCount = matchingBooks.reduce((sum, b) => sum + (b.availableCopies || 0), 0);
+          const imgUrl = categoryCovers[cat.id] || 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600';
+
+          return `
+            <div class="category-card" style="padding: 0; overflow: hidden;">
+              <div style="height: 180px; position: relative; overflow: hidden; background: var(--color-navy-900);">
+                <img src="${imgUrl}" alt="${cat.name} Collection" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,30,54,0.9), transparent);"></div>
+                <div style="position: absolute; bottom: 16px; left: 20px; display: flex; align-items: center; gap: 10px;">
+                  <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--color-gold-500); color: var(--color-navy-900); display: flex; align-items: center; justify-content: center;">
+                    <span class="material-symbols-outlined" style="font-size: 24px;">${cat.icon || 'menu_book'}</span>
+                  </div>
+                  <h3 style="color: #fff; font-size: 1.3rem; margin: 0;">${cat.name}</h3>
+                </div>
+              </div>
+              <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+                <p class="category-card-desc" style="margin-bottom: 20px;">${cat.description}</p>
+                <div class="category-card-footer" style="border-top: 1px solid var(--color-parchment-200); padding-top: 16px; margin-top: auto;">
+                  <div>
+                    <strong style="display: block; color: var(--color-navy-900); font-size: 0.95rem;">${totalTitles} Titles</strong>
+                    <span style="font-size: 0.8rem; color: var(--color-green-700);">${availableCount} Copies Available</span>
+                  </div>
+                  <a href="books.html?category=${cat.id}" class="btn btn-sm btn-gold">
+                    Filter Stacks &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        if (window.triggerScrollReveals) {
+          window.triggerScrollReveals();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
