@@ -160,135 +160,258 @@
             </div>
           </div>
 
-          <!-- METRICS GRID -->
-          <div class="metrics-grid">
-            <div class="metric-card card-gold">
-              <div class="metric-info">
-                <span class="metric-label">Book Titles Cataloged</span>
-                <span class="metric-value" id="statAdminTitles">0</span>
+          <!-- SECTION 1: REAL-TIME OPERATIONAL KPIS & METRICS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">analytics</span> Section 1: Institutional Circulation & Inventory KPIs</h2>
+                <p class="dash-section-subtitle">Real-time core bibliographic metrics synchronized with library physical stacks.</p>
               </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">menu_book</span>
-              </div>
+              <span class="status-pill status-available">Live Sync Active</span>
             </div>
+            <div class="metrics-grid">
+              <div class="metric-card card-gold">
+                <div class="metric-info">
+                  <span class="metric-label">Book Titles Cataloged</span>
+                  <span class="metric-value" id="statAdminTitles">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">menu_book</span>
+                </div>
+              </div>
 
-            <div class="metric-card card-blue">
-              <div class="metric-info">
-                <span class="metric-label">Physical Copies in Stacks</span>
-                <span class="metric-value" id="statAdminPhysicalCopies">0</span>
+              <div class="metric-card card-blue">
+                <div class="metric-info">
+                  <span class="metric-label">Physical Copies in Stacks</span>
+                  <span class="metric-value" id="statAdminPhysicalCopies">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">shelves</span>
+                </div>
               </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">shelves</span>
-              </div>
-            </div>
 
-            <div class="metric-card card-green">
-              <div class="metric-info">
-                <span class="metric-label">Available Copies Now</span>
-                <span class="metric-value" id="statAdminAvailableCopies">0</span>
+              <div class="metric-card card-green">
+                <div class="metric-info">
+                  <span class="metric-label">Available Copies Now</span>
+                  <span class="metric-value" id="statAdminAvailableCopies">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">check_circle</span>
+                </div>
               </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">check_circle</span>
-              </div>
-            </div>
 
-            <div class="metric-card card-blue">
-              <div class="metric-info">
-                <span class="metric-label">Active Patron Loans</span>
-                <span class="metric-value" id="statAdminActiveLoans">0</span>
+              <div class="metric-card card-blue">
+                <div class="metric-info">
+                  <span class="metric-label">Active Patron Loans</span>
+                  <span class="metric-value" id="statAdminActiveLoans">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">receipt_long</span>
+                </div>
               </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">receipt_long</span>
-              </div>
-            </div>
 
-            <div class="metric-card card-red">
-              <div class="metric-info">
-                <span class="metric-label">Overdue Volumes</span>
-                <span class="metric-value" id="statAdminOverdue">0</span>
+              <div class="metric-card card-red">
+                <div class="metric-info">
+                  <span class="metric-label">Overdue Volumes</span>
+                  <span class="metric-value" id="statAdminOverdue">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">notification_important</span>
+                </div>
               </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">notification_important</span>
-              </div>
-            </div>
 
-            <div class="metric-card card-green">
-              <div class="metric-info">
-                <span class="metric-label">Registered Patrons</span>
-                <span class="metric-value" id="statAdminMembers">0</span>
+              <div class="metric-card card-green">
+                <div class="metric-info">
+                  <span class="metric-label">Registered Patrons</span>
+                  <span class="metric-value" id="statAdminMembers">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">group</span>
+                </div>
               </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">group</span>
-              </div>
-            </div>
 
-            <div class="metric-card card-gold">
-              <div class="metric-info">
-                <span class="metric-label">Pending Hold Queue</span>
-                <span class="metric-value" id="statAdminReservations">0</span>
-              </div>
-              <div class="metric-icon-box">
-                <span class="material-symbols-outlined" style="font-size: 28px;">bookmark</span>
+              <div class="metric-card card-gold">
+                <div class="metric-info">
+                  <span class="metric-label">Pending Hold Queue</span>
+                  <span class="metric-value" id="statAdminReservations">0</span>
+                </div>
+                <div class="metric-icon-box">
+                  <span class="material-symbols-outlined" style="font-size: 28px;">bookmark</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- VISUAL CHARTS & ACTIVITY LOGS -->
-          <div class="chart-container-grid">
-            
-            <!-- Monthly Circulation Chart (Visual Bars) -->
-            <div class="dashboard-card">
-              <div class="dashboard-card-header">
-                <h3 class="dashboard-card-title">Monthly Borrowing Velocity</h3>
-                <span style="font-size: 0.85rem; color: var(--color-text-muted);">Current Academic Year</span>
+          <!-- SECTION 2: CIRCULATION ANALYTICS & VELOCITY -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">monitoring</span> Section 2: Circulation Analytics & Stacks Velocity</h2>
+                <p class="dash-section-subtitle">Monthly loan distribution versus category stack utilization across the academic term.</p>
               </div>
-              <div class="dashboard-card-body">
-                <div class="bar-chart-bars">
-                  <div class="bar-column">
-                    <span class="bar-val">120</span>
-                    <div class="bar-fill" style="height: 48%;"></div>
-                    <span class="bar-label">May</span>
+            </div>
+
+            <div class="chart-container-grid">
+              <!-- Monthly Circulation Chart -->
+              <div class="dashboard-card">
+                <div class="dashboard-card-header">
+                  <h3 class="dashboard-card-title">Monthly Borrowing Velocity</h3>
+                  <span style="font-size: 0.85rem; color: var(--color-text-muted);">Current Academic Year</span>
+                </div>
+                <div class="dashboard-card-body">
+                  <div class="bar-chart-bars">
+                    <div class="bar-column">
+                      <span class="bar-val">120</span>
+                      <div class="bar-fill" style="height: 48%;"></div>
+                      <span class="bar-label">May</span>
+                    </div>
+                    <div class="bar-column">
+                      <span class="bar-val">185</span>
+                      <div class="bar-fill" style="height: 72%;"></div>
+                      <span class="bar-label">Jun</span>
+                    </div>
+                    <div class="bar-column">
+                      <span class="bar-val">140</span>
+                      <div class="bar-fill" style="height: 56%;"></div>
+                      <span class="bar-label">Jul</span>
+                    </div>
+                    <div class="bar-column">
+                      <span class="bar-val">210</span>
+                      <div class="bar-fill" style="height: 84%;"></div>
+                      <span class="bar-label">Aug</span>
+                    </div>
+                    <div class="bar-column">
+                      <span class="bar-val">260</span>
+                      <div class="bar-fill" style="height: 100%;"></div>
+                      <span class="bar-label">Sep</span>
+                    </div>
+                    <div class="bar-column">
+                      <span class="bar-val">235</span>
+                      <div class="bar-fill" style="height: 92%;"></div>
+                      <span class="bar-label">Oct</span>
+                    </div>
                   </div>
-                  <div class="bar-column">
-                    <span class="bar-val">185</span>
-                    <div class="bar-fill" style="height: 72%;"></div>
-                    <span class="bar-label">Jun</span>
+                </div>
+              </div>
+
+              <!-- Category Distribution / Stacks Meter -->
+              <div class="dashboard-card">
+                <div class="dashboard-card-header">
+                  <h3 class="dashboard-card-title">Stacks Capacity & Category Split</h3>
+                  <span class="status-pill status-borrowed">9 Stacks Active</span>
+                </div>
+                <div class="dashboard-card-body" style="display: flex; flex-direction: column; gap: 14px;">
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px;">
+                      <span>Fiction & Literature</span>
+                      <span>32% Stacks Share</span>
+                    </div>
+                    <div class="dash-progress-wrap"><div class="dash-progress-bar" style="width: 32%;"></div></div>
                   </div>
-                  <div class="bar-column">
-                    <span class="bar-val">140</span>
-                    <div class="bar-fill" style="height: 56%;"></div>
-                    <span class="bar-label">Jul</span>
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px;">
+                      <span>Science & Technology</span>
+                      <span>28% Stacks Share</span>
+                    </div>
+                    <div class="dash-progress-wrap"><div class="dash-progress-bar" style="width: 28%; background: linear-gradient(90deg, #3b82f6, #60a5fa);"></div></div>
                   </div>
-                  <div class="bar-column">
-                    <span class="bar-val">210</span>
-                    <div class="bar-fill" style="height: 84%;"></div>
-                    <span class="bar-label">Aug</span>
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px;">
+                      <span>History & Archives</span>
+                      <span>22% Stacks Share</span>
+                    </div>
+                    <div class="dash-progress-wrap"><div class="dash-progress-bar" style="width: 22%; background: linear-gradient(90deg, #10b981, #34d399);"></div></div>
                   </div>
-                  <div class="bar-column">
-                    <span class="bar-val">260</span>
-                    <div class="bar-fill" style="height: 100%;"></div>
-                    <span class="bar-label">Sep</span>
-                  </div>
-                  <div class="bar-column">
-                    <span class="bar-val">235</span>
-                    <div class="bar-fill" style="height: 92%;"></div>
-                    <span class="bar-label">Oct</span>
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px;">
+                      <span>Philosophy, Business & Arts</span>
+                      <span>18% Stacks Share</span>
+                    </div>
+                    <div class="dash-progress-wrap"><div class="dash-progress-bar" style="width: 18%; background: linear-gradient(90deg, #8b5cf6, #a78bfa);"></div></div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Recent Activity Audit Logs -->
-            <div class="dashboard-card">
-              <div class="dashboard-card-header">
-                <h3 class="dashboard-card-title">Circulation Activity Audit</h3>
-                <span class="status-pill status-available">Live Stream</span>
+          <!-- SECTION 3: URGENT CIRCULATION ACTIONS & PRIORITY ALERTS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">notification_important</span> Section 3: Priority Circulation Alerts & Fast Actions</h2>
+                <p class="dash-section-subtitle">Operational items requiring cataloger or circulation desk clearance.</p>
               </div>
+            </div>
+
+            <div class="dash-grid-3">
+              <div class="mini-stat-card" style="flex-direction: column; align-items: stretch;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                  <div class="mini-stat-icon red"><span class="material-symbols-outlined">warning</span></div>
+                  <div>
+                    <strong style="color: var(--color-navy-900);">Overdue Notices Pending</strong>
+                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">Patrons past 14-day loan term</div>
+                  </div>
+                </div>
+                <p style="font-size: 0.84rem; color: var(--color-text-muted); margin-bottom: 14px;">
+                  Dispatch courtesy notifications and review accounts for temporary checkout freeze.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline" onclick="document.querySelector('.sidebar-nav-item[data-tab=\'admin-tab-overdue\'] button')?.click();">
+                  Review Overdue Queue
+                </button>
+              </div>
+
+              <div class="mini-stat-card" style="flex-direction: column; align-items: stretch;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                  <div class="mini-stat-icon gold"><span class="material-symbols-outlined">bookmark_added</span></div>
+                  <div>
+                    <strong style="color: var(--color-navy-900);">Holds Ready on Shelf</strong>
+                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">48h Pickup Expiration Window</div>
+                  </div>
+                </div>
+                <p style="font-size: 0.84rem; color: var(--color-text-muted); margin-bottom: 14px;">
+                  Volumes returned with patron reservations ready at circulation front desk.
+                </p>
+                <button type="button" class="btn btn-sm btn-gold" onclick="document.querySelector('.sidebar-nav-item[data-tab=\'admin-tab-reservations\'] button')?.click();">
+                  Manage Hold Queue
+                </button>
+              </div>
+
+              <div class="mini-stat-card" style="flex-direction: column; align-items: stretch;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                  <div class="mini-stat-icon blue"><span class="material-symbols-outlined">inventory</span></div>
+                  <div>
+                    <strong style="color: var(--color-navy-900);">Inventory Replenishment</strong>
+                    <div style="font-size: 0.8rem; color: var(--color-text-muted);">High-Demand Reserved Titles</div>
+                  </div>
+                </div>
+                <p style="font-size: 0.84rem; color: var(--color-text-muted); margin-bottom: 14px;">
+                  Check zero-stock titles with active queues for acquisition order requisition.
+                </p>
+                <button type="button" class="btn btn-sm btn-outline" onclick="document.querySelector('.sidebar-nav-item[data-tab=\'admin-tab-books\'] button')?.click();">
+                  Inspect Catalog Levels
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: REAL-TIME TRANSACTION AUDIT STREAM -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">history_toggle_off</span> Section 4: Live Transaction Audit Stream</h2>
+                <p class="dash-section-subtitle">Timestamped continuous ledger of all circulation desk actions and system events.</p>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline" onclick="window.showToast('Activity audit stream refreshed.', 'info');">
+                <span class="material-symbols-outlined" style="font-size: 16px;">refresh</span>
+                Refresh Stream
+              </button>
+            </div>
+
+            <div class="dashboard-card">
               <div class="dashboard-card-body" id="adminActivityLogsList" style="padding-top: 8px;">
                 <!-- Populated by admin-dashboard.js -->
               </div>
             </div>
-
           </div>
 
         </section>
@@ -300,39 +423,176 @@
               <h1 class="dashboard-page-title">Catalog Inventory Management</h1>
               <p class="dashboard-page-subtitle">Add new accessions, modify bibliographic records, or adjust inventory copies.</p>
             </div>
-            <button type="button" class="btn btn-gold" onclick="window.openModal('addBookModal')">
-              <span class="material-symbols-outlined">add</span>
-              <span>Add New Catalog Title</span>
-            </button>
+            <div style="display: flex; gap: 10px;">
+              <button type="button" class="btn btn-outline" onclick="exportBooksCsv()">
+                <span class="material-symbols-outlined">download</span>
+                Export CSV
+              </button>
+              <button type="button" class="btn btn-gold" onclick="window.openModal('addBookModal')">
+                <span class="material-symbols-outlined">add</span>
+                <span>Add New Catalog Title</span>
+              </button>
+            </div>
           </div>
 
-          <div class="dashboard-card">
-            <div class="dashboard-card-header">
-              <div class="input-icon-wrap" style="width: 320px;">
+          <!-- SECTION 1: CATALOG STACKS HEALTH & METRICS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">inventory_2</span> Section 1: Catalog Stacks Health & Physical Volumes Summary</h2>
+                <p class="dash-section-subtitle">Real-time breakdown of physical volumes, shelf capacity, and catalog circulation ratios.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">library_books</span></div>
+                <div>
+                  <span class="mini-stat-label">Total Titles</span>
+                  <div class="mini-stat-num">28 Titles</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">shelves</span></div>
+                <div>
+                  <span class="mini-stat-label">Total Stacks Copies</span>
+                  <div class="mini-stat-num">124 Copies</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">fact_check</span></div>
+                <div>
+                  <span class="mini-stat-label">In Circulation</span>
+                  <div class="mini-stat-num">88 Available</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">percent</span></div>
+                <div>
+                  <span class="mini-stat-label">Shelf Occupancy</span>
+                  <div class="mini-stat-num">74.2% Full</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: CATALOG SEARCH & FILTER CONTROLS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">filter_list</span> Section 2: Catalog Filter, Search & Batch Operations Bar</h2>
+                <p class="dash-section-subtitle">Search by Title, Author, ISBN or filter by library department stack.</p>
+              </div>
+            </div>
+            <div style="background: var(--color-white); border: 1px solid var(--color-parchment-300); border-radius: var(--radius-lg); padding: 18px 24px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+              <div class="input-icon-wrap" style="width: 320px; flex: 1;">
                 <span class="material-symbols-outlined input-icon">search</span>
-                <input type="text" id="adminBookSearchInput" class="form-control" placeholder="Filter by title, author, or ISBN...">
+                <input type="text" id="adminBookSearchInput" class="form-control" placeholder="Search by title, author, or ISBN...">
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <select class="form-select" style="min-width: 180px;" onchange="const val = this.value.toLowerCase(); document.querySelectorAll('#manageBooksTbody tr').forEach(r => { r.style.display = (val === 'all' || r.textContent.toLowerCase().includes(val)) ? '' : 'none'; });">
+                  <option value="all">All Library Categories</option>
+                  <option value="fiction">Fiction</option>
+                  <option value="science and technology">Science & Tech</option>
+                  <option value="history">History</option>
+                  <option value="biography">Biography</option>
+                  <option value="business and economics">Business & Econ</option>
+                  <option value="education">Academic</option>
+                  <option value="mystery and thriller">Mystery</option>
+                </select>
+                <button type="button" class="btn btn-sm btn-gold" onclick="window.openModal('addBookModal')">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">add</span> Add Book
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: PRIMARY BIBLIOGRAPHIC CATALOG TABLE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">table_view</span> Section 3: Primary Bibliographic Master Catalog Table</h2>
+                <p class="dash-section-subtitle">Official accession records with call numbers, physical copy balances, and action controls.</p>
               </div>
               <div style="font-size: 0.85rem; color: var(--color-text-muted);">
                 * Deletion is prevented if active loans exist for that volume.
               </div>
             </div>
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Book / ISBN</th>
-                    <th>Author</th>
-                    <th>Category</th>
-                    <th>Total Copies</th>
-                    <th>Available Copies</th>
-                    <th>Shelf Location</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="manageBooksTbody">
-                  <!-- Populated by admin-dashboard.js -->
-                </tbody>
-              </table>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Book / ISBN</th>
+                      <th>Author</th>
+                      <th>Category</th>
+                      <th>Total Copies</th>
+                      <th>Available Copies</th>
+                      <th>Shelf Location</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="manageBooksTbody">
+                    <!-- Populated by admin-dashboard.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: INVENTORY ACQUISITION & SHELF CONDITION AUDIT -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">verified_user</span> Section 4: Acquisition, Weeding & Shelf Condition Audit Ledger</h2>
+                <p class="dash-section-subtitle">Physical preservation health, bindery status, and scheduled catalog weeding cycles.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Stack Aisle</th>
+                      <th>Curatorial Department</th>
+                      <th>Physical Condition Ratio</th>
+                      <th>Last Full Inspection</th>
+                      <th>Preservation Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Aisle A-1 through A-8</strong></td>
+                      <td>Fiction & Literature Stacks</td>
+                      <td><span class="status-pill status-available">98% Pristine</span></td>
+                      <td>October 12, 2026</td>
+                      <td>Routine shelving audit complete</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aisle S-1 through S-6</strong></td>
+                      <td>Science & Frontier Computing</td>
+                      <td><span class="status-pill status-available">95% Excellent</span></td>
+                      <td>September 28, 2026</td>
+                      <td>2 replacement copies on order</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aisle H-1 through H-4</strong></td>
+                      <td>History & Archival Retrospectives</td>
+                      <td><span class="status-pill status-borrowed">89% Good</span></td>
+                      <td>October 04, 2026</td>
+                      <td>Re-casing scheduled in Preservation Lab</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Aisle B-1 through B-3</strong></td>
+                      <td>Biography & World Leadership</td>
+                      <td><span class="status-pill status-available">99% Pristine</span></td>
+                      <td>October 15, 2026</td>
+                      <td>No action required</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -344,20 +604,155 @@
               <h1 class="dashboard-page-title">Manage Categories & Stacks</h1>
               <p class="dashboard-page-subtitle">Standard bibliographic subject divisions used throughout the library catalog.</p>
             </div>
+            <button type="button" class="btn btn-gold" onclick="window.showToast('Stack Category configuration form activated below.', 'info');">
+              <span class="material-symbols-outlined">add</span>
+              <span>Define New Stacks Category</span>
+            </button>
           </div>
 
-          <div class="dashboard-card">
-            <div class="dashboard-card-body">
-              <div class="categories-grid">
-                <div class="category-card"><h3 class="category-card-title">Fiction</h3><p class="category-card-desc">Literary works, drama, science fiction, and modern epics.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Science and Technology</h3><p class="category-card-desc">Physics, computing, artificial intelligence, and engineering.</p></div>
-                <div class="category-card"><h3 class="category-card-title">History</h3><p class="category-card-desc">World civilizations, ancient archives, and military history.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Biography</h3><p class="category-card-desc">Memoirs, letters, and autobiographical narratives.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Business and Economics</h3><p class="category-card-desc">Financial theory, investing, and macroeconomics.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Education and Academic Textbooks</h3><p class="category-card-desc">Curriculum textbooks, biology, and scientific reference.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Mystery and Thriller</h3><p class="category-card-desc">Detective inquiries, suspense, and psychological crime.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Literature and Poetry</h3><p class="category-card-desc">Classical verse, Homeric epics, and poetic anthologies.</p></div>
-                <div class="category-card"><h3 class="category-card-title">Children's Books</h3><p class="category-card-desc">Early readers, illustrated classics, and youth adventures.</p></div>
+          <!-- SECTION 1: CLASSIFICATION INFRASTRUCTURE OVERVIEW -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">account_tree</span> Section 1: Classification & Stacks Architecture Summary</h2>
+                <p class="dash-section-subtitle">Dewey Decimal & Library of Congress classification division compliance statistics.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">category</span></div>
+                <div>
+                  <span class="mini-stat-label">Active Categories</span>
+                  <div class="mini-stat-num">9 Divisions</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">view_column</span></div>
+                <div>
+                  <span class="mini-stat-label">Aisles Mapped</span>
+                  <div class="mini-stat-num">36 Aisles</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">domain</span></div>
+                <div>
+                  <span class="mini-stat-label">Floor Zones</span>
+                  <div class="mini-stat-num">4 Levels</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">rule</span></div>
+                <div>
+                  <span class="mini-stat-label">Classification Index</span>
+                  <div class="mini-stat-num">100% Verified</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: CREATE / RECONFIGURE CATEGORY FORM -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">edit_square</span> Section 2: Create / Reconfigure Library Stacks Category</h2>
+                <p class="dash-section-subtitle">Define classification parameters, shelf bay allocations, and curatorial lead oversight.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 28px; box-shadow: var(--shadow-xs);">
+              <form onsubmit="event.preventDefault(); window.showToast('Category parameters saved successfully.', 'success');">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <div class="form-group">
+                    <label class="form-label">Category Name *</label>
+                    <input type="text" class="form-control" placeholder="e.g. Environmental Science & Ecology" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Dewey Decimal Range</label>
+                    <input type="text" class="form-control" placeholder="e.g. 570 - 579">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Designated Floor & Aisle</label>
+                    <input type="text" class="form-control" placeholder="e.g. Level 2 - Aisle E-04">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Curatorial Lead</label>
+                    <input type="text" class="form-control" placeholder="e.g. Dr. Julian Sterling">
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end;">
+                  <button type="submit" class="btn btn-gold">Save Category Division</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- SECTION 3: CATEGORY ALLOCATION CARDS GRID -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">grid_view</span> Section 3: Active Category Allocation Cards Grid</h2>
+                <p class="dash-section-subtitle">Complete directory of 9 catalog divisions with direct catalog links.</p>
+              </div>
+            </div>
+
+            <div class="categories-grid">
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">auto_stories</span></div><h3 class="category-card-title">Fiction</h3><p class="category-card-desc">Literary works, drama, science fiction, and modern epics.</p><div class="category-card-footer"><span>Aisle A1-A8</span><a href="books.html?category=fiction" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">biotech</span></div><h3 class="category-card-title">Science & Technology</h3><p class="category-card-desc">Physics, computing, artificial intelligence, and engineering.</p><div class="category-card-footer"><span>Aisle S1-S6</span><a href="books.html?category=science-tech" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">account_balance</span></div><h3 class="category-card-title">History</h3><p class="category-card-desc">World civilizations, ancient archives, and military history.</p><div class="category-card-footer"><span>Aisle H1-H4</span><a href="books.html?category=history" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">person</span></div><h3 class="category-card-title">Biography</h3><p class="category-card-desc">Memoirs, letters, and autobiographical narratives.</p><div class="category-card-footer"><span>Aisle B1-B3</span><a href="books.html?category=biography" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">trending_up</span></div><h3 class="category-card-title">Business & Economics</h3><p class="category-card-desc">Financial theory, investing, and macroeconomics.</p><div class="category-card-footer"><span>Aisle E1-E3</span><a href="books.html?category=business-econ" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">school</span></div><h3 class="category-card-title">Academic & Textbooks</h3><p class="category-card-desc">Curriculum textbooks, biology, and scientific reference.</p><div class="category-card-footer"><span>Aisle T1-T5</span><a href="books.html?category=education" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">psychology_alt</span></div><h3 class="category-card-title">Mystery & Thriller</h3><p class="category-card-desc">Detective inquiries, suspense, and psychological crime.</p><div class="category-card-footer"><span>Aisle M1-M3</span><a href="books.html?category=mystery-thriller" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">history_edu</span></div><h3 class="category-card-title">Literature & Poetry</h3><p class="category-card-desc">Classical verse, Homeric epics, and poetic anthologies.</p><div class="category-card-footer"><span>Aisle P1-P4</span><a href="books.html?category=literature-poetry" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+              <div class="category-card"><div class="category-icon-box"><span class="material-symbols-outlined">child_care</span></div><h3 class="category-card-title">Children's Books</h3><p class="category-card-desc">Early readers, illustrated classics, and youth adventures.</p><div class="category-card-footer"><span>Ground Wing</span><a href="books.html?category=childrens" class="btn btn-sm btn-outline">Browse &rarr;</a></div></div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: DEPARTMENT CIRCULATION VELOCITY & ROTATION SCHEDULE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">rotate_right</span> Section 4: Department Circulation Velocity & Re-shelving Rotation Schedule</h2>
+                <p class="dash-section-subtitle">Periodic stacks rotation schedule and cleaning audits across campus floors.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Division</th>
+                      <th>30-Day Circulation Velocity</th>
+                      <th>Stack Rotation Cycle</th>
+                      <th>Assigned Conservator</th>
+                      <th>Next Audit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Fiction & Literature</strong></td>
+                      <td><span class="status-pill status-available">High (214 Checkouts)</span></td>
+                      <td>Weekly front-facing refresh</td>
+                      <td>Miriam Vance, MLIS</td>
+                      <td>Monday, Oct 19</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Science & Technology</strong></td>
+                      <td><span class="status-pill status-available">High (182 Checkouts)</span></td>
+                      <td>Bi-weekly accession update</td>
+                      <td>Dr. Julian Sterling</td>
+                      <td>Wednesday, Oct 21</td>
+                    </tr>
+                    <tr>
+                      <td><strong>History & Archives</strong></td>
+                      <td><span class="status-pill status-borrowed">Moderate (94 Checkouts)</span></td>
+                      <td>Monthly climate audit</td>
+                      <td>Alistair Finch, Ph.D.</td>
+                      <td>Friday, Oct 23</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -370,32 +765,181 @@
               <h1 class="dashboard-page-title">Patron Membership Directory</h1>
               <p class="dashboard-page-subtitle">View member cards, monitor active loan quotas, and toggle account status.</p>
             </div>
+            <button type="button" class="btn btn-gold" onclick="window.showToast('Patron Card Quick Issuance desk focused below.', 'info');">
+              <span class="material-symbols-outlined">person_add</span>
+              <span>Issue New Patron Card</span>
+            </button>
           </div>
 
-          <div class="dashboard-card">
-            <div class="dashboard-card-header">
-              <div class="input-icon-wrap" style="width: 320px;">
-                <span class="material-symbols-outlined input-icon">search</span>
-                <input type="text" id="adminMemberSearchInput" class="form-control" placeholder="Search members by name or card ID...">
+          <!-- SECTION 1: PATRON MEMBERSHIP DEMOGRAPHICS & METRICS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">badge</span> Section 1: Patron Membership Demographics & Card Metrics</h2>
+                <p class="dash-section-subtitle">Active patron accounts, card standing distribution, and borrowing allowance consumption.</p>
               </div>
             </div>
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Patron Name / ID</th>
-                    <th>Email Address</th>
-                    <th>Phone</th>
-                    <th>Role</th>
-                    <th>Active Loans</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="manageMembersTbody">
-                  <!-- Populated by admin-dashboard.js -->
-                </tbody>
-              </table>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">group</span></div>
+                <div>
+                  <span class="mini-stat-label">Active Cardholders</span>
+                  <div class="mini-stat-num">4 Patrons</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">school</span></div>
+                <div>
+                  <span class="mini-stat-label">Student Scholars</span>
+                  <div class="mini-stat-num">3 Members</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">verified</span></div>
+                <div>
+                  <span class="mini-stat-label">Good Standing</span>
+                  <div class="mini-stat-num">100% Rate</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">warning</span></div>
+                <div>
+                  <span class="mini-stat-label">Suspended Cards</span>
+                  <div class="mini-stat-num">0 Frozen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: PATRON QUICK REGISTRATION & ISSUANCE DESK -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">card_membership</span> Section 2: Patron Quick Registration & Card Issuance Desk</h2>
+                <p class="dash-section-subtitle">Instant on-boarding of academic scholars and immediate barcode card provisioning.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 28px; box-shadow: var(--shadow-xs);">
+              <form onsubmit="event.preventDefault(); window.showToast('New patron card provisioned and issued to circulation directory.', 'success'); this.reset();">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <div class="form-group">
+                    <label class="form-label">Full Legal Name *</label>
+                    <input type="text" class="form-control" placeholder="e.g. Jonathan Archer" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Academic Email *</label>
+                    <input type="email" class="form-control" placeholder="e.g. j.archer@athenaeum.lib" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Contact Phone</label>
+                    <input type="tel" class="form-control" placeholder="+1 (555) 019-8822">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Membership Tier</label>
+                    <select class="form-select">
+                      <option value="undergrad">Undergraduate Scholar (Max 4 Books)</option>
+                      <option value="grad">Graduate Researcher (Max 6 Books)</option>
+                      <option value="faculty">Faculty & Archival Fellow (Max 10 Books)</option>
+                    </select>
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                  <button type="submit" class="btn btn-gold">
+                    <span class="material-symbols-outlined" style="font-size: 18px;">badge</span>
+                    Issue Patron Card
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- SECTION 3: PATRON DIRECTORY & CARDHOLDER MASTER LEDGER -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">list_alt</span> Section 3: Patron Directory & Cardholder Master Ledger</h2>
+                <p class="dash-section-subtitle">Real-time status of active borrowing quotas, card standings, and access privileges.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="dashboard-card-header">
+                <div class="input-icon-wrap" style="width: 320px;">
+                  <span class="material-symbols-outlined input-icon">search</span>
+                  <input type="text" id="adminMemberSearchInput" class="form-control" placeholder="Search members by name or card ID...">
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                  * Toggling status immediately freezes or restores circulation checkout privileges.
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Patron Name / ID</th>
+                      <th>Email Address</th>
+                      <th>Phone</th>
+                      <th>Role</th>
+                      <th>Active Loans</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="manageMembersTbody">
+                    <!-- Populated by admin-dashboard.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: PATRON MEMBERSHIP TIERS & PRIVILEGE RULES -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">policy</span> Section 4: Patron Membership Tiers & Borrowing Privilege Policy</h2>
+                <p class="dash-section-subtitle">Circulation parameters, loan duration ceilings, and renewal quotas by tier.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Tier Designation</th>
+                      <th>Max Concurrent Loans</th>
+                      <th>Standard Loan Term</th>
+                      <th>Permitted Renewals</th>
+                      <th>Archival Stacks Access</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Undergraduate Student</strong></td>
+                      <td>4 Volumes</td>
+                      <td>14 Days</td>
+                      <td>1 Online Renewal</td>
+                      <td>Supervised Reading Room Only</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Graduate Researcher</strong></td>
+                      <td>6 Volumes</td>
+                      <td>28 Days</td>
+                      <td>2 Online Renewals</td>
+                      <td>Mezzanine Research Carrels</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Faculty Fellow</strong></td>
+                      <td>10 Volumes</td>
+                      <td>60 Days</td>
+                      <td>Unlimited within term</td>
+                      <td>Full Vault Pass & Extended Reserves</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -413,24 +957,146 @@
             </button>
           </div>
 
-          <div class="dashboard-card">
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Loan ID</th>
-                    <th>Book Title</th>
-                    <th>Member</th>
-                    <th>Borrow Date</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="manageLoansTbody">
-                  <!-- Populated by admin-dashboard.js -->
-                </tbody>
-              </table>
+          <!-- SECTION 1: CIRCULATION DESK LIVE STATUS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">point_of_sale</span> Section 1: Circulation Desk Live Status & Daily Counters</h2>
+                <p class="dash-section-subtitle">Operational transaction volume processed during current front-desk shift.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">receipt_long</span></div>
+                <div>
+                  <span class="mini-stat-label">Active Loans</span>
+                  <div class="mini-stat-num">4 Active</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">check_circle</span></div>
+                <div>
+                  <span class="mini-stat-label">Checked Out Today</span>
+                  <div class="mini-stat-num">2 Volumes</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">update</span></div>
+                <div>
+                  <span class="mini-stat-label">Renewals Today</span>
+                  <div class="mini-stat-num">1 Approved</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">event_busy</span></div>
+                <div>
+                  <span class="mini-stat-label">Returns Due Today</span>
+                  <div class="mini-stat-num">1 Expected</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: QUICK ISSUE LOAN TERMINAL -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">input</span> Section 2: Quick Issue Loan Terminal</h2>
+                <p class="dash-section-subtitle">Express front-desk checkout interface for immediate volume handover.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 24px; box-shadow: var(--shadow-xs);">
+              <div style="display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <div>
+                  <h3 style="font-size: 1.1rem; color: var(--color-navy-900); margin-bottom: 4px;">Express Book Checkout</h3>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Scan patron card and select available book to instantly create loan receipt.</p>
+                </div>
+                <button type="button" class="btn btn-gold" onclick="window.openModal('recordLoanModal')">
+                  <span class="material-symbols-outlined">post_add</span>
+                  Launch Express Checkout Modal
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: ACTIVE LOANS MASTER REGISTRY TABLE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">assignment</span> Section 3: Active Loans Master Registry Table</h2>
+                <p class="dash-section-subtitle">Searchable circulation ledger with return execution and duration monitoring.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Loan ID</th>
+                      <th>Book Title</th>
+                      <th>Member</th>
+                      <th>Borrow Date</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="manageLoansTbody">
+                    <!-- Populated by admin-dashboard.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: LOAN DURATION DISTRIBUTION & POLICY COMPLIANCE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">schedule</span> Section 4: Loan Duration Distribution & Policy Compliance</h2>
+                <p class="dash-section-subtitle">Loan lifespan breakdown and automated return reminder trigger schedule.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Policy Class</th>
+                      <th>Duration Granted</th>
+                      <th>Automated Courtesy Notice</th>
+                      <th>Overdue Escalation</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Standard Reading Circulation</strong></td>
+                      <td>14 Calendar Days</td>
+                      <td>3 Days prior to Due Date</td>
+                      <td>Day +1 SMS & Email Notice</td>
+                      <td><span class="status-pill status-available">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Research Dissertation Reserve</strong></td>
+                      <td>28 Calendar Days</td>
+                      <td>5 Days prior to Due Date</td>
+                      <td>Day +1 Academic Advisor Notice</td>
+                      <td><span class="status-pill status-available">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Inter-Library Archival Loan</strong></td>
+                      <td>30 Calendar Days</td>
+                      <td>7 Days prior to Due Date</td>
+                      <td>Institutional Courier Dispatch</td>
+                      <td><span class="status-pill status-available">Active</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -444,17 +1110,145 @@
             </div>
           </div>
 
-          <div style="max-width: 600px; background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 32px;">
-            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Quick Return Check-In</h3>
-            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 20px;">
-              Enter Loan ID (e.g. <code>101</code> or <code>loan-101</code>) or book title to record return.
-            </p>
-            <div style="display: flex; gap: 12px;">
-              <input type="text" id="returnBarcodeOrLoanInput" class="form-control" placeholder="Loan ID or Title (e.g. 101 or Gatsby)">
-              <button type="button" id="processReturnBtn" class="btn btn-gold" style="white-space: nowrap;">
-                <span class="material-symbols-outlined">keyboard_return</span>
-                Process Return
-              </button>
+          <!-- SECTION 1: DAILY RETURN PROCESSING METRICS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">assignment_turned_in</span> Section 1: Daily Return Processing Metrics & Fulfillment Counters</h2>
+                <p class="dash-section-subtitle">Front-desk return volume and shelf replenishment clearance rate.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">keyboard_return</span></div>
+                <div>
+                  <span class="mini-stat-label">Checked In Today</span>
+                  <div class="mini-stat-num">6 Volumes</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">timer</span></div>
+                <div>
+                  <span class="mini-stat-label">On-Time Return Rate</span>
+                  <div class="mini-stat-num">96.4%</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">bookmark_check</span></div>
+                <div>
+                  <span class="mini-stat-label">Hold Triggers</span>
+                  <div class="mini-stat-num">2 Reserved</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">healing</span></div>
+                <div>
+                  <span class="mini-stat-label">Requires Repair</span>
+                  <div class="mini-stat-num">0 Volumes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: EXPRESS RETURN CHECK-IN TERMINAL -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">barcode_scanner</span> Section 2: Express Return Check-In Terminal</h2>
+                <p class="dash-section-subtitle">Enter barcode, Loan ID or title to instantly clear loan and replenish available copies.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 32px; box-shadow: var(--shadow-sm); margin-bottom: 24px;">
+              <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--color-navy-900);">Scan or Enter Volume for Immediate Check-In</h3>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 18px;">
+                Enter Loan ID (e.g. <code>101</code> or <code>loan-101</code>) or book title to record return and update inventory in real-time.
+              </p>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <input type="text" id="returnBarcodeOrLoanInput" class="form-control" style="flex: 1; min-width: 260px;" placeholder="Loan ID or Title (e.g. 101, Gatsby, or Mockingbird)">
+                <button type="button" id="processReturnBtn" class="btn btn-gold" style="white-space: nowrap;">
+                  <span class="material-symbols-outlined">keyboard_return</span>
+                  Process Return Check-In
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: RECENTLY PROCESSED RETURNS QUEUE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">published_with_changes</span> Section 3: Recently Processed Returns Queue</h2>
+                <p class="dash-section-subtitle">Volumes checked in today pending physical re-shelving or hold transfer.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Return ID</th>
+                      <th>Book Title</th>
+                      <th>Returned By</th>
+                      <th>Condition Checked</th>
+                      <th>Re-shelving Routing</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#RET-4091</strong></td>
+                      <td>Pride and Prejudice</td>
+                      <td>Elena Rostova</td>
+                      <td>Pristine / Excellent</td>
+                      <td>Aisle A-14 / Fic-AUST</td>
+                      <td><span class="status-pill status-available">Re-shelved</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#RET-4090</strong></td>
+                      <td>Principles of Neural Science</td>
+                      <td>Dr. Julian Sterling</td>
+                      <td>Good / Minor Wear</td>
+                      <td>Aisle S-08 / Sci-KAND</td>
+                      <td><span class="status-pill status-available">Re-shelved</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>#RET-4089</strong></td>
+                      <td>The Republic</td>
+                      <td>Marcus Vance</td>
+                      <td>Pristine / Excellent</td>
+                      <td>Hold Shelf (Reserved for Member #1043)</td>
+                      <td><span class="status-pill status-borrowed">Hold Staged</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: BOOK INSPECTION & RESHELVING ROUTING GUIDE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">alt_route</span> Section 4: Book Inspection, Restoration & Reshelving Routing Guide</h2>
+                <p class="dash-section-subtitle">Operational guidelines for physical volume sorting and return cart distribution.</p>
+              </div>
+            </div>
+
+            <div class="dash-grid-3">
+              <div class="dashboard-card" style="padding: 20px;">
+                <h4 style="font-size: 1rem; color: var(--color-navy-900); margin-bottom: 8px;">1. Physical Inspection</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">Check spine alignment, barcode readability, and examine for accidental loose folios or water damage.</p>
+              </div>
+              <div class="dashboard-card" style="padding: 20px;">
+                <h4 style="font-size: 1rem; color: var(--color-navy-900); margin-bottom: 8px;">2. Reservation Hold Check</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">If volume has a pending hold, attach a printed 48-hour patron slip and route to Front Hold Shelf 1B.</p>
+              </div>
+              <div class="dashboard-card" style="padding: 20px;">
+                <h4 style="font-size: 1rem; color: var(--color-navy-900); margin-bottom: 8px;">3. Stacks Re-shelving</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5;">Place cleared volume onto designated department sorting trolley for student librarians to re-file by call number.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -466,26 +1260,150 @@
               <h1 class="dashboard-page-title">Patron Hold & Reservation Queue</h1>
               <p class="dashboard-page-subtitle">Fulfill hold requests as soon as titles are returned to circulation desk.</p>
             </div>
+            <button type="button" class="btn btn-gold" onclick="window.showToast('Hold queue dispatched notification batch to patrons.', 'success');">
+              <span class="material-symbols-outlined">send</span>
+              <span>Dispatch Hold Notices</span>
+            </button>
           </div>
 
-          <div class="dashboard-card">
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Hold ID</th>
-                    <th>Book</th>
-                    <th>Requesting Patron</th>
-                    <th>Date Placed</th>
-                    <th>Queue Priority</th>
-                    <th>Hold Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="adminReservationsTbody">
-                  <!-- Populated by admin-dashboard.js -->
-                </tbody>
-              </table>
+          <!-- SECTION 1: HOLD FULFILLMENT OVERVIEW & WAITLIST KPIS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">bookmark_manager</span> Section 1: Hold Fulfillment Overview & Waitlist KPIs</h2>
+                <p class="dash-section-subtitle">Real-time hold backlog, shelf staging status, and queue fulfillment velocity.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">bookmark</span></div>
+                <div>
+                  <span class="mini-stat-label">Pending Holds</span>
+                  <div class="mini-stat-num">1 Request</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">done_all</span></div>
+                <div>
+                  <span class="mini-stat-label">Ready on Shelf</span>
+                  <div class="mini-stat-num">1 Volume</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">timelapse</span></div>
+                <div>
+                  <span class="mini-stat-label">Avg Wait Time</span>
+                  <div class="mini-stat-num">2.4 Days</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">hourglass_bottom</span></div>
+                <div>
+                  <span class="mini-stat-label">Pickup Window</span>
+                  <div class="mini-stat-num">48 Hours</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: PRIORITY HOLD ALLOCATION & DISPATCH CONTROLS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">rule</span> Section 2: Priority Hold Allocation & Dispatch Controls</h2>
+                <p class="dash-section-subtitle">Automated shelf allocation and reservation hold queue rules.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 24px; box-shadow: var(--shadow-xs); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Automated 48-Hour Reservation Hold Shelf</h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Returned volumes are tagged for the highest-priority patron for 48 hours before being released to open circulation.</p>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button type="button" class="btn btn-outline" onclick="window.showToast('Priority queue re-indexed by submission timestamp.', 'info');">
+                  Re-Index Priority
+                </button>
+                <button type="button" class="btn btn-gold" onclick="window.showToast('Reminder SMS triggered for pending hold pickups.', 'success');">
+                  Broadcast Pickup Alerts
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: ACTIVE HOLD QUEUE LEDGER TABLE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">format_list_numbered</span> Section 3: Active Hold Queue Ledger Table</h2>
+                <p class="dash-section-subtitle">Official waitlist ledger with queue seniority and fulfillment execution.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Hold ID</th>
+                      <th>Book</th>
+                      <th>Requesting Patron</th>
+                      <th>Date Placed</th>
+                      <th>Queue Priority</th>
+                      <th>Hold Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminReservationsTbody">
+                    <!-- Populated by admin-dashboard.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: UNCLAIMED HOLD REDISTRIBUTION & ARCHIVE RULES -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">restart_alt</span> Section 4: Unclaimed Hold Redistribution & Archive Rules</h2>
+                <p class="dash-section-subtitle">Automated release protocols for volumes unclaimed past the 48-hour pickup window.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Protocol Step</th>
+                      <th>Trigger Condition</th>
+                      <th>System Action</th>
+                      <th>Staff Responsibility</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Hold Expiration Notice</strong></td>
+                      <td>48 hours elapsed without pickup</td>
+                      <td>Automatic cancellation notice emailed to patron</td>
+                      <td>Front Desk verifies status</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Secondary Patron Reassignment</strong></td>
+                      <td>Next patron waiting in queue</td>
+                      <td>Volume hold slip reassigned to Queue #2</td>
+                      <td>Circulation Clerk updates slip</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Return to General Stacks</strong></td>
+                      <td>Zero patrons remaining in queue</td>
+                      <td>Book status updated to Available in catalog</td>
+                      <td>Shelver returns book to designated bay</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -497,26 +1415,150 @@
               <h1 class="dashboard-page-title">Overdue Item Monitoring & Notices</h1>
               <p class="dashboard-page-subtitle">Track volumes past their 14-day checkout date and dispatch patron reminders.</p>
             </div>
+            <button type="button" class="btn btn-gold" onclick="window.showToast('Batch overdue notices dispatched to all delinquent patrons.', 'success');">
+              <span class="material-symbols-outlined">campaign</span>
+              <span>Dispatch Batch Overdue Notices</span>
+            </button>
           </div>
 
-          <div class="dashboard-card">
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Loan ID</th>
-                    <th>Book Title</th>
-                    <th>Patron Name</th>
-                    <th>Scheduled Due</th>
-                    <th>Days Overdue</th>
-                    <th>Sample Fine</th>
-                    <th>Notice Action</th>
-                  </tr>
-                </thead>
-                <tbody id="adminOverdueTbody">
-                  <!-- Populated by admin-dashboard.js -->
-                </tbody>
-              </table>
+          <!-- SECTION 1: OVERDUE ESCALATION TIERS SUMMARY -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">warning</span> Section 1: Overdue Escalation Tiers Summary</h2>
+                <p class="dash-section-subtitle">Delinquent loan categories and accrued fine liability tracking.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">notification_important</span></div>
+                <div>
+                  <span class="mini-stat-label">Total Overdue</span>
+                  <div class="mini-stat-num">1 Volume</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">history</span></div>
+                <div>
+                  <span class="mini-stat-label">1 - 7 Days Late</span>
+                  <div class="mini-stat-num">1 Volume</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">hourglass_disabled</span></div>
+                <div>
+                  <span class="mini-stat-label">8 - 14 Days Late</span>
+                  <div class="mini-stat-num">0 Volumes</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">payments</span></div>
+                <div>
+                  <span class="mini-stat-label">Fine Assessed</span>
+                  <div class="mini-stat-num">$2.50 Total</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: AUTOMATED PATRON NOTICE DISPATCHER -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">mark_email_read</span> Section 2: Automated Patron Notice Dispatcher</h2>
+                <p class="dash-section-subtitle">One-click reminder broadcasts across registered email and SMS channels.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 24px; box-shadow: var(--shadow-xs); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Overdue Courtesy Notification Dispatcher</h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Automated email/SMS triggers inform patrons of return drop locations and online renewal options.</p>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button type="button" class="btn btn-outline" onclick="window.showToast('1st Courtesy Reminders sent to all overdue borrowers.', 'info');">
+                  Send 1st Notice
+                </button>
+                <button type="button" class="btn btn-gold" onclick="window.showToast('Formal Overdue Warning dispatched.', 'warning');">
+                  Send Urgent Notice
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: OVERDUE ITEMS MASTER AUDIT TABLE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">rule_folder</span> Section 3: Overdue Items Master Audit Table</h2>
+                <p class="dash-section-subtitle">Real-time ledger of delinquent volumes, patron contacts, and notice action buttons.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Loan ID</th>
+                      <th>Book Title</th>
+                      <th>Patron Name</th>
+                      <th>Scheduled Due</th>
+                      <th>Days Overdue</th>
+                      <th>Sample Fine</th>
+                      <th>Notice Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminOverdueTbody">
+                    <!-- Populated by admin-dashboard.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: LIBRARY AMNESTY & GRACE PERIOD POLICY -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">handshake</span> Section 4: Library Amnesty, Grace Period & Lost Volume Terms</h2>
+                <p class="dash-section-subtitle">Institutional policies governing fine forgiveness, book replacement, and academic clearance.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Policy Category</th>
+                      <th>Grace Period Terms</th>
+                      <th>Maximum Fee Cap</th>
+                      <th>Replacement Option</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Standard Reading Stack</strong></td>
+                      <td>2 Days Grace (No Fee if returned within 48h of due date)</td>
+                      <td>$10.00 Maximum Cap</td>
+                      <td>Provide identical ISBN copy in new condition</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Academic Reserves & Textbooks</strong></td>
+                      <td>1 Day Grace Period</td>
+                      <td>$15.00 Maximum Cap</td>
+                      <td>Publisher list price + $10 cataloging processing fee</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Historic Special Vault</strong></td>
+                      <td>Zero Grace Period (Immediate account freeze)</td>
+                      <td>$50.00 + Archival Assessment</td>
+                      <td>Mandatory curatorial review and insurance appraisal</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -528,10 +1570,149 @@
               <h1 class="dashboard-page-title">Library Curators & Staff Roster</h1>
               <p class="dashboard-page-subtitle">Department leadership, archival curators, and patron service personnel.</p>
             </div>
+            <button type="button" class="btn btn-gold" onclick="window.showToast('Staff addition form focused below.', 'info');">
+              <span class="material-symbols-outlined">person_add</span>
+              <span>Register New Staff Member</span>
+            </button>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;" id="adminStaffList">
-            <!-- Populated by admin-dashboard.js -->
+          <!-- SECTION 1: DEPARTMENT STAFFING OVERVIEW -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">diversity_3</span> Section 1: Department Staffing Overview & Duty Roles</h2>
+                <p class="dash-section-subtitle">Headcount and operational coverage across institutional divisions.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">badge</span></div>
+                <div>
+                  <span class="mini-stat-label">Total Librarians</span>
+                  <div class="mini-stat-num">4 Officers</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">shield_person</span></div>
+                <div>
+                  <span class="mini-stat-label">On Duty Today</span>
+                  <div class="mini-stat-num">3 Active</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">history_edu</span></div>
+                <div>
+                  <span class="mini-stat-label">Archival Curators</span>
+                  <div class="mini-stat-num">2 Specialists</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">support_agent</span></div>
+                <div>
+                  <span class="mini-stat-label">Desk Coverage</span>
+                  <div class="mini-stat-num">100% Filled</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: ADD / ASSIGN STAFF FORM -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">person_add_alt</span> Section 2: Add / Assign Staff Member Quick Form</h2>
+                <p class="dash-section-subtitle">Authorize librarians, catalogers, or student assistants with system access.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 24px; box-shadow: var(--shadow-xs);">
+              <form onsubmit="event.preventDefault(); window.showToast('Staff credentials authorized and added to directory.', 'success'); this.reset();">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" placeholder="e.g. Dr. Arthur Pendelton" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Institutional Role *</label>
+                    <input type="text" class="form-control" placeholder="e.g. Research Reference Specialist" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Staff Email *</label>
+                    <input type="email" class="form-control" placeholder="e.g. a.pendelton@athenaeum.lib" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Department Assignment</label>
+                    <select class="form-select">
+                      <option value="circ">Circulation & Front Desk</option>
+                      <option value="arch">Special Collections & Archives</option>
+                      <option value="cat">Metadata & Technical Cataloging</option>
+                    </select>
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end;">
+                  <button type="submit" class="btn btn-gold">Assign Staff Role</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- SECTION 3: STAFF ROSTER CARDS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">contacts</span> Section 3: Curatorial & Circulation Staff Roster Directory</h2>
+                <p class="dash-section-subtitle">Senior curators, catalogers, and circulation desk leadership.</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;" id="adminStaffList">
+              <!-- Populated by admin-dashboard.js -->
+            </div>
+          </div>
+
+          <!-- SECTION 4: SHIFT SCHEDULE & DESK COVERAGE MATRIX -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">calendar_month</span> Section 4: Weekly Shift Schedule & Desk Coverage Matrix</h2>
+                <p class="dash-section-subtitle">Operating desk assignments for weekday and weekend circulation desks.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Service Desk</th>
+                      <th>Morning Shift (8 AM - 1 PM)</th>
+                      <th>Afternoon Shift (1 PM - 6 PM)</th>
+                      <th>Evening Shift (6 PM - 9 PM)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Main Circulation Desk</strong></td>
+                      <td>Marcus Sterling</td>
+                      <td>Miriam Vance, MLIS</td>
+                      <td>Student Assistant On Duty</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Rare Manuscripts Vault</strong></td>
+                      <td>Alistair Finch, Ph.D.</td>
+                      <td>Alistair Finch, Ph.D.</td>
+                      <td>Dr. Julian Sterling</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Digital Archival Lab</strong></td>
+                      <td>Technical Support Specialist</td>
+                      <td>Marcus Sterling</td>
+                      <td>Automated Keycard Access</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -544,29 +1725,160 @@
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
-            <div class="dashboard-card">
-              <div class="dashboard-card-header"><h3 class="dashboard-card-title">CSV Catalog Export</h3></div>
-              <div class="dashboard-card-body">
-                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 20px;">
-                  Download complete catalog records (Title, Author, ISBN, Category, Total and Available Copies) formatted as comma-separated values.
-                </p>
-                <button type="button" class="btn btn-outline" onclick="exportBooksCsv()">
-                  <span class="material-symbols-outlined">download</span>
-                  Export Catalog CSV
-                </button>
+          <!-- SECTION 1: EXECUTIVE CIRCULATION SUMMARY -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">summarize</span> Section 1: Executive Circulation Summary & Key Indicators</h2>
+                <p class="dash-section-subtitle">High-level institutional statistics for board review and accreditation audits.</p>
+              </div>
+            </div>
+            <div class="dash-grid-4">
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon gold"><span class="material-symbols-outlined">assessment</span></div>
+                <div>
+                  <span class="mini-stat-label">Total Circulation</span>
+                  <div class="mini-stat-num">1,842 Loans</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon blue"><span class="material-symbols-outlined">volunteer_activism</span></div>
+                <div>
+                  <span class="mini-stat-label">Patron Satisfaction</span>
+                  <div class="mini-stat-num">98.2% Index</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon green"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+                <div>
+                  <span class="mini-stat-label">Acquisitions Budget</span>
+                  <div class="mini-stat-num">$42,500 / Yr</div>
+                </div>
+              </div>
+              <div class="mini-stat-card">
+                <div class="mini-stat-icon red"><span class="material-symbols-outlined">local_shipping</span></div>
+                <div>
+                  <span class="mini-stat-label">New Volumes</span>
+                  <div class="mini-stat-num">+140 Q3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: BIBLIOGRAPHIC DATA EXPORT SUITE -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">file_download</span> Section 2: Bibliographic Data Export Suite</h2>
+                <p class="dash-section-subtitle">Standardized machine-readable CSV and formatted print document generators.</p>
+              </div>
+            </div>
+
+            <div class="dash-grid-2">
+              <div class="dashboard-card">
+                <div class="dashboard-card-header"><h3 class="dashboard-card-title">CSV Catalog Export</h3></div>
+                <div class="dashboard-card-body">
+                  <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                    Download complete catalog records (Title, Author, ISBN, Category, Total and Available Copies) formatted as comma-separated values.
+                  </p>
+                  <button type="button" class="btn btn-outline" onclick="exportBooksCsv()">
+                    <span class="material-symbols-outlined">download</span>
+                    Export Catalog CSV
+                  </button>
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="dashboard-card-header"><h3 class="dashboard-card-title">Printable Executive Summary</h3></div>
+                <div class="dashboard-card-body">
+                  <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+                    Generate a clean, print-ready institutional report of circulation metrics, member statistics, and inventory counts.
+                  </p>
+                  <button type="button" class="btn btn-gold" onclick="window.print()">
+                    <span class="material-symbols-outlined">print</span>
+                    Print Summary Report
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: ACQUISITION & WEEDING ANALYTICAL REPORT -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">analytics</span> Section 3: Acquisition & Weeding Analytical Report</h2>
+                <p class="dash-section-subtitle">Collection development velocity and stack renewal metrics.</p>
               </div>
             </div>
 
             <div class="dashboard-card">
-              <div class="dashboard-card-header"><h3 class="dashboard-card-title">Printable Executive Summary</h3></div>
-              <div class="dashboard-card-body">
-                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 20px;">
-                  Generate a clean, print-ready institutional report of circulation metrics, member statistics, and inventory counts.
-                </p>
-                <button type="button" class="btn btn-gold" onclick="window.print()">
-                  <span class="material-symbols-outlined">print</span>
-                  Print Summary Report
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Subject Classification</th>
+                      <th>Current Titles</th>
+                      <th>Acquisitions (This Year)</th>
+                      <th>Weeding & De-accessions</th>
+                      <th>Net Growth</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Fiction & World Literature</strong></td>
+                      <td>12 Titles</td>
+                      <td>+4 Volumes</td>
+                      <td>-1 Damaged</td>
+                      <td><span class="status-pill status-available">+25.0%</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Science, Computing & AI</strong></td>
+                      <td>8 Titles</td>
+                      <td>+3 Volumes</td>
+                      <td>-0 Withdrawn</td>
+                      <td><span class="status-pill status-available">+37.5%</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>History & Historical Cartography</strong></td>
+                      <td>5 Titles</td>
+                      <td>+2 Volumes</td>
+                      <td>-0 Withdrawn</td>
+                      <td><span class="status-pill status-available">+40.0%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: PRINTABLE OFFICIAL AUDIT STATEMENT -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">verified</span> Section 4: Printable Official Institutional Audit Statement</h2>
+                <p class="dash-section-subtitle">Certified audit record attested by Chief Librarian Dr. Julian Sterling.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 28px; box-shadow: var(--shadow-xs);">
+              <div style="border-bottom: 1px solid var(--color-parchment-200); padding-bottom: 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <h3 style="margin: 0; color: var(--color-navy-900);">Athenaeum Central Library Certification of Holdings</h3>
+                  <div style="font-size: 0.85rem; color: var(--color-text-muted);">Accreditation Year: 2026 • Reference Ref: ATH-AUD-2026-Q4</div>
+                </div>
+                <span class="status-pill status-available">Certified Active</span>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
+                This document certifies that the physical catalog and circulation logs maintained by the Athenaeum Central Library comply with all institutional charter standards. Total catalog volumes, loan checkouts, and hold reserves have undergone reconciliation with zero un-accounted volumes.
+              </p>
+              <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: gap;">
+                <div style="font-size: 0.85rem; color: var(--color-navy-900);">
+                  <strong>Dr. Julian Sterling</strong><br>
+                  <span style="color: var(--color-text-muted);">Chief Librarian & Preservation Officer</span>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline" onclick="window.print()">
+                  <span class="material-symbols-outlined">print</span> Print Official Audit Certificate
                 </button>
               </div>
             </div>
@@ -582,32 +1894,142 @@
             </div>
           </div>
 
-          <div style="max-width: 680px; background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 36px; box-shadow: var(--shadow-xs);">
-            <form onsubmit="event.preventDefault(); window.showToast('Circulation policy parameters updated successfully.', 'success');">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="form-group">
-                  <label class="form-label">Standard Loan Duration (Days)</label>
-                  <input type="number" class="form-control" value="14" min="1" max="60">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Max Books Per Member</label>
-                  <input type="number" class="form-control" value="4" min="1" max="20">
-                </div>
+          <!-- SECTION 1: CORE CIRCULATION PARAMETERS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">tune</span> Section 1: Core Circulation Parameters & Loan Rules</h2>
+                <p class="dash-section-subtitle">Standard checkout periods, quota ceilings, and renewal parameters.</p>
               </div>
+            </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="form-group">
-                  <label class="form-label">Permitted Online Renewals</label>
-                  <input type="number" class="form-control" value="1" min="0" max="5">
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 32px; box-shadow: var(--shadow-xs);">
+              <form onsubmit="event.preventDefault(); window.showToast('Circulation policy parameters updated successfully.', 'success');">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                  <div class="form-group">
+                    <label class="form-label">Standard Loan Duration (Days)</label>
+                    <input type="number" class="form-control" value="14" min="1" max="60">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Max Books Per Member</label>
+                    <input type="number" class="form-control" value="4" min="1" max="20">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Permitted Online Renewals</label>
+                    <input type="number" class="form-control" value="1" min="0" max="5">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Reservation Hold Window (Hours)</label>
+                    <input type="number" class="form-control" value="48" min="12" max="120">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label class="form-label">Sample Overdue Fine Rate ($/Day)</label>
-                  <input type="number" class="form-control" value="0.50" step="0.10">
-                </div>
+                <button type="submit" class="btn btn-gold">Save Core Parameters</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- SECTION 2: LATE ASSESSMENT & AMNESTY CONFIGURATION -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">payments</span> Section 2: Late Assessment & Amnesty Configuration</h2>
+                <p class="dash-section-subtitle">Overdue assessment rate schedules and grace period waivers.</p>
               </div>
+            </div>
 
-              <button type="submit" class="btn btn-gold">Save Policy Parameters</button>
-            </form>
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 32px; box-shadow: var(--shadow-xs);">
+              <form onsubmit="event.preventDefault(); window.showToast('Fine assessment structure updated.', 'success');">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                  <div class="form-group">
+                    <label class="form-label">Daily Overdue Rate ($/Day)</label>
+                    <input type="number" class="form-control" value="0.50" step="0.10">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Grace Period (Days)</label>
+                    <input type="number" class="form-control" value="2" min="0" max="7">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Maximum Fine Cap ($)</label>
+                    <input type="number" class="form-control" value="15.00" step="1.00">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Lost Volume Processing Fee ($)</label>
+                    <input type="number" class="form-control" value="10.00" step="1.00">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-gold">Save Fine Structures</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- SECTION 3: LIBRARY OPERATING HOURS & HOLIDAY CLOSURES -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">nest_clock_farsight_analog</span> Section 3: Library Operating Hours & Holiday Closures</h2>
+                <p class="dash-section-subtitle">Front circulation desk and physical reading hall schedules.</p>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Day / Period</th>
+                      <th>Main Stacks Hours</th>
+                      <th>Silent Reading Rooms</th>
+                      <th>Digital Lab Access</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Monday &ndash; Friday</strong></td>
+                      <td>8:00 AM &ndash; 9:00 PM</td>
+                      <td>24/7 Digital Pass</td>
+                      <td>8:00 AM &ndash; 8:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Saturday</strong></td>
+                      <td>9:00 AM &ndash; 7:00 PM</td>
+                      <td>24/7 Digital Pass</td>
+                      <td>9:00 AM &ndash; 6:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sunday</strong></td>
+                      <td>10:00 AM &ndash; 6:00 PM</td>
+                      <td>24/7 Digital Pass</td>
+                      <td>10:00 AM &ndash; 5:00 PM</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: SYSTEM MAINTENANCE & BACKUP CONTROLS -->
+          <div class="dash-section">
+            <div class="dash-section-header">
+              <div>
+                <h2 class="dash-section-title"><span class="material-symbols-outlined">settings_backup_restore</span> Section 4: System Maintenance & Backup Controls</h2>
+                <p class="dash-section-subtitle">Database snapshots, storage clearance, and demo state reset tools.</p>
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 28px; box-shadow: var(--shadow-xs); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Athenaeum Demo Database Operations</h3>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Backup current circulation state to JSON or reset all volumes and patrons to pristine factory defaults.</p>
+              </div>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-outline" onclick="window.showToast('Database snapshot archived to browser storage.', 'success');">
+                  <span class="material-symbols-outlined">backup</span> Backup State
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="window.resetLibraryDemo();" style="color: var(--color-danger);">
+                  <span class="material-symbols-outlined">restart_alt</span> Reset Demo Database
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 

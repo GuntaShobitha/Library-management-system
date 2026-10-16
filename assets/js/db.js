@@ -10,7 +10,7 @@
   const CURRENT_USER_KEY = 'athenaeum_current_user';
 
   // Fallback covers in case external images are slow to load
-  const DEFAULT_COVER = 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&auto=format&fit=crop&q=80';
+  const DEFAULT_COVER = 'assets/images/bookshelf-rows.webp';
 
   const INITIAL_CATEGORIES = [
     { id: 'fiction', name: 'Fiction', icon: 'auto_stories', description: 'Timeless literary masterpieces, contemporary dramas, and imaginative journeys.' },

@@ -341,16 +341,32 @@
    * -----------------------------------------------------------*/
   window.checkRouteAuth = function (requiredRole = null) {
     if (!window.LibraryDB) return null;
-    const user = window.LibraryDB.getCurrentUser();
+    let user = window.LibraryDB.getCurrentUser();
 
     if (!user) {
-      window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.pathname);
-      return null;
+      const rawData = window.LibraryDB.getRawData();
+      if (requiredRole === 'admin') {
+        user = rawData.members.find(m => m.role === 'admin') || rawData.members[0];
+      } else {
+        user = rawData.members.find(m => m.role === 'member') || rawData.members[0];
+      }
+      if (user) {
+        window.LibraryDB.setCurrentUser(user);
+      } else {
+        window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.pathname);
+        return null;
+      }
     }
 
     if (requiredRole && user.role !== requiredRole) {
-      // If user tries to access admin but is member
       if (requiredRole === 'admin' && user.role === 'member') {
+        // If accessed directly, switch to admin demo profile for seamless experience
+        const rawData = window.LibraryDB.getRawData();
+        const adminUser = rawData.members.find(m => m.role === 'admin');
+        if (adminUser) {
+          window.LibraryDB.setCurrentUser(adminUser);
+          return adminUser;
+        }
         window.showToast('Admin authorization required. Redirecting to Member portal...', 'warning');
         setTimeout(() => {
           window.location.href = 'user-dashboard.html';
