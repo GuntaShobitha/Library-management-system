@@ -43,16 +43,30 @@
     if (!loginRoleTabs.length) return;
     loginRoleTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        loginRoleTabs.forEach(t => t.classList.remove('active'));
+        loginRoleTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         activeLoginRole = tab.getAttribute('data-role');
 
         const roleTitle = document.getElementById('loginRoleTitle');
+        const submitBtnSpan = document.querySelector('#loginForm button[type="submit"] span');
         if (roleTitle) {
-          roleTitle.textContent = activeLoginRole === 'admin' ? 'Administrator Portal' : 'Member Sign In';
+          roleTitle.textContent = activeLoginRole === 'admin' ? 'Administrator Login' : 'User Login';
+        }
+        if (submitBtnSpan) {
+          submitBtnSpan.textContent = activeLoginRole === 'admin' ? 'Login as Administrator' : 'Login as User';
         }
       });
     });
+
+    const urlRole = new URLSearchParams(window.location.search).get('role');
+    if (urlRole === 'admin') {
+      const adminTab = document.querySelector('.js-role-tab[data-role="admin"]');
+      if (adminTab) adminTab.click();
+    }
   }
 
   /* -------------------------------------------------------------
@@ -136,12 +150,12 @@
       if (hasError) return;
 
       const submitBtn = loginForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Sign In';
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : '<span>Login to Dashboard</span>';
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
           <span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">sync</span>
-          Authenticating...
+          Logging in...
         `;
       }
 
@@ -162,21 +176,15 @@
         } else {
           if (window.showToast) window.showToast(`Welcome back, ${result.user.name}!`, 'success');
           
-          // Check query redirect
-          const params = new URLSearchParams(window.location.search);
-          const redirect = params.get('redirect');
-
           setTimeout(() => {
-            if (redirect && !redirect.includes('login') && !redirect.includes('register')) {
-              window.location.href = redirect;
-            } else if (result.user.role === 'admin') {
+            if (activeLoginRole === 'admin') {
               window.location.href = 'admin-dashboard.html';
             } else {
               window.location.href = 'user-dashboard.html';
             }
-          }, 800);
+          }, 400);
         }
-      }, 500);
+      }, 300);
     });
   }
 
@@ -341,38 +349,20 @@
    * -----------------------------------------------------------*/
   window.checkRouteAuth = function (requiredRole = null) {
     if (!window.LibraryDB) return null;
-    let user = window.LibraryDB.getCurrentUser();
+    const user = window.LibraryDB.getCurrentUser();
 
     if (!user) {
-      const rawData = window.LibraryDB.getRawData();
-      if (requiredRole === 'admin') {
-        user = rawData.members.find(m => m.role === 'admin') || rawData.members[0];
-      } else {
-        user = rawData.members.find(m => m.role === 'member') || rawData.members[0];
-      }
-      if (user) {
-        window.LibraryDB.setCurrentUser(user);
-      } else {
-        window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.pathname);
-        return null;
-      }
+      window.location.href = 'login.html';
+      return null;
     }
 
     if (requiredRole && user.role !== requiredRole) {
-      if (requiredRole === 'admin' && user.role === 'member') {
-        // If accessed directly, switch to admin demo profile for seamless experience
-        const rawData = window.LibraryDB.getRawData();
-        const adminUser = rawData.members.find(m => m.role === 'admin');
-        if (adminUser) {
-          window.LibraryDB.setCurrentUser(adminUser);
-          return adminUser;
-        }
-        window.showToast('Admin authorization required. Redirecting to Member portal...', 'warning');
-        setTimeout(() => {
-          window.location.href = 'user-dashboard.html';
-        }, 1200);
-        return null;
+      if (user.role === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        window.location.href = 'user-dashboard.html';
       }
+      return null;
     }
 
     return user;

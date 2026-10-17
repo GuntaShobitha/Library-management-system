@@ -128,7 +128,7 @@
     if (currentUser) {
       const isMember = currentUser.role === 'member';
       const dashboardUrl = isMember ? 'user-dashboard.html' : 'admin-dashboard.html';
-      const dashboardLabel = isMember ? 'My Portal' : 'Admin Console';
+      const dashboardLabel = isMember ? 'Dashboard' : 'Admin Console';
 
       navAuthContainer.innerHTML = `
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -144,10 +144,13 @@
 
       const logoutBtn = navAuthContainer.querySelector('.js-nav-logout');
       if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
+        logoutBtn.addEventListener('click', (e) => {
+          e.preventDefault();
           window.LibraryDB.logout();
           if (window.showToast) window.showToast('Signed out successfully.', 'info');
-          setTimeout(() => window.location.reload(), 400);
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 300);
         });
       }
 
@@ -177,22 +180,25 @@
 
         const mobileLogoutBtn = mobileAuthContainer.querySelector('.js-mobile-logout');
         if (mobileLogoutBtn) {
-          mobileLogoutBtn.addEventListener('click', () => {
+          mobileLogoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             window.LibraryDB.logout();
-            window.location.reload();
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 300);
           });
         }
       }
     } else {
       navAuthContainer.innerHTML = `
-        <a href="login.html" class="btn btn-sm btn-outline">Sign In</a>
-        
+        <a href="login.html" class="btn btn-sm btn-outline">Login</a>
+        <a href="register.html" class="btn btn-sm btn-gold">Join Library</a>
       `;
 
       if (mobileAuthContainer) {
         mobileAuthContainer.innerHTML = `
           <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 10px;">
-            <a href="login.html" class="btn btn-sm btn-outline" style="color:#fff; border-color: rgba(255,255,255,0.3); justify-content: center;">Sign In</a>
+            <a href="login.html" class="btn btn-sm btn-outline" style="color:#fff; border-color: rgba(255,255,255,0.3); justify-content: center;">Login</a>
             <a href="register.html" class="btn btn-sm btn-gold" style="justify-content: center;">Join Library</a>
           </div>
         `;

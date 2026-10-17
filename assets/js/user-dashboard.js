@@ -13,8 +13,12 @@
     if (window.checkRouteAuth) {
       currentUser = window.checkRouteAuth('member');
       if (!currentUser) return;
-    } else {
+    } else if (window.LibraryDB) {
       currentUser = window.LibraryDB.getCurrentUser();
+      if (!currentUser) {
+        window.location.href = 'login.html';
+        return;
+      }
     }
 
     renderUserProfileHeader();
@@ -593,13 +597,11 @@
     logoutBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (confirm('Are you sure you want to end your library session?')) {
-          window.LibraryDB.logout();
-          window.showToast('Logged out successfully.', 'info');
-          setTimeout(() => {
-            window.location.href = 'login.html';
-          }, 600);
-        }
+        window.LibraryDB.logout();
+        if (window.showToast) window.showToast('Logged out successfully.', 'info');
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 300);
       });
     });
   }

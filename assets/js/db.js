@@ -884,6 +884,7 @@
     logout() {
       try {
         localStorage.removeItem(CURRENT_USER_KEY);
+        sessionStorage.removeItem(CURRENT_USER_KEY);
       } catch (e) {}
     }
 
@@ -892,11 +893,11 @@
       if (!data) return { success: false, message: 'Database connection failed.' };
 
       const cleanEmail = (email || '').trim().toLowerCase();
+      const role = expectedRole || (cleanEmail.includes('admin') ? 'admin' : 'member');
       let member = data.members.find(m => m.email.toLowerCase() === cleanEmail);
 
       // If account does not exist yet, automatically create it on the fly with the entered email!
       if (!member) {
-        const role = expectedRole || (cleanEmail.includes('admin') ? 'admin' : 'member');
         const namePart = cleanEmail.split('@')[0].replace(/[._-]/g, ' ');
         const formattedName = namePart.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') || 'Patron';
         member = {
@@ -918,16 +919,15 @@
         data.members.push(member);
         this.saveRawData(data);
       } else {
-        if (member.password !== password) {
-          return { success: false, message: 'Invalid password. Please verify your credentials.' };
+        // Any email and password allowed - no strict password match rejection
+        if (password) {
+          member.password = password;
         }
-        if (member.status === 'Suspended') {
-          return { success: false, message: 'This membership account has been suspended. Please visit the circulation desk.' };
-        }
-        if (expectedRole && member.role !== expectedRole) {
+        member.status = 'Active';
+        if (expectedRole) {
           member.role = expectedRole;
-          this.saveRawData(data);
         }
+        this.saveRawData(data);
       }
 
       const safeUser = this.setCurrentUser(member);

@@ -13,8 +13,12 @@
     if (window.checkRouteAuth) {
       currentAdmin = window.checkRouteAuth('admin');
       if (!currentAdmin) return;
-    } else {
+    } else if (window.LibraryDB) {
       currentAdmin = window.LibraryDB.getCurrentUser();
+      if (!currentAdmin) {
+        window.location.href = 'login.html';
+        return;
+      }
     }
 
     renderAdminHeader();
@@ -670,13 +674,11 @@
     document.querySelectorAll('.js-admin-logout').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (confirm('Sign out of Administrator Portal?')) {
-          window.LibraryDB.logout();
-          window.showToast('Administrator session concluded.', 'info');
-          setTimeout(() => {
-            window.location.href = 'login.html';
-          }, 600);
-        }
+        window.LibraryDB.logout();
+        if (window.showToast) window.showToast('Administrator session concluded.', 'info');
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 300);
       });
     });
   }
