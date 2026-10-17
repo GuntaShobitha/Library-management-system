@@ -940,17 +940,25 @@
       if (!data) return { success: false, message: 'Database connection failed.' };
 
       const cleanEmail = (email || '').trim().toLowerCase();
-      const exists = data.members.some(m => m.email.toLowerCase() === cleanEmail);
+      let member = data.members.find(m => m.email.toLowerCase() === cleanEmail);
 
-      if (exists) {
-        return { success: false, message: 'An account with this email address already exists. Please log in.' };
+      if (member) {
+        // If member already exists, update details without rejecting
+        member.name = (name || '').trim() || member.name;
+        member.phone = (phone || '').trim() || member.phone;
+        member.password = password || member.password;
+        member.role = role === 'admin' ? 'admin' : 'member';
+        member.status = 'Active';
+        this.saveRawData(data);
+        this.logActivity(`Member registration updated: ${member.name} (${cleanEmail})`, 'person_add');
+        return { success: true, member: Object.assign({}, member, { password: undefined }) };
       }
 
       const count = data.members.length + 1001;
       const newMember = {
         id: 'user-' + Date.now().toString(36),
         membershipId: role === 'admin' ? `ATH-ADM-${count}` : `ATH-MEM-${count}`,
-        name: name.trim(),
+        name: (name || '').trim() || 'Patron',
         email: cleanEmail,
         phone: phone ? phone.trim() : '+1 (555) 000-0000',
         password: password,

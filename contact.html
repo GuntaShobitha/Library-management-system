@@ -99,16 +99,16 @@
         </div>
 
         <div style="background: var(--color-white); border-radius: var(--radius-xl); border: 1px solid var(--color-parchment-300); padding: 40px 36px; box-shadow: var(--shadow-sm);">
-          <form id="contactInquiryForm">
+          <form id="contactInquiryForm" novalidate>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
               <div class="form-group">
                 <label class="form-label" for="inqName">Your Full Name *</label>
-                <input type="text" id="inqName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+                <input type="text" id="inqName" class="form-control" placeholder="e.g. Eleanor Vance" >
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="inqEmail">Email Address *</label>
-                <input type="email" id="inqEmail" class="form-control" placeholder="name@domain.com" required>
+                <input type="email" id="inqEmail" class="form-control" placeholder="name@domain.com" >
               </div>
             </div>
 
@@ -133,12 +133,12 @@
 
             <div class="form-group">
               <label class="form-label" for="inqSubject">Subject Summary *</label>
-              <input type="text" id="inqSubject" class="form-control" placeholder="Brief subject line" required>
+              <input type="text" id="inqSubject" class="form-control" placeholder="Brief subject line" >
             </div>
 
             <div class="form-group">
               <label class="form-label" for="inqMessage">Detailed Message / Citation Request *</label>
-              <textarea id="inqMessage" class="form-control" rows="5" placeholder="Please elaborate your research request or circulation inquiry..." required></textarea>
+              <textarea id="inqMessage" class="form-control" rows="5" placeholder="Please elaborate your research request or circulation inquiry..." ></textarea>
             </div>
 
             <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; justify-content: center;">
@@ -205,7 +205,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <!-- <div class="service-card">
             <div class="service-icon-wrap" style="background: #ffedd5; color: #ea580c;">
               <span class="material-symbols-outlined">swap_horizontal_circle</span>
             </div>
@@ -218,7 +218,7 @@
               <div><strong>Direct Email:</strong> ill@athenaeum.lib</div>
               <div><strong>Desk Phone:</strong> +1 (555) 019-9021 &bull; Ext. 402</div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -349,6 +349,33 @@
       </div>
     </section>
 
+     <section class="map-section">
+
+    <!-- Address bar -->
+    <div class="map-address">
+        MMR Complex, Periyakollappatty, <br />
+Chinna Thirupathi, <br />
+Salem, Tamil Nadu 636008
+    </div>
+
+    <!-- Real Google Map -->
+    <div class="map-container">
+
+        <iframe
+    src="https://www.google.com/maps?q=MMR%20Complex%2C%20Chinna%20Thirupathi%2C%20near%20Chinna%20Muniyappan%20Kovil%2C%20Salem%2C%20Tamil%20Nadu%20636008&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+
+    </div>
+
+</section>
+
     <!-- 6. FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
     <section class="section-py section-bg-parchment" id="faq">
       <div class="container" style="max-width: 860px;">
@@ -429,41 +456,86 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
+      <!-- Col 1: Brand & Identity -->
       <div class="footer-brand">
         <img src="assets/images/logo.svg" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
-        <p>A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.</p>
+        <p>
+          A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.
+        </p>
+        <div class="footer-socials">
+          <a href="404.html" class="footer-social-link" aria-label="Library Archive Twitter"><span class="material-symbols-outlined" style="font-size:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+</svg></span></a>
+          <a href="404.html" class="footer-social-link" aria-label="Library Catalog RSS"><span class="material-symbols-outlined" style="font-size:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></span></a>
+          <a href="404.html" class="footer-social-link" aria-label="Contact Desk"><span class="material-symbols-outlined" style="font-size:20px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+</svg></span></a>
+        </div>
       </div>
+
+      <!-- Col 2: Navigation Links -->
       <div>
         <h4 class="footer-heading">Quick Catalog</h4>
         <ul class="footer-links">
-          <li><a href="books.html">Complete Catalog</a></li>
-          <li><a href="categories.html">Browse Categories</a></li>
-          <li><a href="about.html">About Athenaeum</a></li>
-          <li><a href="services.html">Services & Facilities</a></li>
+          <li><a href="index.html"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span> Home</a></li>
+          <li><a href="about.html"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span> About</a></li>
+          <li><a href="services.html"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span> Services</a></li>
+          <li><a href="books.html"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span> Blog</a></li>
+          <li><a href="categories.html"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span> Categories</a></li>
+                    <li><a href="contact.html"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span> Contact</a></li>
+
         </ul>
       </div>
+
+      <!-- Col 3: Hours & Operations -->
       <div>
         <h4 class="footer-heading">Circulation Hours</h4>
         <ul class="footer-hours-list">
-          <li class="footer-hours-item"><span>Monday &ndash; Friday</span> <strong>8:00 AM &ndash; 9:00 PM</strong></li>
-          <li class="footer-hours-item"><span>Saturday</span> <strong>9:00 AM &ndash; 7:00 PM</strong></li>
-          <li class="footer-hours-item"><span>Sunday</span> <strong>10:00 AM &ndash; 6:00 PM</strong></li>
+          <li class="footer-hours-item">
+            <span>Monday &ndash; Friday</span>
+            <strong>8:00 AM &ndash; 9:00 PM</strong>
+          </li>
+          <li class="footer-hours-item">
+            <span>Saturday</span>
+            <strong>9:00 AM &ndash; 7:00 PM</strong>
+          </li>
+          <li class="footer-hours-item">
+            <span>Sunday</span>
+            <strong>10:00 AM &ndash; 6:00 PM</strong>
+          </li>
+          <li class="footer-hours-item">
+            <span>Reading Halls</span>
+            <strong style="color:var(--color-gold-400);">24/7 Digital Pass</strong>
+          </li>
         </ul>
       </div>
+
+      
+
+      <!-- Col 4: Location & Demo Support -->
       <div>
-        <h4 class="footer-heading">Librarian Desk</h4>
-        <div style="font-size:0.9rem; line-height:1.7; color:rgba(255,255,255,0.7); margin-bottom:16px;">
-          <p>450 Academic Way, Scholastic Row</p>
-          <p>desk@athenaeum.lib</p>
+        <h4 class="footer-heading">Library Desk</h4>
+        <div style="font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.7); margin-bottom: 16px;">
+          <p><span class="material-symbols-outlined" style="font-size:16px; vertical-align:text-bottom;">location_on</span> MMR Complex, Chinna Thirupathi Kovil Street, Salem, Tamil Nadu 636008, India</p>
+          <p><span class="material-symbols-outlined" style="font-size:16px; vertical-align:text-bottom;">call</span> +91 70107 92745</p>
+          <p><span class="material-symbols-outlined" style="font-size:16px; vertical-align:text-bottom;">mail</span> info@thestackly.com</p>
         </div>
-        <button type="button" class="btn btn-sm btn-secondary" onclick="window.resetLibraryDemo()" style="width:100%; justify-content:center;">Reset Demo Data</button>
+        <!-- <button type="button" class="btn btn-sm btn-secondary" onclick="window.resetLibraryDemo()" style="width: 100%; justify-content: center; font-size: 0.8rem;">
+          <span class="material-symbols-outlined" style="font-size:16px;">restart_alt</span>
+          Reset Demo Database
+        </button> -->
       </div>
     </div>
+
+    <!-- Bottom Bar -->
     <div class="container footer-bottom">
       <div>&copy; 2026 Athenaeum Central Library. All rights reserved.</div>
-      <div style="display:flex; gap:20px;">
-        <a href="about.html">Institutional Charter</a>
-        <a href="contact.html">Contact Us</a>
+      <div style="display: flex; gap: 20px;">
+        <a href="404.html">Institutional Charter</a>
+        <a href="404.html">Circulation Policies</a>
+        <a href="404.html">Research Inquiries</a>
       </div>
     </div>
   </footer>
@@ -483,40 +555,145 @@
         });
       });
 
-      // Contact Inquiry Form Submission
+      // Contact Inquiry Form Submission with Field-Level Errors
       const form = document.getElementById('contactInquiryForm');
       if (form) {
+        const inqName = document.getElementById('inqName');
+        const inqEmail = document.getElementById('inqEmail');
+        const inqCategory = document.getElementById('inqCategory');
+        const inqSubject = document.getElementById('inqSubject');
+        const inqMessage = document.getElementById('inqMessage');
+
+        function showFieldError(inputEl, msg) {
+          if (!inputEl) return;
+          const parent = inputEl.closest('.form-group');
+          if (parent) {
+            parent.classList.add('has-error');
+            let errSpan = parent.querySelector('.form-error');
+            if (!errSpan) {
+              errSpan = document.createElement('div');
+              errSpan.className = 'form-error';
+              parent.appendChild(errSpan);
+            }
+            errSpan.textContent = msg;
+            errSpan.style.display = 'block';
+            errSpan.style.color = '#c53030';
+            errSpan.style.fontSize = '0.82rem';
+            errSpan.style.marginTop = '6px';
+            errSpan.style.fontWeight = '500';
+          }
+        }
+
+        function clearFormErrors() {
+          form.querySelectorAll('.has-error').forEach(g => {
+            g.classList.remove('has-error');
+            const err = g.querySelector('.form-error');
+            if (err) {
+              err.style.display = 'none';
+              err.textContent = '';
+            }
+          });
+        }
+
+        // Live error clearing as user types
+        [inqName, inqEmail, inqSubject, inqMessage].forEach(input => {
+          if (!input) return;
+          input.addEventListener('input', () => {
+            const parent = input.closest('.form-group');
+            if (parent) {
+              parent.classList.remove('has-error');
+              const err = parent.querySelector('.form-error');
+              if (err) {
+                err.style.display = 'none';
+                err.textContent = '';
+              }
+            }
+          });
+        });
+
         // Pre-fill subject if URL parameter present
         const params = new URLSearchParams(window.location.search);
-        if (params.has('subject')) {
-          document.getElementById('inqSubject').value = params.get('subject');
+        if (params.has('subject') && inqSubject) {
+          inqSubject.value = params.get('subject');
         }
 
         form.addEventListener('submit', function (e) {
           e.preventDefault();
-          const name = document.getElementById('inqName').value.trim();
-          const email = document.getElementById('inqEmail').value.trim();
-          const category = document.getElementById('inqCategory').value;
-          const subject = document.getElementById('inqSubject').value.trim();
-          const message = document.getElementById('inqMessage').value.trim();
+          clearFormErrors();
 
-          if (!name || !email || !subject || !message) {
-            window.showToast('Please fill in all mandatory fields.', 'warning');
+          const name = inqName ? inqName.value.trim() : '';
+          const email = inqEmail ? inqEmail.value.trim() : '';
+          const category = inqCategory ? inqCategory.value : 'General Circulation';
+          const subject = inqSubject ? inqSubject.value.trim() : '';
+          const message = inqMessage ? inqMessage.value.trim() : '';
+
+          let hasError = false;
+          let firstErrorInput = null;
+
+          if (!name || name.length < 2) {
+            showFieldError(inqName, 'Please enter your full name.');
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = inqName;
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email) {
+            showFieldError(inqEmail, 'Please enter your email address.');
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = inqEmail;
+          } else if (!emailRegex.test(email)) {
+            showFieldError(inqEmail, 'Please enter a valid email address.');
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = inqEmail;
+          }
+
+          if (!subject) {
+            showFieldError(inqSubject, 'Please enter a subject summary.');
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = inqSubject;
+          }
+
+          if (!message || message.length < 5) {
+            showFieldError(inqMessage, 'Please elaborate your message (minimum 5 characters).');
+            hasError = true;
+            if (!firstErrorInput) firstErrorInput = inqMessage;
+          }
+
+          if (hasError) {
+            if (firstErrorInput) firstErrorInput.focus();
             return;
           }
 
-          if (window.LibraryDB) {
-            const res = window.LibraryDB.addInquiry({
-              name, email, category, subject, message
-            });
-
-            if (res.success) {
-              window.showToast('Inquiry transmitted! Receipt ID #' + res.inquiry.id + '. A librarian will reply shortly.', 'success', 5000);
-              form.reset();
-            } else {
-              window.showToast('Failed to save inquiry.', 'error');
-            }
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+              <span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">sync</span>
+              <span>Transmitting Inquiry...</span>
+            `;
           }
+
+          setTimeout(() => {
+            if (window.LibraryDB) {
+              const res = window.LibraryDB.addInquiry({
+                name, email, category, subject, message
+              });
+
+              if (res.success) {
+                if (window.showToast) window.showToast('Inquiry transmitted! Receipt ID #' + res.inquiry.id + '. A librarian will reply shortly.', 'success', 5000);
+                form.reset();
+                clearFormErrors();
+              } else {
+                if (window.showToast) window.showToast('Failed to save inquiry.', 'error');
+              }
+            }
+
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnHtml;
+            }
+          }, 400);
         });
       }
     });

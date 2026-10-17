@@ -206,6 +206,31 @@
       });
     }
 
+    // Clear errors on input
+    [regName, regEmail, regPhone, regPassword, regConfirmPassword].forEach(input => {
+      if (!input) return;
+      input.addEventListener('input', () => {
+        const parent = input.closest('.form-group');
+        if (parent) {
+          parent.classList.remove('has-error');
+          const err = parent.querySelector('.form-error');
+          if (err) err.textContent = '';
+        }
+      });
+    });
+
+    const termsAcceptedCheckbox = document.getElementById('termsAcceptCheckbox');
+    if (termsAcceptedCheckbox) {
+      termsAcceptedCheckbox.addEventListener('change', () => {
+        const parent = termsAcceptedCheckbox.closest('.form-group');
+        if (parent) {
+          parent.classList.remove('has-error');
+          const err = parent.querySelector('.form-error');
+          if (err) err.textContent = '';
+        }
+      });
+    }
+
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
       clearFormErrors(registerForm);
@@ -225,50 +250,57 @@
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email || !emailRegex.test(email)) {
+      if (!email) {
+        showFieldError(regEmail, 'Email address is required.');
+        hasError = true;
+      } else if (!emailRegex.test(email)) {
         showFieldError(regEmail, 'Please provide a valid email address.');
         hasError = true;
       }
 
-      if (!password || password.length < 6) {
+      if (!phone || phone.length < 7) {
+        showFieldError(regPhone, 'Please provide a valid phone number.');
+        hasError = true;
+      }
+
+      if (!password) {
+        showFieldError(regPassword, 'Password is required.');
+        hasError = true;
+      } else if (password.length < 6) {
         showFieldError(regPassword, 'Password must be at least 6 characters long.');
         hasError = true;
       }
 
-      if (password !== confirmPassword) {
+      if (!confirmPassword) {
+        showFieldError(regConfirmPassword, 'Please confirm your password.');
+        hasError = true;
+      } else if (password !== confirmPassword) {
         showFieldError(regConfirmPassword, 'Passwords do not match. Please re-type.');
         hasError = true;
       }
 
       if (termsAccepted && !termsAccepted.checked) {
-        if (window.showToast) window.showToast('Please agree to library terms and borrowing regulations.', 'warning');
+        showFieldError(termsAccepted, 'Please agree to library terms and regulations.');
         hasError = true;
       }
 
       if (hasError) return;
 
       const submitBtn = registerForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `Creating Membership...`;
+      const originalText = submitBtn ? submitBtn.innerHTML : '<span>Register Membership Card</span>';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `Creating Membership...`;
+      }
 
       setTimeout(() => {
-        const result = window.LibraryDB.register(name, email, phone, password, 'member');
+        window.LibraryDB.register(name, email, phone, password, 'member');
 
-        if (!result.success) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-          if (window.showToast) window.showToast(result.message, 'error');
-          showFieldError(regEmail, result.message);
-        } else {
-          if (window.showToast) window.showToast('Membership created successfully! Logging you in...', 'success');
-          // Automatically set user session
-          window.LibraryDB.setCurrentUser(result.member);
-          setTimeout(() => {
-            window.location.href = 'user-dashboard.html';
-          }, 1000);
-        }
-      }, 600);
+        if (window.showToast) window.showToast('Registration successful! Redirecting to login page...', 'success');
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 800);
+      }, 400);
     });
   }
 
@@ -334,12 +366,23 @@
         parent.appendChild(errSpan);
       }
       errSpan.textContent = msg;
+      errSpan.style.display = 'block';
+      errSpan.style.color = '#c53030';
+      errSpan.style.fontSize = '0.82rem';
+      errSpan.style.marginTop = '6px';
     }
   }
 
   function clearFormErrors(formEl) {
     if (!formEl) return;
-    formEl.querySelectorAll('.has-error').forEach(g => g.classList.remove('has-error'));
+    formEl.querySelectorAll('.has-error').forEach(g => {
+      g.classList.remove('has-error');
+      const err = g.querySelector('.form-error');
+      if (err) {
+        err.style.display = 'none';
+        err.textContent = '';
+      }
+    });
     const errorAlert = document.getElementById('loginErrorAlert');
     if (errorAlert) errorAlert.style.display = 'none';
   }
