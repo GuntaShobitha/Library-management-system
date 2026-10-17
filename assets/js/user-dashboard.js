@@ -270,7 +270,7 @@
               </div>
               <div style="margin-top:6px; font-size:0.85rem;">${timeBadge}</div>
             </div>
-            <div style="display:flex; gap:10px;">
+            <div class="dashoboard-button-container" style="display:flex; gap:10px;">
               <button type="button" class="btn btn-outline js-action-return" data-loan-id="${loan.id}">
                 <span class="material-symbols-outlined">keyboard_return</span>
                 Return Book

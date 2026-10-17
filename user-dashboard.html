@@ -39,12 +39,12 @@
             <span>Dashboard</span>
           </button>
         </li>
-        <li class="sidebar-nav-item">
+        <!-- <li class="sidebar-nav-item">
           <a href="books.html">
             <span class="material-symbols-outlined">search</span>
             <span>Browse Books</span>
           </a>
-        </li>
+        </li> -->
         <li class="sidebar-nav-item" data-tab="tab-borrowed">
           <button type="button">
             <span class="material-symbols-outlined">local_library</span>
@@ -109,10 +109,10 @@
           <button type="button" class="btn-sidebar-toggle" id="sidebarToggleBtn" aria-label="Toggle navigation drawer">
             <span class="material-symbols-outlined">menu</span>
           </button>
-          <div class="topbar-search-box">
+          <!-- <div class="topbar-search-box">
             <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Search catalog..." onkeydown="if(event.key==='Enter') window.location.href='books.html?q='+encodeURIComponent(this.value);">
-          </div>
+          </div> -->
         </div>
 
         <div class="dashboard-topbar-right">
@@ -121,13 +121,13 @@
             <span class="topbar-badge" id="userNotificationBadge" style="display: none;">0</span>
           </button>
 
-          <a href="index.html" class="topbar-action-btn" title="View Public Website">
+          <!-- <a href="index.html" class="topbar-action-btn" title="View Public Website">
             <span class="material-symbols-outlined">public</span>
-          </a>
+          </a> -->
 
           <div class="user-profile-menu" style="display: flex; align-items: center; gap: 10px;">
             <img src="" alt="Patron" class="user-profile-avatar js-user-avatar" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200'">
-            <div style="display: flex; flex-direction: column; text-align: right; line-height: 1.25;">
+            <div class="blocking-small-screen"  style="display: flex; flex-direction: column; text-align: right; line-height: 1.25;">
               <span style="font-weight: 600; font-size: 0.92rem; color: var(--color-navy-900);" class="js-user-name">Patron</span>
               <span style="font-size: 0.75rem; color: var(--color-text-muted);" class="js-user-email">patron@athenaeum.lib</span>
             </div>
@@ -656,7 +656,7 @@
                 <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Academic Reading Dossier</h3>
                 <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Export your complete reading portfolio for thesis bibliography and research credit.</p>
               </div>
-              <div style="display: flex; gap: 10px;">
+              <div class="dashoboard-button-container" style="display: flex; gap: 10px;">
                 <button type="button" class="btn btn-outline" onclick="window.showToast('Reading history exported to CSV.', 'success');">
                   Export CSV Dossier
                 </button>
@@ -1170,7 +1170,7 @@
                 <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Download Complete Patron Data File (JSON / CSV)</h3>
                 <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Obtain an archival copy of all your active checkouts, reading history, and account settings.</p>
               </div>
-              <div style="display: flex; gap: 10px;">
+              <div class="dashoboard-button-container" style="display: flex; gap: 10px;">
                 <button type="button" class="btn btn-outline" onclick="window.showToast('Patron JSON dossier generated.', 'success');">
                   Download JSON Dossier
                 </button>

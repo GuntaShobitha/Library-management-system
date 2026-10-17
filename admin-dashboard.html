@@ -118,23 +118,23 @@
           <button type="button" class="btn-sidebar-toggle" id="adminSidebarToggle" aria-label="Toggle admin drawer">
             <span class="material-symbols-outlined">menu</span>
           </button>
-          <div class="topbar-search-box" style="width: 380px;">
+          <!-- <div class="topbar-search-box" style="width: 380px;">
             <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Search catalog, patron cards, or loan IDs..." id="adminGlobalSearchInput">
-          </div>
+          </div> -->
         </div>
 
         <div class="dashboard-topbar-right">
-          <a href="index.html" class="topbar-action-btn" title="View Public Front">
+          <!-- <a href="index.html" class="topbar-action-btn" title="View Public Front">
             <span class="material-symbols-outlined">public</span>
-          </a>
+          </a> -->
           <button type="button" class="btn btn-sm btn-gold" onclick="window.openModal('addBookModal')">
             <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
             <span>Add Book</span>
           </button>
           <div class="user-profile-menu" style="display: flex; align-items: center; gap: 10px;">
             <img src="" alt="Admin" class="user-profile-avatar js-admin-avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200'">
-            <div style="display: flex; flex-direction: column; text-align: right; line-height: 1.25;">
+            <div class="blocking-small-screen" style="display: flex; flex-direction: column; text-align: right; line-height: 1.25;">
               <span style="font-weight: 600; font-size: 0.92rem; color: var(--color-navy-900);" class="js-admin-name">Dr. Julian Sterling</span>
               <span style="font-size: 0.75rem; color: var(--color-text-muted);" class="js-admin-email">admin@athenaeum.lib</span>
             </div>
@@ -423,7 +423,7 @@
               <h1 class="dashboard-page-title">Catalog Inventory Management</h1>
               <p class="dashboard-page-subtitle">Add new accessions, modify bibliographic records, or adjust inventory copies.</p>
             </div>
-            <div style="display: flex; gap: 10px;">
+            <div class="dashoboard-button-container" style="display: flex; gap: 10px;">
               <button type="button" class="btn btn-outline" onclick="exportBooksCsv()">
                 <span class="material-symbols-outlined">download</span>
                 Export CSV
@@ -1320,7 +1320,7 @@
                 <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Automated 48-Hour Reservation Hold Shelf</h3>
                 <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Returned volumes are tagged for the highest-priority patron for 48 hours before being released to open circulation.</p>
               </div>
-              <div style="display: flex; gap: 10px;">
+              <div class="dashoboard-button-container" style="display: flex; gap: 10px;">
                 <button type="button" class="btn btn-outline" onclick="window.showToast('Priority queue re-indexed by submission timestamp.', 'info');">
                   Re-Index Priority
                 </button>
@@ -1475,7 +1475,7 @@
                 <h3 style="font-size: 1.05rem; color: var(--color-navy-900); margin-bottom: 4px;">Overdue Courtesy Notification Dispatcher</h3>
                 <p style="font-size: 0.88rem; color: var(--color-text-muted); margin: 0;">Automated email/SMS triggers inform patrons of return drop locations and online renewal options.</p>
               </div>
-              <div style="display: flex; gap: 10px;">
+              <div class="dashoboard-button-container" style="display: flex; gap: 10px;">
                 <button type="button" class="btn btn-outline" onclick="window.showToast('1st Courtesy Reminders sent to all overdue borrowers.', 'info');">
                   Send 1st Notice
                 </button>
@@ -1872,7 +1872,7 @@
               <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
                 This document certifies that the physical catalog and circulation logs maintained by the Athenaeum Central Library comply with all institutional charter standards. Total catalog volumes, loan checkouts, and hold reserves have undergone reconciliation with zero un-accounted volumes.
               </p>
-              <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: gap;">
+              <div class="dashoboard-button-container" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: gap;">
                 <div style="font-size: 0.85rem; color: var(--color-navy-900);">
                   <strong>Dr. Julian Sterling</strong><br>
                   <span style="color: var(--color-text-muted);">Chief Librarian & Preservation Officer</span>

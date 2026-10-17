@@ -543,6 +543,51 @@
   margin: 0 auto 20px;
 }
 
+@media (max-width: 760px) {
+  .metrics-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .dashboard-card {
+    width:95vw;
+  }
+
+  .dashoboard-button-container {
+    flex-direction: column !important;
+    
+  }
+  .dashboard-main-body {
+    padding: 0px 0px 0px 10px !important;
+  }
+
+  .btn-primary{
+    font-size: 12px;
+  }
+
+  .btn-gold  {
+    font-size: 12px;
+  }
+
+  .dash-section {
+    width: 95vw;
+  }
+
+  .dashboard-page-header  {
+    width: 95vw;
+  }
+  .dash-grid-3, .dash-grid-4 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  /* .dashboard-tab-pane.active {
+    width: 90vw;
+  } */
+
+  .blocking-small-screen {
+    display: none !important;
+  }
+  
+}
+
 /* Responsive Dashboard */
 @media (max-width: 1024px) {
   .chart-container-grid {

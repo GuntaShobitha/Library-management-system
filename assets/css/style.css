@@ -1539,6 +1539,9 @@ h1, h2, h3, h4, h5, h6 {
    320px, 375px, 425px, 768px, 1024px, 1440px, 1920px
    ========================================================================== */
 
+ 
+
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1558,6 +1561,7 @@ h1, h2, h3, h4, h5, h6 {
   .header-actions .btn-desktop {
     display: none;
   }
+
   .btn-mobile-toggle {
     display: block;
   }
@@ -1613,6 +1617,25 @@ h1, h2, h3, h4, h5, h6 {
   }
   .cta-banner {
     padding: 40px 20px;
+  }
+
+  .small-screen-issue {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .btn-lg {
+    font-size: 10px;
+  }
+
+  .policy-table {
+    overflow-x: auto;
+  }
+
+  .policy-table-wrap {
+    overflow-x: auto !important; 
+  }
+  .not-displaying {
+    display: none;
   }
 }
 

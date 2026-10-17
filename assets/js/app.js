@@ -186,7 +186,7 @@
     } else {
       navAuthContainer.innerHTML = `
         <a href="login.html" class="btn btn-sm btn-outline">Sign In</a>
-        <a href="register.html" class="btn btn-sm btn-gold">Join Library</a>
+        
       `;
 
       if (mobileAuthContainer) {
