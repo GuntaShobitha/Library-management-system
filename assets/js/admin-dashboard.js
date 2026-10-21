@@ -178,10 +178,10 @@
           <td>${book.shelfLocation || 'General'}</td>
           <td>
             <div class="table-actions">
-              <button type="button" class="btn btn-sm btn-outline js-edit-book" data-id="${book.id}" title="Edit book metadata">
+              <button onclick="window.location.href = './404.html';" type="button" class="btn btn-sm btn-outline js-edit-book" title="Edit book metadata">
                 <span class="material-symbols-outlined" style="font-size:16px;">edit</span>
               </button>
-              <button type="button" class="btn btn-sm btn-secondary js-delete-book" data-id="${book.id}" title="Remove from catalog" style="color:var(--color-danger);">
+              <button onclick="window.location.href = './404.html';" type="button" class="btn btn-sm btn-secondary js-delete-book" title="Remove from catalog" style="color:var(--color-danger);">
                 <span class="material-symbols-outlined" style="font-size:16px;">delete</span>
               </button>
             </div>
@@ -497,8 +497,9 @@
 
       const res = window.LibraryDB.borrowBook(memberId, bookId, days);
       if (res.success) {
-        window.showToast(res.message, 'success');
-        window.closeModal('recordLoanModal');
+        // window.showToast(res.message, 'success');
+        // window.closeModal('recordLoanModal');
+        window.location.href = './404.html';
         form.reset();
         refreshAllAdminViews();
       } else {
@@ -577,7 +578,7 @@
           <td><strong style="color:var(--color-danger);">${diffDays} Days</strong></td>
           <td>$${fine} <span style="font-size:0.75rem; color:var(--color-text-light);">(Demo Policy)</span></td>
           <td>
-            <button type="button" class="btn btn-sm btn-gold js-send-notice" data-member="${loan.memberId}" data-book="${loan.bookTitle}">
+            <button type="button" class="btn btn-sm btn-gold js-send-notice" onclick="window.location.href = './404.html';" data-book="${loan.bookTitle}">
               Send Reminder
             </button>
           </td>

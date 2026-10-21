@@ -183,7 +183,7 @@
             </div>
 
             <div class="book-card-actions">
-              <a href="book-details.html?id=${book.id}" class="btn btn-sm btn-outline">
+              <a href="./404.html" class="btn btn-sm btn-outline">
                 <span class="material-symbols-outlined" style="font-size:16px;">visibility</span>
                 Details
               </a>

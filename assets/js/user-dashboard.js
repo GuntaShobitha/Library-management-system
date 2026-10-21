@@ -169,7 +169,7 @@
               <span class="material-symbols-outlined empty-state-icon">menu_book</span>
               <div class="empty-state-title">No Currently Borrowed Books</div>
               <div class="empty-state-desc">You don't have any books checked out right now. Ready to discover your next story?</div>
-              <a href="books.html" class="btn btn-sm btn-gold">Explore Catalog</a>
+              <a href="./404.html" class="btn btn-sm btn-gold">Explore Catalog</a>
             </div>
           </td>
         </tr>
@@ -238,7 +238,7 @@
           <span class="material-symbols-outlined empty-state-icon">library_books</span>
           <h4 class="empty-state-title">No Active Borrowing Records</h4>
           <p class="empty-state-desc">You are free to borrow up to ${currentUser.maxBorrowLimit || 4} volumes from our stacks.</p>
-          <a href="books.html" class="btn btn-sm btn-primary">Browse Catalog</a>
+          <a href="./404.html" class="btn btn-sm btn-primary">Browse Catalog</a>
         </div>
       `;
       return;
@@ -339,7 +339,7 @@
           <span class="material-symbols-outlined empty-state-icon">bookmark</span>
           <h4 class="empty-state-title">No Active Reservations</h4>
           <p class="empty-state-desc">When a high-demand book is currently on loan to another reader, you can place a reservation to be notified as soon as it is returned.</p>
-          <a href="books.html" class="btn btn-sm btn-outline">Find Books to Reserve</a>
+          <a href="./404.html" class="btn btn-sm btn-outline">Find Books to Reserve</a>
         </div>
       `;
       return;
@@ -575,7 +575,7 @@
       if (res.success) {
         currentUser = res.member;
         renderUserProfileHeader();
-        window.showToast('Profile updated successfully!', 'success');
+        window.location.href = './404.html';
       } else {
         window.showToast(res.message, 'error');
       }
@@ -588,7 +588,7 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      window.showToast('Notification and circulation preferences saved.', 'success');
+      window.location.href = './404.html';
     });
   }
 
