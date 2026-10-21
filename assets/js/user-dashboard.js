@@ -52,7 +52,7 @@
 
     const userAvatars = document.querySelectorAll('.js-user-avatar');
     userAvatars.forEach(img => {
-      img.src = currentUser.avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200';
+      img.src = currentUser.avatar || 'assets/images/avatar-elena-rostova.webp';
     });
 
     // Populate profile inputs
@@ -185,7 +185,7 @@
         <tr>
           <td>
             <div class="table-book-cell">
-              <img src="${loan.bookCover}" alt="${loan.bookTitle}" class="table-book-thumb" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'">
+              <img src="${loan.bookCover}" alt="${loan.bookTitle}" class="table-book-thumb" onerror="this.src='assets/images/book-cover-fallback.webp'">
               <div>
                 <strong style="color:var(--color-navy-900);">${loan.bookTitle}</strong>
                 <div style="font-size:0.8rem; color:var(--color-text-muted);">By ${loan.bookAuthor}</div>
@@ -263,7 +263,7 @@
       return `
         <div class="dashboard-card" style="margin-bottom: 20px;">
           <div class="dashboard-card-body" style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
-            <img src="${loan.bookCover}" alt="${loan.bookTitle}" style="width:70px; height:100px; object-fit:cover; border-radius:6px; box-shadow:var(--shadow-sm);" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'">
+            <img src="${loan.bookCover}" alt="${loan.bookTitle}" style="width:70px; height:100px; object-fit:cover; border-radius:6px; box-shadow:var(--shadow-sm);" onerror="this.src='assets/images/book-cover-fallback.webp'">
             <div style="flex:1; min-width:220px;">
               <h4 style="margin-bottom:4px; font-size:1.15rem;">${loan.bookTitle}</h4>
               <div style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:8px;">By ${loan.bookAuthor}</div>
@@ -362,7 +362,7 @@
               <tr>
                 <td>
                   <div class="table-book-cell">
-                    <img src="${res.bookCover}" alt="${res.bookTitle}" class="table-book-thumb" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'">
+                    <img src="${res.bookCover}" alt="${res.bookTitle}" class="table-book-thumb" onerror="this.src='assets/images/book-cover-fallback.webp'">
                     <div>
                       <strong style="color:var(--color-navy-900);">${res.bookTitle}</strong>
                       <div style="font-size:0.8rem; color:var(--color-text-muted);">By ${res.bookAuthor}</div>
@@ -431,7 +431,7 @@
       <tr>
         <td>
           <div class="table-book-cell">
-            <img src="${loan.bookCover}" alt="${loan.bookTitle}" class="table-book-thumb" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'">
+            <img src="${loan.bookCover}" alt="${loan.bookTitle}" class="table-book-thumb" onerror="this.src='assets/images/book-cover-fallback.webp'">
             <div>
               <strong>${loan.bookTitle}</strong>
               <div style="font-size:0.8rem; color:var(--color-text-muted);">${loan.bookAuthor}</div>

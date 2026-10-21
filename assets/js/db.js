@@ -37,7 +37,7 @@
       description: 'A portrait of the Jazz Age in all its decadence and excess, following the mysterious Jay Gatsby and his obsession with the elusive Daisy Buchanan.',
       totalCopies: 6,
       availableCopies: 4,
-      coverImage: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-fallback.webp',
       shelfLocation: 'A-14 / Fic-FITZ',
       pages: 180,
       language: 'English',
@@ -59,7 +59,7 @@
       description: 'The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, featuring attorney Atticus Finch.',
       totalCopies: 5,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-01.webp',
       shelfLocation: 'A-22 / Fic-LEE',
       pages: 336,
       language: 'English',
@@ -81,7 +81,7 @@
       description: 'An iconic exploration of profound questions: How did the universe begin? Could time run backward? Is there an ultimate boundary to space?',
       totalCopies: 4,
       availableCopies: 2,
-      coverImage: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-02.webp',
       shelfLocation: 'S-08 / Sci-HAWK',
       pages: 212,
       language: 'English',
@@ -103,7 +103,7 @@
       description: 'The definitive, most widely used university text on artificial intelligence, covering search algorithms, machine learning, robotics, and neural networks.',
       totalCopies: 3,
       availableCopies: 1,
-      coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-science-tech.webp',
       shelfLocation: 'S-19 / Comp-RUSS',
       pages: 1152,
       language: 'English',
@@ -125,7 +125,7 @@
       description: 'A groundbreaking narrative traversing 70,000 years of human evolution, exploring how biology and history have defined us and enhanced our understanding of what it means to be human.',
       totalCopies: 7,
       availableCopies: 5,
-      coverImage: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-history.webp',
       shelfLocation: 'H-03 / Hist-HARA',
       pages: 443,
       language: 'English',
@@ -147,7 +147,7 @@
       description: 'Pulitzer Prize-winning masterpiece recreating the fateful opening thirty days of the summer of 1914, which determined the course of the First World War.',
       totalCopies: 4,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-07.webp',
       shelfLocation: 'H-12 / Hist-TUCH',
       pages: 511,
       language: 'English',
@@ -169,7 +169,7 @@
       description: 'Based on thousands of pages from Leonardo da Vinci’s astonishing notebooks, Isaacson weaves a narrative connecting his art with his visionary science.',
       totalCopies: 5,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-biography.webp',
       shelfLocation: 'B-04 / Bio-ISAA',
       pages: 624,
       language: 'English',
@@ -191,7 +191,7 @@
       description: 'Discovered in the attic in which she spent the last years of her life, Anne Frank’s remarkable diary has become a world classic and testament to the human spirit.',
       totalCopies: 6,
       availableCopies: 5,
-      coverImage: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/img-microform-archive.webp',
       shelfLocation: 'B-15 / Bio-FRAN',
       pages: 283,
       language: 'English',
@@ -213,7 +213,7 @@
       description: 'Ray Dalio, one of the world’s most successful investors, shares the unconventional principles that he developed, refined, and used over forty years.',
       totalCopies: 5,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-04.webp',
       shelfLocation: 'E-02 / Econ-DALI',
       pages: 592,
       language: 'English',
@@ -235,7 +235,7 @@
       description: 'The greatest investment advisor of the twentieth century, Benjamin Graham taught and inspired people worldwide through his philosophy of value investing.',
       totalCopies: 4,
       availableCopies: 2,
-      coverImage: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-business-econ.webp',
       shelfLocation: 'E-09 / Econ-GRAH',
       pages: 640,
       language: 'English',
@@ -257,7 +257,7 @@
       description: 'Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. A revolutionary guide for all engineers.',
       totalCopies: 6,
       availableCopies: 4,
-      coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-06.webp',
       shelfLocation: 'T-01 / Soft-MART',
       pages: 464,
       language: 'English',
@@ -279,7 +279,7 @@
       description: 'Setting the standard for excellence, accuracy, and innovation in biological pedagogy. Trusted by professors and biology scholars globally.',
       totalCopies: 4,
       availableCopies: 2,
-      coverImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-education.webp',
       shelfLocation: 'T-11 / Bio-URRY',
       pages: 1488,
       language: 'English',
@@ -301,7 +301,7 @@
       description: 'Sherlock Holmes and Dr. Watson investigate the legend of a diabolical hound haunting Dartmoor and threatening the life of Sir Henry Baskerville.',
       totalCopies: 5,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-mystery-thriller.webp',
       shelfLocation: 'M-05 / Myst-DOYL',
       pages: 256,
       language: 'English',
@@ -323,7 +323,7 @@
       description: 'On a warm summer morning in North Carthage, Missouri, it is Nick and Amy Dunne’s fifth wedding anniversary. Presents are being wrapped when Amy disappears.',
       totalCopies: 5,
       availableCopies: 4,
-      coverImage: 'https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-05.webp',
       shelfLocation: 'M-18 / Myst-FLYN',
       pages: 432,
       language: 'English',
@@ -345,7 +345,7 @@
       description: 'The first English translation of Homer’s epic poem by a woman, capturing the energy, pathos, and craft of Odysseus’ ten-year quest to return home.',
       totalCopies: 5,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/bg-contact.webp',
       shelfLocation: 'L-02 / Po-HOME',
       pages: 592,
       language: 'English',
@@ -367,7 +367,7 @@
       description: 'Contains seminal works including The Love Song of J. Alfred Prufrock, The Waste Land, and The Hollow Men by Nobel laureate T. S. Eliot.',
       totalCopies: 4,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-literature-poetry.webp',
       shelfLocation: 'L-14 / Po-ELIO',
       pages: 144,
       language: 'English',
@@ -389,7 +389,7 @@
       description: 'A poetic tale of an aviator stranded in the desert who meets a young prince fallen to Earth from a tiny asteroid, meditating on love, loneliness, and friendship.',
       totalCopies: 6,
       availableCopies: 5,
-      coverImage: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/cat-childrens.webp',
       shelfLocation: 'C-01 / Ch-EXUP',
       pages: 96,
       language: 'English',
@@ -411,7 +411,7 @@
       description: 'The heartwarming story of a gentle pig named Wilbur and an extraordinary spider named Charlotte who determines to save his life.',
       totalCopies: 5,
       availableCopies: 4,
-      coverImage: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/bg-books.webp',
       shelfLocation: 'C-08 / Ch-WHIT',
       pages: 192,
       language: 'English',
@@ -433,7 +433,7 @@
       description: 'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who will become the mysterious man known as Muad’Dib, avenging his family.',
       totalCopies: 5,
       availableCopies: 2,
-      coverImage: 'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-03.webp',
       shelfLocation: 'A-31 / Sci-HERB',
       pages: 688,
       language: 'English',
@@ -455,7 +455,7 @@
       description: 'Sagan’s magnificent exploration of the universe, tracing fifteen billion years of cosmic evolution and science history that shaped human society.',
       totalCopies: 5,
       availableCopies: 3,
-      coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80',
+      coverImage: 'assets/images/book-cover-08.webp',
       shelfLocation: 'S-24 / Sci-SAGA',
       pages: 384,
       language: 'English',
@@ -479,7 +479,7 @@
       joinedDate: '2022-01-15',
       status: 'Active',
       maxBorrowLimit: 10,
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=faces'
+      avatar: 'assets/images/avatar-dr-sterling.webp'
     },
     {
       id: 'user-elena',
@@ -492,7 +492,7 @@
       joinedDate: '2024-03-12',
       status: 'Active',
       maxBorrowLimit: 4,
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces'
+      avatar: 'assets/images/avatar-elena-rostova.webp'
     },
     {
       id: 'user-marcus',
@@ -505,7 +505,7 @@
       joinedDate: '2024-05-20',
       status: 'Active',
       maxBorrowLimit: 4,
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces'
+      avatar: 'assets/images/avatar-marcus-vance.webp'
     },
     {
       id: 'user-sophia',
@@ -518,7 +518,7 @@
       joinedDate: '2024-06-04',
       status: 'Active',
       maxBorrowLimit: 4,
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=faces'
+      avatar: 'assets/images/avatar-unknown-01.webp'
     },
     {
       id: 'user-clara',
@@ -531,7 +531,7 @@
       joinedDate: '2024-08-14',
       status: 'Suspended',
       maxBorrowLimit: 4,
-      avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&h=200&fit=crop&crop=faces'
+      avatar: 'assets/images/avatar-unknown-02.webp'
     }
   ];
 
@@ -554,7 +554,7 @@
       bookId: 'book-001',
       bookTitle: 'The Great Gatsby',
       bookAuthor: 'F. Scott Fitzgerald',
-      bookCover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/book-cover-fallback.webp',
       memberId: 'user-elena',
       memberName: 'Elena Rostova',
       memberEmail: 'elena.rostova@athenaeum.lib',
@@ -569,7 +569,7 @@
       bookId: 'book-003',
       bookTitle: 'A Brief History of Time',
       bookAuthor: 'Stephen Hawking',
-      bookCover: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/book-cover-02.webp',
       memberId: 'user-elena',
       memberName: 'Elena Rostova',
       memberEmail: 'elena.rostova@athenaeum.lib',
@@ -584,7 +584,7 @@
       bookId: 'book-004',
       bookTitle: 'Artificial Intelligence: A Modern Approach',
       bookAuthor: 'Stuart Russell & Peter Norvig',
-      bookCover: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/cat-science-tech.webp',
       memberId: 'user-marcus',
       memberName: 'Marcus Vance',
       memberEmail: 'marcus.vance@gmail.com',
@@ -599,7 +599,7 @@
       bookId: 'book-005',
       bookTitle: 'Sapiens: A Brief History of Humankind',
       bookAuthor: 'Yuval Noah Harari',
-      bookCover: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/cat-history.webp',
       memberId: 'user-sophia',
       memberName: 'Sophia Chen',
       memberEmail: 'sophia.chen@university.edu',
@@ -614,7 +614,7 @@
       bookId: 'book-010',
       bookTitle: 'The Intelligent Investor',
       bookAuthor: 'Benjamin Graham',
-      bookCover: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/cat-business-econ.webp',
       memberId: 'user-elena',
       memberName: 'Elena Rostova',
       memberEmail: 'elena.rostova@athenaeum.lib',
@@ -632,7 +632,7 @@
       bookId: 'book-019',
       bookTitle: 'Dune',
       bookAuthor: 'Frank Herbert',
-      bookCover: 'https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/book-cover-03.webp',
       memberId: 'user-elena',
       memberName: 'Elena Rostova',
       memberEmail: 'elena.rostova@athenaeum.lib',
@@ -645,7 +645,7 @@
       bookId: 'book-007',
       bookTitle: 'Leonardo da Vinci',
       bookAuthor: 'Walter Isaacson',
-      bookCover: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+      bookCover: 'assets/images/cat-biography.webp',
       memberId: 'user-marcus',
       memberName: 'Marcus Vance',
       memberEmail: 'marcus.vance@gmail.com',
@@ -911,8 +911,8 @@
           status: 'Active',
           joinedDate: new Date().toISOString().split('T')[0],
           avatar: role === 'admin'
-            ? 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&fm=webp&q=75'
-            : 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&fm=webp&q=75',
+            ? 'assets/images/avatar-dr-sterling.webp'
+            : 'assets/images/avatar-unknown-03.webp',
           department: role === 'admin' ? 'Library Administration' : 'General Patron',
           maxBorrowLimit: role === 'admin' ? 20 : 6
         };
@@ -966,7 +966,7 @@
         joinedDate: new Date().toISOString().split('T')[0],
         status: 'Active',
         maxBorrowLimit: role === 'admin' ? 10 : 4,
-        avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop&crop=faces'
+        avatar: 'assets/images/avatar-unknown-03.webp'
       };
 
       data.members.push(newMember);

@@ -45,7 +45,7 @@
     document.querySelectorAll('.js-admin-name').forEach(el => el.textContent = currentAdmin.name);
     document.querySelectorAll('.js-admin-email').forEach(el => el.textContent = currentAdmin.email);
     document.querySelectorAll('.js-admin-avatar').forEach(img => {
-      img.src = currentAdmin.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200';
+      img.src = currentAdmin.avatar || 'assets/images/avatar-dr-sterling.webp';
     });
   }
 
@@ -160,7 +160,7 @@
         <tr>
           <td>
             <div class="table-book-cell">
-              <img src="${book.coverImage}" alt="${book.title}" class="table-book-thumb" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'">
+              <img src="${book.coverImage}" alt="${book.title}" class="table-book-thumb" onerror="this.src='assets/images/book-cover-fallback.webp'">
               <div>
                 <strong style="color:var(--color-navy-900);">${book.title}</strong>
                 <div style="font-size:0.8rem; color:var(--color-text-muted);">ISBN: ${book.isbn}</div>
@@ -371,7 +371,7 @@
         <tr>
           <td>
             <div class="table-user-cell">
-              <img src="${m.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100'}" alt="${m.name}" class="table-user-avatar">
+              <img src="${m.avatar || 'assets/images/avatar-unknown-03.webp'}" alt="${m.name}" class="table-user-avatar">
               <div>
                 <strong>${m.name}</strong>
                 <div style="font-size:0.8rem; color:var(--color-text-muted);">${m.membershipId}</div>
@@ -650,10 +650,10 @@
     if (!container) return;
 
     const staffMembers = [
-      { name: 'Dr. Julian Sterling', role: 'Chief Librarian & Director', email: 'j.sterling@athenaeum.lib', phone: '+1 (555) 019-2834', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200' },
-      { name: 'Alistair Finch, Ph.D.', role: 'Head of Rare Manuscripts & Archives', email: 'a.finch@athenaeum.lib', phone: '+1 (555) 019-3321', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200' },
-      { name: 'Miriam Vance, MLIS', role: 'Lead Cataloger & Metadata Specialist', email: 'm.vance@athenaeum.lib', phone: '+1 (555) 019-4820', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200' },
-      { name: 'Marcus Sterling', role: 'Circulation & Patron Services Officer', email: 'm.sterling@athenaeum.lib', phone: '+1 (555) 019-7412', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200' }
+      { name: 'Dr. Julian Sterling', role: 'Chief Librarian & Director', email: 'j.sterling@athenaeum.lib', phone: '+1 (555) 019-2834', avatar: 'assets/images/avatar-dr-sterling.webp' },
+      { name: 'Alistair Finch, Ph.D.', role: 'Head of Rare Manuscripts & Archives', email: 'a.finch@athenaeum.lib', phone: '+1 (555) 019-3321', avatar: 'assets/images/avatar-marcus-vance.webp' },
+      { name: 'Miriam Vance, MLIS', role: 'Lead Cataloger & Metadata Specialist', email: 'm.vance@athenaeum.lib', phone: '+1 (555) 019-4820', avatar: 'assets/images/avatar-miriam-vance.webp' },
+      { name: 'Marcus Sterling', role: 'Circulation & Patron Services Officer', email: 'm.sterling@athenaeum.lib', phone: '+1 (555) 019-7412', avatar: 'assets/images/staff-marcus-sterling.webp' }
     ];
 
     container.innerHTML = staffMembers.map(s => `

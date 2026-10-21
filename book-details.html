@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Volume Details — Athenaeum Central Library</title>
   <meta name="description" content="View comprehensive bibliographic details, availability counters, synopsis, and loan status for this library volume.">
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <!-- <link rel="icon" type="image/webp" href="assets/images/logo.webp"> -->
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .book-detail-grid {
@@ -88,7 +88,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="index.html" class="logo-brand" aria-label="Athenaeum Central Library Home">
-        <img src="assets/images/logo.svg" alt="Athenaeum Central Library Emblem" class="logo-svg">
+        <img src="assets/images/logo.webp" alt="Athenaeum Central Library Emblem" class="logo-svg">
       </a>
       <nav class="nav-desktop" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
@@ -111,7 +111,7 @@
   <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
   <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
     <div class="mobile-drawer-header">
-      <img src="assets/images/logo.svg" alt="Athenaeum Library" style="height: 32px; filter: brightness(0) invert(1);">
+      <img src="assets/images/logo.webp" alt="Athenaeum Library" style="height: 32px; filter: brightness(0) invert(1);">
       <button type="button" id="mobileDrawerClose" style="color: #fff;" aria-label="Close mobile menu">
         <span class="material-symbols-outlined">close</span>
       </button>
@@ -163,7 +163,7 @@
           
           <!-- Col 1: Cover Image & Quick Actions -->
           <div class="detail-cover-card">
-            <img src="" alt="Book Cover" id="bookCoverImg" class="detail-cover-img" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600'">
+            <img src="" alt="Book Cover" id="bookCoverImg" class="detail-cover-img" onerror="this.src='assets/images/book-cover-fallback.webp'">
             <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
               <div id="actionButtonsContainer" style="display: flex; flex-direction: column; gap: 10px;">
                 <!-- Populated by JS -->
@@ -297,7 +297,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="assets/images/logo.svg" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        <img src="assets/images/logo.webp" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
         <p>A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.</p>
       </div>
       <div>
@@ -497,7 +497,7 @@
           relatedGrid.innerHTML = related.map(rel => `
             <div class="book-card">
               <div class="book-card-cover-wrap" style="height: 240px;">
-                <img src="${rel.coverImage}" alt="${rel.title}" class="book-card-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600'">
+                <img src="${rel.coverImage}" alt="${rel.title}" class="book-card-cover" loading="lazy" onerror="this.src='assets/images/book-cover-fallback.webp'">
                 <span class="book-badge-status ${rel.availableCopies > 0 ? 'badge-available' : 'badge-borrowed'}">
                   ${rel.availableCopies > 0 ? `${rel.availableCopies} Available` : 'Reserved'}
                 </span>

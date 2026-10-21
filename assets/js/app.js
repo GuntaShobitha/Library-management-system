@@ -222,7 +222,7 @@
 
         dropdown.innerHTML = results.map(book => `
           <a href="book-details.html?id=${book.id}" class="suggestion-item">
-            <img src="${book.coverImage}" alt="${book.title}" class="suggestion-thumb" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100'">
+            <img src="${book.coverImage}" alt="${book.title}" class="suggestion-thumb" onerror="this.src='assets/images/book-cover-fallback.webp'">
             <div class="suggestion-meta">
               <div class="suggestion-title">${book.title}</div>
               <div class="suggestion-author">${book.author} &bull; <span style="color:var(--color-gold-600);">${book.categoryName}</span></div>

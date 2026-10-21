@@ -168,7 +168,7 @@
       return `
         <div class="book-card" data-id="${book.id}">
           <div class="book-card-cover-wrap">
-            <img src="${book.coverImage}" alt="${book.title} cover" class="book-card-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600'">
+            <img src="${book.coverImage}" alt="${book.title} cover" class="book-card-cover" loading="lazy" onerror="this.src='assets/images/book-cover-fallback.webp'">
             <span class="book-badge-status ${statusClass}">${statusText}</span>
             <span class="book-category-pill">${book.categoryName}</span>
           </div>
