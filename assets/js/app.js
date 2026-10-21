@@ -130,17 +130,17 @@
       const dashboardUrl = isMember ? 'user-dashboard.html' : 'admin-dashboard.html';
       const dashboardLabel = isMember ? 'Dashboard' : 'Admin Console';
 
-      navAuthContainer.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <a href="${dashboardUrl}" class="btn btn-sm btn-primary" title="Logged in as ${currentUser.email}">
-            <span class="material-symbols-outlined" style="font-size: 18px;">dashboard</span>
-            <span>${dashboardLabel}</span>
-          </a>
-          <button type="button" class="btn btn-sm btn-outline js-nav-logout" title="Sign Out (${currentUser.email})" style="padding: 8px 10px;">
-            <span class="material-symbols-outlined" style="font-size: 18px;">logout</span>
-          </button>
-        </div>
-      `;
+      // navAuthContainer.innerHTML = `
+      //   <div style="display: flex; align-items: center; gap: 8px;">
+      //     <a href="${dashboardUrl}" class="btn btn-sm btn-primary" title="Logged in as ${currentUser.email}">
+      //       <span class="material-symbols-outlined" style="font-size: 18px;">dashboard</span>
+      //       <span>${dashboardLabel}</span>
+      //     </a>
+      //     <button type="button" class="btn btn-sm btn-outline js-nav-logout" title="Sign Out (${currentUser.email})" style="padding: 8px 10px;">
+      //       <span class="material-symbols-outlined" style="font-size: 18px;">logout</span>
+      //     </button>
+      //   </div>
+      // `;
 
       const logoutBtn = navAuthContainer.querySelector('.js-nav-logout');
       if (logoutBtn) {
@@ -157,24 +157,7 @@
       if (mobileAuthContainer) {
         mobileAuthContainer.innerHTML = `
           <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <img src="${currentUser.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100'}" 
-                   alt="${currentUser.name}" 
-                   style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid #c59b27;">
-              <div style="overflow: hidden;">
-                <div style="font-weight:700; font-size:0.9rem; color:#fff; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${currentUser.name}</div>
-                <div style="font-size:0.75rem; color: rgba(255,255,255,0.7); text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${currentUser.email}</div>
-                <div style="font-size:0.7rem; color:#c59b27; text-transform:uppercase; font-weight:700;">${currentUser.role}</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 8px;">
-              <a href="${dashboardUrl}" class="btn btn-sm btn-gold" style="flex: 1; justify-content: center;">
-                ${dashboardLabel}
-              </a>
-              <button type="button" class="btn btn-sm btn-outline js-mobile-logout" style="color: #fff; border-color: rgba(255,255,255,0.3);">
-                <span class="material-symbols-outlined" style="font-size: 18px;">logout</span>
-              </button>
-            </div>
+            
           </div>
         `;
 
