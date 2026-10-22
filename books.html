@@ -160,79 +160,7 @@
     </section>
 
     <!-- 2. INTERACTIVE CATALOG & SEARCH ENGINE -->
-    <section class="section-py section-bg-parchment" id="catalog-explorer" style="padding-top: 56px;">
-      <div class="container">
-
-        <div class="catalog-toolbar">
-          <div class="catalog-search-row">
-            
-            <!-- Search by Title, Author, ISBN -->
-            <div class="input-icon-wrap">
-              <span class="material-symbols-outlined input-icon">search</span>
-              <input type="text" id="catalogSearchInput" class="form-control" placeholder="Search by title, author, or ISBN..." aria-label="Search catalog books">
-            </div>
-
-            <!-- Category Filtering -->
-            <div>
-              <select id="categoryFilterSelect" class="form-select" aria-label="Select book category">
-                <option value="all">All 9 Categories</option>
-              </select>
-            </div>
-
-            <!-- Availability Filtering -->
-            <div>
-              <select id="availabilityFilterSelect" class="form-select" aria-label="Filter by availability">
-                <option value="all">All Copies</option>
-                <option value="available">Available Now</option>
-                <option value="unavailable">Reserved / On Loan</option>
-              </select>
-            </div>
-
-            <!-- Sorting -->
-            <div>
-              <select id="sortFilterSelect" class="form-select" aria-label="Sort catalog results">
-                <option value="popular">Most Popular</option>
-                <option value="title-asc">Title (A &ndash; Z)</option>
-                <option value="title-desc">Title (Z &ndash; A)</option>
-                <option value="author">Author (A &ndash; Z)</option>
-                <option value="year-new">Publication: Newest</option>
-                <option value="year-old">Publication: Oldest</option>
-              </select>
-            </div>
-
-            <!-- Reset Filters -->
-            <div>
-              <button type="button" id="resetFiltersBtn" class="btn btn-secondary" title="Reset all search filters">
-                <span class="material-symbols-outlined">restart_alt</span>
-                Reset
-              </button>
-            </div>
-
-          </div>
-
-          <div class="catalog-results-bar">
-            <div id="resultsCount" style="font-weight: 600; color: var(--color-navy-900);">
-              Loading catalog volumes...
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span class="status-pill status-available">Green: Available to Borrow</span>
-              <span class="status-pill status-borrowed">Blue: Reserved Queue Open</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- COMPLETE BOOK CATALOG GRID -->
-        <div class="books-grid" id="catalogBooksGrid" aria-live="polite">
-          <!-- Populated by assets/js/books.js -->
-        </div>
-
-        <!-- PAGINATION CONTROLS -->
-        <nav class="pagination-bar" id="paginationControls" aria-label="Catalog pages">
-          <!-- Populated by assets/js/books.js -->
-        </nav>
-
-      </div>
-    </section>
+   
 
     <!-- 3. CURATED READING LISTS & THEMATIC PATHS -->
     <section class="section-py section-bg-white" id="curated-lists">
@@ -448,11 +376,13 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+ <footer class="site-footer">
     <div class="container footer-grid">
       <!-- Col 1: Brand & Identity -->
       <div class="footer-brand">
-        <img src="./assets/images/stackly-logo-0f1e36.webp" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        <a href="index.html">
+          <img src="./assets/images/stackly-logo-0f1e36.webp" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        </a>
         <p>
           A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.
         </p>

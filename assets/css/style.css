@@ -1750,29 +1750,29 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
-.page-hero-books {
+/* .page-hero-books {
   background-image: url('assets/images/bg-books.webp');
-}
+} */
 
-.page-hero-categories {
+/* .page-hero-categories {
   background-image: url('assets/images/bg-categories.webp');
-}
+} */
 
-.page-hero-services {
+/* .page-hero-services {
   background-image: url('assets/images/bg-hero.webp');
-}
+} */
 
-.page-hero-about {
+/* .page-hero-about {
   background-image: url('assets/images/bg-services.webp');
-}
+} */
 
-.page-hero-contact {
+/* .page-hero-contact {
   background-image: url('assets/images/bg-contact.webp');
-}
+} */
 
-.page-hero-details {
+/* .page-hero-details {
   background-image: url('assets/images/book-cover-fallback.webp');
-}
+} */
 
 /* Archives & Special Collection Cards */
 .archives-grid {

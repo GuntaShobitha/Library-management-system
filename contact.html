@@ -458,7 +458,9 @@ Salem, Tamil Nadu 636008
     <div class="container footer-grid">
       <!-- Col 1: Brand & Identity -->
       <div class="footer-brand">
-        <img src="./assets/images/stackly-logo-0f1e36.webp" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        <a href="index.html">
+          <img src="./assets/images/stackly-logo-0f1e36.webp" alt="Athenaeum Central Library" style="height: 40px; filter: brightness(0) invert(1);">
+        </a>
         <p>
           A venerable center of learning, literature, and archival discovery. Fostering literacy, inquiry, and intellectual heritage since 1924.
         </p>
@@ -512,8 +514,6 @@ Salem, Tamil Nadu 636008
         </ul>
       </div>
 
-      
-
       <!-- Col 4: Location & Demo Support -->
       <div>
         <h4 class="footer-heading">Library Desk</h4>
@@ -543,160 +543,241 @@ Salem, Tamil Nadu 636008
   <script src="assets/js/db.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // FAQ Accordion click handlers
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      faqQuestions.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const item = btn.closest('.faq-item');
-          const isOpen = item.classList.contains('active');
-          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-          if (!isOpen) item.classList.add('active');
-        });
+    
+document.addEventListener('DOMContentLoaded', function () {
+
+  // =========================
+  // FAQ ACCORDION
+  // =========================
+  
+document.addEventListener('DOMContentLoaded', function () {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector('.faq-question');
+
+    if (!question) return;
+
+    question.setAttribute('aria-expanded', 'false');
+
+    question.addEventListener('click', function () {
+      const isActive = item.classList.contains('active');
+
+      // Close all FAQ items
+      faqItems.forEach((faq) => {
+        faq.classList.remove('active');
+
+        const btn = faq.querySelector('.faq-question');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+        }
       });
 
-      // Contact Inquiry Form Submission with Field-Level Errors
-      const form = document.getElementById('contactInquiryForm');
-      if (form) {
-        const inqName = document.getElementById('inqName');
-        const inqEmail = document.getElementById('inqEmail');
-        const inqCategory = document.getElementById('inqCategory');
-        const inqSubject = document.getElementById('inqSubject');
-        const inqMessage = document.getElementById('inqMessage');
-
-        function showFieldError(inputEl, msg) {
-          if (!inputEl) return;
-          const parent = inputEl.closest('.form-group');
-          if (parent) {
-            parent.classList.add('has-error');
-            let errSpan = parent.querySelector('.form-error');
-            if (!errSpan) {
-              errSpan = document.createElement('div');
-              errSpan.className = 'form-error';
-              parent.appendChild(errSpan);
-            }
-            errSpan.textContent = msg;
-            errSpan.style.display = 'block';
-            errSpan.style.color = '#c53030';
-            errSpan.style.fontSize = '0.82rem';
-            errSpan.style.marginTop = '6px';
-            errSpan.style.fontWeight = '500';
-          }
-        }
-
-        function clearFormErrors() {
-          form.querySelectorAll('.has-error').forEach(g => {
-            g.classList.remove('has-error');
-            const err = g.querySelector('.form-error');
-            if (err) {
-              err.style.display = 'none';
-              err.textContent = '';
-            }
-          });
-        }
-
-        // Live error clearing as user types
-        [inqName, inqEmail, inqSubject, inqMessage].forEach(input => {
-          if (!input) return;
-          input.addEventListener('input', () => {
-            const parent = input.closest('.form-group');
-            if (parent) {
-              parent.classList.remove('has-error');
-              const err = parent.querySelector('.form-error');
-              if (err) {
-                err.style.display = 'none';
-                err.textContent = '';
-              }
-            }
-          });
-        });
-
-        // Pre-fill subject if URL parameter present
-        const params = new URLSearchParams(window.location.search);
-        if (params.has('subject') && inqSubject) {
-          inqSubject.value = params.get('subject');
-        }
-
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          clearFormErrors();
-
-          const name = inqName ? inqName.value.trim() : '';
-          const email = inqEmail ? inqEmail.value.trim() : '';
-          const category = inqCategory ? inqCategory.value : 'General Circulation';
-          const subject = inqSubject ? inqSubject.value.trim() : '';
-          const message = inqMessage ? inqMessage.value.trim() : '';
-
-          let hasError = false;
-          let firstErrorInput = null;
-
-          if (!name || name.length < 2) {
-            showFieldError(inqName, 'Please enter your full name.');
-            hasError = true;
-            if (!firstErrorInput) firstErrorInput = inqName;
-          }
-
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!email) {
-            showFieldError(inqEmail, 'Please enter your email address.');
-            hasError = true;
-            if (!firstErrorInput) firstErrorInput = inqEmail;
-          } else if (!emailRegex.test(email)) {
-            showFieldError(inqEmail, 'Please enter a valid email address.');
-            hasError = true;
-            if (!firstErrorInput) firstErrorInput = inqEmail;
-          }
-
-          if (!subject) {
-            showFieldError(inqSubject, 'Please enter a subject summary.');
-            hasError = true;
-            if (!firstErrorInput) firstErrorInput = inqSubject;
-          }
-
-          if (!message || message.length < 5) {
-            showFieldError(inqMessage, 'Please elaborate your message (minimum 5 characters).');
-            hasError = true;
-            if (!firstErrorInput) firstErrorInput = inqMessage;
-          }
-
-          if (hasError) {
-            if (firstErrorInput) firstErrorInput.focus();
-            return;
-          }
-
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `
-              <span class="material-symbols-outlined" style="animation: spin 1s linear infinite;">sync</span>
-              <span>Transmitting Inquiry...</span>
-            `;
-          }
-
-          setTimeout(() => {
-            if (window.LibraryDB) {
-              const res = window.LibraryDB.addInquiry({
-                name, email, category, subject, message
-              });
-
-              if (res.success) {
-                if (window.showToast) window.showToast('Inquiry transmitted! Receipt ID #' + res.inquiry.id + '. A librarian will reply shortly.', 'success', 5000);
-                form.reset();
-                clearFormErrors();
-              } else {
-                if (window.showToast) window.showToast('Failed to save inquiry.', 'error');
-              }
-            }
-
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = originalBtnHtml;
-            }
-          }, 400);
-        });
+      // Open clicked FAQ if previously closed
+      if (!isActive) {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
       }
     });
+  });
+});
+
+  
+  // =========================
+  // CONTACT INQUIRY FORM
+  // =========================
+  const form = document.getElementById('contactInquiryForm');
+
+  if (!form) return;
+
+  const nameInput = document.getElementById('inqName');
+  const emailInput = document.getElementById('inqEmail');
+  const categoryInput = document.getElementById('inqCategory');
+  const subjectInput = document.getElementById('inqSubject');
+  const messageInput = document.getElementById('inqMessage');
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // Display notifications
+  function notify(message, type = 'success') {
+    if (typeof window.showToast === 'function') {
+      window.showToast(message, type);
+    } else {
+      alert(message);
+    }
+  }
+
+  // Show a field-level error
+  function showFieldError(input, message) {
+    if (!input) return;
+
+    const group = input.closest('.form-group');
+    if (!group) return;
+
+    group.classList.add('has-error');
+
+    let error = group.querySelector('.form-error');
+
+    if (!error) {
+      error = document.createElement('div');
+      error.className = 'form-error';
+      group.appendChild(error);
+    }
+
+    error.textContent = message;
+    error.style.display = 'block';
+    error.style.color = '#c53030';
+    error.style.fontSize = '0.82rem';
+    error.style.marginTop = '6px';
+
+    input.setAttribute('aria-invalid', 'true');
+  }
+
+  // Clear validation errors
+  function clearFieldError(input) {
+    if (!input) return;
+
+    const group = input.closest('.form-group');
+
+    if (group) {
+      group.classList.remove('has-error');
+
+      const error = group.querySelector('.form-error');
+      if (error) {
+        error.textContent = '';
+        error.style.display = 'none';
+      }
+    }
+
+    input.setAttribute('aria-invalid', 'false');
+  }
+
+  function clearFormErrors() {
+    [nameInput, emailInput, subjectInput, messageInput]
+      .forEach(clearFieldError);
+  }
+
+  [nameInput, emailInput, subjectInput, messageInput]
+    .forEach(input => {
+      if (input) {
+        input.addEventListener('input', () => clearFieldError(input));
+      }
+    });
+
+  // Prefill subject from URL
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has('subject') && subjectInput) {
+    subjectInput.value = params.get('subject');
+  }
+
+  // Prevent duplicate form submissions
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    clearFormErrors();
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const category = categoryInput
+      ? categoryInput.value
+      : 'General Circulation';
+    const subject = subjectInput ? subjectInput.value.trim() : '';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    let firstError = null;
+
+    function addError(input, text) {
+      showFieldError(input, text);
+      if (!firstError) firstError = input;
+    }
+
+    if (!name || name.length < 2) {
+      addError(nameInput, 'Please enter your name (at least 2 characters).');
+    }
+
+    // Correct JavaScript email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email) {
+      addError(emailInput, 'Please enter your email address.');
+    } else if (!emailRegex.test(email)) {
+      addError(emailInput, 'Please enter a valid email address.');
+    }
+
+    if (!subject) {
+      addError(subjectInput, 'Please enter a subject.');
+    }
+
+    if (!message || message.length < 5) {
+      addError(messageInput, 'Message must contain at least 5 characters.');
+    }
+
+    if (firstError) {
+      firstError.focus();
+      return;
+    }
+
+    const inquiry = {
+      id: Date.now(),
+      name,
+      email,
+      category,
+      subject,
+      message,
+      createdAt: new Date().toISOString()
+    };
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      let saved = false;
+
+      // Use the existing database if available
+      if (
+        window.LibraryDB &&
+        typeof window.LibraryDB.addInquiry === 'function'
+      ) {
+        const result = window.LibraryDB.addInquiry(inquiry);
+
+        if (result && result.success) {
+          saved = true;
+        } else {
+          throw new Error('The library database could not save the inquiry.');
+        }
+      } else {
+        // Demo fallback: save inquiries in this browser
+        const existing = JSON.parse(
+          localStorage.getItem('libraryInquiries') || '[]'
+        );
+
+        if (!Array.isArray(existing)) {
+          throw new Error('Stored inquiry data is invalid.');
+        }
+
+        existing.push(inquiry);
+        localStorage.setItem('libraryInquiries', JSON.stringify(existing));
+        saved = true;
+      }
+
+      if (saved) {
+        form.reset();
+        clearFormErrors();
+        notify('Your inquiry has been submitted successfully!', 'success');
+      }
+
+    } catch (error) {
+      console.error('Inquiry submission failed:', error);
+      notify(
+        'Unable to submit your inquiry. Please try again.',
+        'error'
+      );
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+
+});
+
   </script>
 </body>
 </html>
