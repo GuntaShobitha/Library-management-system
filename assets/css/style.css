@@ -1623,6 +1623,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px 20px;
   }
 
+  .sanctuary-card {
+    width: 90vw;
+  }
+  .service-card, .category-card, .archive-card, .testimonial-card {
+    width: 90vw;
+  }
+
   .small-screen-issue {
     grid-template-columns: repeat(1, 1fr) !important;
   }
