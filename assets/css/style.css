@@ -1569,6 +1569,12 @@ h1, h2, h3, h4, h5, h6 {
   .btn-mobile-toggle {
     display: block;
   }
+  /* Search/hamburger nav section: (middle of hamburger and logo) top-bar login
+     hidden on mobile, since the intent is to render the login button inside the
+     mobile drawer instead. */
+  #navAuthContainer {
+    display: none !important;
+  }
   .header-inner {
     height: 70px;
   }
